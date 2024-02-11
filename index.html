@@ -6,15 +6,6 @@
     <title>Salman Omar Sohail</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9; /* Light gray background color */
-            color: #333; /* Dark text color */
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Two-column layout */
-        }
         .header {
             background-color: #333; /* Dark gray header background color */
             color: #fff;
@@ -82,10 +73,11 @@
             color: #fff;
             text-align: center;
             padding: 10px;
-            position: fixed;
+            position: sticky;
             bottom: 0;
             width: 100%;
             z-index: 1; /* Ensure it stays above content */
+            grid-column: span 2; /* Span across both columns */
         }
 
         /* New CSS for scrolling images */
@@ -139,7 +131,7 @@
         .left-section,
         .right-section {
             position: relative;
-            z-index: 2; /* Ensure sections are above the pseudo-element */
+            z-index: 3; /* Ensure sections are above the pseudo-element */
         }
 
     </style>
@@ -200,6 +192,31 @@
 </section>
 
 <section class="right-section">
+    <!-- Add 3d Models -->
+    <model-viewer src="https://raw.githubusercontent.com/SOHAIL1996/Salman-Omar-Sohail/main/OctaviaDiva.gltf"
+        alt="A 3D model of a duck"
+        auto-rotate
+        camera-controls
+        style="width: 100%; height: 400px;"></model-viewer>
+
+    <model-viewer src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"
+                alt="A 3D model of a duck"
+                auto-rotate
+                camera-controls
+                style="width: 100%; height: 400px;"></model-viewer>
+
+    <model-viewer src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"
+    alt="A 3D model of a duck"
+    auto-rotate
+    camera-controls
+    style="width: 100%; height: 400px;"></model-viewer>
+
+    <model-viewer src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"
+                alt="A 3D model of a duck"
+                auto-rotate
+                camera-controls
+                style="width: 100%; height: 400px;"></model-viewer>
+
     <!-- Add grid items for GIFs -->
     <div class="grid-item"><img src="https://via.placeholder.com/150" alt="GIF Placeholder"></div>
     <div class="grid-item"><img src="https://via.placeholder.com/150" alt="GIF Placeholder"></div>
@@ -210,30 +227,6 @@
     <div class="grid-item"><img src="https://via.placeholder.com/150" alt="GIF Placeholder"></div>
     <div class="grid-item"><img src="https://via.placeholder.com/150" alt="GIF Placeholder"></div>
     
-    <!-- Add the model-viewer for the 3D model -->
-    <model-viewer src="https://raw.githubusercontent.com/SOHAIL1996/Salman-Omar-Sohail/main/OctaviaDiva.gltf"
-        alt="A 3D model of a duck"
-        auto-rotate
-        camera-controls
-        style="width: 100%; height: 400px;"></model-viewer>
-    <!-- Add the model-viewer for the 3D model -->
-    <model-viewer src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"
-                alt="A 3D model of a duck"
-                auto-rotate
-                camera-controls
-                style="width: 100%; height: 400px;"></model-viewer>
-                <!-- Add the model-viewer for the 3D model -->
-    <model-viewer src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"
-    alt="A 3D model of a duck"
-    auto-rotate
-    camera-controls
-    style="width: 100%; height: 400px;"></model-viewer>
-    <!-- Add the model-viewer for the 3D model -->
-    <model-viewer src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"
-                alt="A 3D model of a duck"
-                auto-rotate
-                camera-controls
-                style="width: 100%; height: 400px;"></model-viewer>
 </section>
 
 
