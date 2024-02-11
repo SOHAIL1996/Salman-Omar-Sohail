@@ -1,0 +1,143 @@
+.profile-image {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* Ensures a circular shape */
+    overflow: hidden; /* Ensures image stays within circular frame */
+    margin-right: 20px; /* Adjust spacing as needed */
+}
+
+.profile-image img {
+    width: 100%; /* Ensures image fills circular frame */
+    height: 100%; /* Ensures image fills circular frame */
+    object-fit: cover; /* Ensures image maintains aspect ratio */
+}
+.header {
+    background-color: #333; /* Dark gray header background color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    grid-column: span 2; /* Span across both columns */
+    font-family: sans-serif; /* Formal font family */
+    position: relative; /* Position relative for pseudo-element positioning */
+}
+
+/* Adjusted CSS for header grid */
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; /* Center items vertically */
+    justify-items: center; /* Center items horizontally */
+    gap: 20px;
+}
+
+.header-content {
+    display: flex; /* Change to flex layout */
+    align-items: center; /* Center items vertically */
+}
+        
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; /* Adjust the initial position to make the wave partially visible */
+    left: -50%; /* Adjusted to cover the entire width */
+    width: 200%; /* Adjusted to cover the entire width */
+    height: 100px; /* Adjust the height of the wave */
+    background: linear-gradient(to bottom, rgba(204, 204, 204, 0), rgba(204, 204, 204, 0.5)); /* Transparent gray gradient */
+    animation: waveAnimation 5s linear infinite; /* Adjust animation duration */
+}
+
+.left-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff; /* White background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.right-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff; /* White background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Three-column layout */
+    gap: 10px;
+}
+.section h2 {
+    color: #333; /* Dark section heading color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.footer {
+    background-color: #333; /* Dark gray footer background color */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 3; /* Ensure it stays above content */
+    grid-column: span 2; /* Span across both columns */
+}
+
+/* New CSS for scrolling images */
+.scrolling-images {
+    overflow: hidden;
+    grid-column: span 2; /* Span across both columns */
+}
+
+.scrolling-container {
+    white-space: nowrap;
+    animation: scrollImages 20s linear infinite;
+}
+
+.scrolling-container img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+@keyframes scrollImages {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light gray background color */
+    color: #333; /* Dark text color */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    min-height: 100vh; /* Set a minimum height to ensure the footer stays visible */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(0) translateY(20px); /* Initial position of the wave */
+    }
+    50% {
+        transform: translateX(0) translateY(-20px); /* Peak of the wave */
+    }
+    100% {
+        transform: translateX(0) translateY(20px); /* End position of the wave */
+    }
+}
+
+.left-section,
+.right-section {
+    position: relative;
+    z-index: 3; /* Ensure sections are above the pseudo-element */
+}
