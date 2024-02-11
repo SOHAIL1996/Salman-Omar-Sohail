@@ -3,7 +3,7 @@
     height: 100px; /* Adjust size as needed */
     border-radius: 50%; /* Ensures a circular shape */
     overflow: hidden; /* Ensures image stays within circular frame */
-    margin-right: 450px; /* Adjust spacing as needed */
+    margin-right: 20px; /* Adjust spacing as needed */
 }
 
 .profile-image img {
@@ -114,6 +114,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    font-size: 14px; /* Adjust the font size as needed */
     margin: 0;
     padding: 0;
     background-color: #f9f9f9; /* Light gray background color */
@@ -123,6 +124,7 @@ body {
     min-height: 100vh; /* Set a minimum height to ensure the footer stays visible */
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+
 
 @keyframes waveAnimation {
     0% {
