@@ -6,6 +6,19 @@
     <title>Salman Omar Sohail</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        .profile-image {
+            width: 100px; /* Adjust size as needed */
+            height: 100px; /* Adjust size as needed */
+            border-radius: 50%; /* Ensures a circular shape */
+            overflow: hidden; /* Ensures image stays within circular frame */
+            margin-right: 20px; /* Adjust spacing as needed */
+        }
+
+        .profile-image img {
+            width: 100%; /* Ensures image fills circular frame */
+            height: 100%; /* Ensures image fills circular frame */
+            object-fit: cover; /* Ensures image maintains aspect ratio */
+        }
         .header {
             background-color: #333; /* Dark gray header background color */
             color: #fff;
@@ -26,9 +39,10 @@
         }
 
         .header-content {
-            grid-column: span 2; /* Span across both columns */
+            display: flex; /* Change to flex layout */
+            align-items: center; /* Center items vertically */
         }
-        
+                
         .header::after {
             content: '';
             position: absolute;
@@ -76,7 +90,7 @@
             position: sticky;
             bottom: 0;
             width: 100%;
-            z-index: 1; /* Ensure it stays above content */
+            z-index: 3; /* Ensure it stays above content */
             grid-column: span 2; /* Span across both columns */
         }
 
@@ -88,7 +102,7 @@
 
         .scrolling-container {
             white-space: nowrap;
-            animation: scrollImages 30s linear infinite;
+            animation: scrollImages 20s linear infinite;
         }
 
         .scrolling-container img {
@@ -114,6 +128,8 @@
             color: #333; /* Dark text color */
             display: grid;
             grid-template-columns: 1fr 1fr; /* Two-column layout */
+            min-height: 100vh; /* Set a minimum height to ensure the footer stays visible */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         
         @keyframes waveAnimation {
@@ -138,14 +154,19 @@
 </head>
 <body>
 
-<header class="header">
-    <div class="header-grid">
-        <div class="header-content">
-            <h1 class="name">Salman Omar Sohail</h1>
-            <h2 class="title">Robotics Engineer</h2>
+    <header class="header">
+        <div class="header-grid">
+            <div class="header-content">
+                <div class="profile-image">
+                    <img src="https://via.placeholder.com/150" alt="Profile Image">
+                </div>
+                <div>
+                    <h1 class="name">Salman Omar Sohail</h1>
+                    <h2 class="title">Robotics Engineer</h2>
+                </div>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
 <section class="scrolling-images">
     <div class="scrolling-container">
@@ -192,31 +213,7 @@
 </section>
 
 <section class="right-section">
-    <!-- Add 3d Models -->
-    <model-viewer src="https://raw.githubusercontent.com/SOHAIL1996/Salman-Omar-Sohail/main/assets/OctaviaDiva.gltf"
-        alt="A 3D model of a duck"
-        auto-rotate
-        camera-controls
-        style="width: 100%; height: 400px;"></model-viewer>
-
-    <model-viewer src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"
-                alt="A 3D model of a duck"
-                auto-rotate
-                camera-controls
-                style="width: 100%; height: 400px;"></model-viewer>
-
-    <model-viewer src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"
-    alt="A 3D model of a duck"
-    auto-rotate
-    camera-controls
-    style="width: 100%; height: 400px;"></model-viewer>
-
-    <model-viewer src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"
-                alt="A 3D model of a duck"
-                auto-rotate
-                camera-controls
-                style="width: 100%; height: 400px;"></model-viewer>
-
+    
     <!-- Add grid items for GIFs -->
     <div class="grid-item"><img src="https://via.placeholder.com/150" alt="GIF Placeholder"></div>
     <div class="grid-item"><img src="https://via.placeholder.com/150" alt="GIF Placeholder"></div>
@@ -226,9 +223,33 @@
     <div class="grid-item"><img src="https://via.placeholder.com/150" alt="GIF Placeholder"></div>
     <div class="grid-item"><img src="https://via.placeholder.com/150" alt="GIF Placeholder"></div>
     <div class="grid-item"><img src="https://via.placeholder.com/150" alt="GIF Placeholder"></div>
+
+    <!-- Add 3d Models -->
+    <model-viewer src="https://raw.githubusercontent.com/SOHAIL1996/Salman-Omar-Sohail/main/assets/OctaviaDiva.gltf"
+        alt="A 3D model of a duck"
+        auto-rotate
+        camera-controls
+        style="width: 100%; height: 400px;"></model-viewer>
+
+    <model-viewer src="https://raw.githubusercontent.com/SOHAIL1996/Salman-Omar-Sohail/main/assets/OctaviaDiva.gltf"
+                alt="A 3D model of a duck"
+                auto-rotate
+                camera-controls
+                style="width: 100%; height: 400px;"></model-viewer>
+
+    <model-viewer src="https://raw.githubusercontent.com/SOHAIL1996/Salman-Omar-Sohail/main/assets/OctaviaDiva.gltf"
+    alt="A 3D model of a duck"
+    auto-rotate
+    camera-controls
+    style="width: 100%; height: 400px;"></model-viewer>
+
+    <model-viewer src="https://raw.githubusercontent.com/SOHAIL1996/Salman-Omar-Sohail/main/assets/OctaviaDiva.gltf"
+                alt="A 3D model of a duck"
+                auto-rotate
+                camera-controls
+                style="width: 100%; height: 400px;"></model-viewer>
     
 </section>
-
 
 
 <footer class="footer">
