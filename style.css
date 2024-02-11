@@ -86,6 +86,11 @@
     grid-column: span 2; /* Span across both columns */
 }
 
+.section-heading {
+    grid-column: span 4; /* Span across all four columns */
+    text-align: center; /* Center the heading */
+}
+
 /* New CSS for scrolling images */
 .scrolling-images {
     overflow: hidden;
