@@ -3,7 +3,7 @@
     height: 100px; /* Adjust size as needed */
     border-radius: 50%; /* Ensures a circular shape */
     overflow: hidden; /* Ensures image stays within circular frame */
-    margin-right: 20px; /* Adjust spacing as needed */
+    margin-right: 450px; /* Adjust spacing as needed */
 }
 
 .profile-image img {
