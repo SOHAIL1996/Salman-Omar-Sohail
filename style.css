@@ -16,7 +16,7 @@
 }
 
 .header {
-    background-color: #333; /* Dark gray header background color */
+    background-color: #222021; /* Dark gray header background color */
     color: #cccccc;
     padding: 10px 40px; /* Increase the right padding to move text more to the right */
     text-align: left;
@@ -71,7 +71,7 @@
     gap: 10px;
 }
 .section h2 {
-    color: #333; /* Dark section heading color */
+    color: #222021; /* Dark section heading color */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -84,7 +84,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .footer {
-    background-color: #333; /* Dark gray footer background color */
+    background-color: #222021; /* Dark gray footer background color */
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -122,7 +122,7 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(calc(-100% + 150px)); /* Adjusted to stop exactly after one full image */
     }
 }
 
@@ -132,7 +132,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9; /* Light gray background color */
-    color: #333; /* Dark text color */
+    color: #222021; /* Dark text color */
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two-column layout */
     min-height: 100vh; /* Set a minimum height to ensure the footer stays visible */
@@ -161,11 +161,11 @@ body {
 .dark-grey-line-vertical {
     width: 2px;
     height: 100px; /* Adjust height as needed */
-    background-color: #333; /* Dark grey color */
+    background-color: #222021; /* Dark grey color */
 }
 .dark-grey-line-horizontal {
     border: none;
-    border-top: 2px solid #333; /* Dark grey color */
+    border-top: 2px solid #222021; /* Dark grey color */
     margin-top: 20px; /* Adjust margin as needed */
 }
 
