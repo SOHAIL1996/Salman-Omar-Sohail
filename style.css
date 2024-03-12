@@ -177,3 +177,18 @@ a {
 a:hover {
     color: #444; /* Darker greyish color on hover */
 }
+
+.model-container {
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers items horizontally */
+    text-align: center; /* Centers text */
+    margin-bottom: 20px; /* Adds some space below each model container */
+}
+
+.model-caption {
+    font-family: Arial, sans-serif;
+    color: #444; /* Dark grey color for the caption text */
+    font-size: 12px; /* Adjusts the size of the caption text */
+    margin-top: 8px; /* Space between the model and the caption */
+}
