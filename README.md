@@ -11,4 +11,4 @@
 
 ## MYBOTSHOP GmbH Github
 
-[MBS Github Profile](https://sohail1996.github.io/Salman-Omar-Sohail/index.html](https://github.com/SOHAILMBS)
+[MBS GitHub Profile](https://github.com/SOHAILMBS)
