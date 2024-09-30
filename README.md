@@ -12,3 +12,10 @@
 ## MYBOTSHOP GmbH Github
 
 [MBS GitHub Profile](https://github.com/SOHAILMBS)
+
+---
+
+## Research Paper Repositories
+
+1. [Automated Testing of Standard Conformance for Robots](https://github.com/SOHAIL1996/property_based_tester)
+2. [Property-Based Testing in Simulation for Verifying Robot Action Execution in Tabletop Manipulation](https://github.com/SOHAIL1996/Automatic_Test_Generation_For_Robot_Self_Examination)
