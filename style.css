@@ -170,7 +170,7 @@ body {
 }
 
 a {
-    color: #34a734; /* Greyish color */
+    color: #34a734; 
     text-decoration: none; 
 }
 
@@ -191,6 +191,18 @@ a:hover {
     color: #444; /* Dark grey color for the caption text */
     font-size: 12px; /* Adjusts the size of the caption text */
     margin-top: 8px; /* Space between the model and the caption */
+}
+
+/* Logo container */
+.logo-container {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+.logo-container img {
+    height: 80px; /* Set the desired height for the image */
+    margin-left: 10px; /* Optional: Add some space between text and image */
 }
 
 /* Background video/GIF covers the whole page */
@@ -228,6 +240,13 @@ h2 {
 h3 {
     font-family: 'Dancing Script', cursive; 
     color: #3285fa; 
+}
+
+h4 {
+    color: #3285fa; 
+    font-size: 20px; 
+    font-weight: normal; /* Ensures the text is not bold */
+    font-style: italic; /* Ensures the text is not italic */
 }
 
 .academic-projects-heading {
