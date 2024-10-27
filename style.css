@@ -1,12 +1,19 @@
+/* Profile Image Hover Animation */
 .profile-image {
-    width: 150px; /* Adjust size as needed */
-    height: 150px; /* Adjust size as needed */
-    border-radius: 50%; /* Ensures a circular shape */
-    overflow: hidden; /* Ensures image stays within circular frame */
-    margin-right: 20px; /* Adjust spacing as needed */
-    display: flex; /* Centering technique */
-    justify-content: center; /* Centering technique */
-    align-items: center; /* Centering technique */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.profile-image:hover {
+    transform: scale(1.1); /* Slight enlargement on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
 
 .profile-image img {
@@ -16,17 +23,18 @@
 }
 
 .header {
-    background-color: #fff; /* Dark gray header background color */
+    background-color: rgba(255, 255, 255, 0.2);
     color: #3285fa;
-    padding: 10px 40px; /* Increase the right padding to move text more to the right */
+    padding: 10px 40px;
     text-align: left;
-    grid-column: span 2; /* Span across both columns */
-    font-family: "Times New Roman", Times, serif; /* Use Times New Roman as the font */
-    font-size: 24px; /* Increase the font size */
-    position: relative; /* Position relative for pseudo-element positioning */
-    display: flex; /* Set display to flex */
-    justify-content: left; /* Center horizontally */
-    align-items: left; /* Center vertically */
+    grid-column: span 2;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center; /* Center vertically */
+    flex-wrap: wrap; /* Allows the text to wrap if it gets too compressed */
 }
 
 .header-grid {
@@ -38,33 +46,25 @@
 }
 
 .header-content {
-    display: flex; /* Change to flex layout */
+    display: flex;
+    flex-grow: 1; /* Allow it to take up remaining space */
+    min-width: 0; /* Prevents excessive shrinking */
     align-items: center; /* Center items vertically */
-    width: 100%; /* Ensure the header content takes up the full width */
+    overflow: hidden; /* Prevents overflow */
+    width: 100%;
 }
         
-.header::after {
-    content: '';
-    position: absolute;
-    bottom: -50px; /* Adjust the initial position to make the wave partially visible */
-    left: -50%; /* Adjusted to cover the entire width */
-    width: 200%; /* Adjusted to cover the entire width */
-    height: 100px; /* Adjust the height of the wave */
-    background: linear-gradient(to bottom, rgba(204, 204, 204, 0), rgba(59, 66, 162, 0.397)); /* Transparent gray gradient */
-    animation: waveAnimation 5s linear infinite; /* Adjust animation duration */
-}
-
 .left-section {
     padding: 20px;
     margin: 20px;
-    background-color: #fff; /* White background color */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .right-section {
     padding: 20px;
     margin: 20px;
-    background-color: #fff; /* White background color */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Three-column layout */
     gap: 10px;
@@ -75,15 +75,15 @@
     height: auto;
     display: block;
     margin: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .footer {
-    background-color: #222021; /* Dark gray footer background color */
+    background-color: rgba(50, 133, 250, 0.8);
     color: #fff;
     text-align: center;
-    padding: 10px;
-    position: sticky;
+    padding: 0px;
+    position: static;
     bottom: 0;
     width: 100%;
     z-index: 3; /* Ensure it stays above content */
@@ -110,37 +110,72 @@ body {
     line-height: 1.6; /* Adjust the line height to increase the gap between sentences */
 }
 
-
-@keyframes waveAnimation {
+/* Scrolling Images Animation */
+@keyframes scrollImages {
     0% {
-        transform: translateX(0) translateY(20px); /* Initial position of the wave */
+        transform: translateX(0);
     }
-    50% {
-        transform: translateX(0) translateY(-20px); /* Peak of the wave */
+    45% {
+        transform: translateX(calc(-50%));
+    }
+    90% {
+        transform: translateX(calc(-100% + 150px));
     }
     100% {
-        transform: translateX(0) translateY(20px); /* End position of the wave */
+        transform: translateX(calc(-100% + 150px));
     }
 }
+
+.scrolling-images {
+    overflow: hidden;
+    grid-column: span 2;
+}
+
+.scrolling-container {
+    white-space: nowrap;
+    animation: scrollImages 30s ease-in-out infinite;
+}
+
+.scrolling-container img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.scrolling-container img:hover {
+    transform: scale(1.1); /* Scale up images slightly on hover */
+}
+
+.scrolling-container img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Makes images circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    margin: 5px; /* Optional spacing around images */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
 
 .dark-grey-line-vertical {
     width: 2px;
-    height: 100px; /* Adjust height as needed */
-    background-color: #3285fa; /* Dark grey color */
+    height: 100px; 
+    background-color: #3285fa; 
 }
 .dark-grey-line-horizontal {
     border: none;
-    border-top: 2px solid #3285fa; /* Dark grey color */
-    margin-top: 0px; /* Adjust margin as needed */
+    border-top: 2px solid #3285fa; 
+    margin-top: 0px; 
 }
 
 a {
-    color: #666; /* Greyish color */
-    text-decoration: none; /* Remove underline */
+    color: #34a734; /* Greyish color */
+    text-decoration: none; 
 }
 
 a:hover {
-    color: #444; /* Darker greyish color on hover */
+    color: #34a734; 
 }
 
 .model-container {
@@ -158,33 +193,45 @@ a:hover {
     margin-top: 8px; /* Space between the model and the caption */
 }
 
-/* New CSS for scrolling images */
-.scrolling-images {
+/* Background video/GIF covers the whole page */
+.background-media {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
     overflow: hidden;
-    grid-column: span 2;
 }
 
-.scrolling-container {
-    white-space: nowrap;
-    animation: scrollImages 20s linear infinite;
+.background-media video,
+.background-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
 }
 
-.scrolling-container img {
-    display: inline-block;
-    max-width: 100%;
-    height: auto;
+/* Fonts */
+h1 {
+    font-family: 'Dancing Script', cursive; /* Handwritten font for headings */
+    font-size: 2.5em; 
+    color: #3285fa; 
 }
 
-@keyframes scrollImages {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-100% + 150px));
-    }
+h2 {
+    font-family: 'Dancing Script', cursive; 
+    color: #3285fa; 
+    font-size: 34px; 
+}
+
+h3 {
+    font-family: 'Dancing Script', cursive; 
+    color: #3285fa; 
 }
 
 .academic-projects-heading {
-    color: #3285fa; /* Change this to your desired color */
-    font-size: 20px; /* Adjust the font size as needed */
+    font-family: 'Dancing Script', cursive; 
+    color: #3285fa; 
+    font-size: 34px; 
 }
