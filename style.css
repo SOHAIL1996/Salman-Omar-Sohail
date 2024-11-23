@@ -217,7 +217,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9; /* Light gray background color */
-    color: #524c4f; /* Dark text color */
+    color: #2c2b2b; /* Dark text color */
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two-column layout */
     min-height: 100vh; /* Set a minimum height to ensure the footer stays visible */
@@ -251,6 +251,10 @@ h4 {
     font-weight: normal; /* Ensures the text is not bold */
     font-style: italic; /* Ensures the text is not italic */
     margin-bottom: 1;
+}
+
+.light-gray-text {
+    color: #737475; /* Light gray text */
 }
 
 .academic-projects-heading {
