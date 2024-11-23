@@ -12,7 +12,7 @@
 }
 
 .profile-image:hover {
-    transform: scale(1.1); /* Slight enlargement on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
 
@@ -22,14 +22,47 @@
     object-fit: cover; /* Ensures image maintains aspect ratio and covers container */
 }
 
+/* Logo container */
+.logo-container {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+.logo-container img {
+    height: 80px; /* Set the desired height for the image */
+    margin-left: 10px; /* Optional: Add some space between text and image */
+}
+
+.logo-container img:hover {
+    transform: scale(1.1); /* Scale up images slightly on hover */
+}
+
+/* Background video/GIF covers the whole page */
+.background-media {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    overflow: hidden;
+}
+
+.background-media video,
+.background-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
 .header {
     background-color: rgba(255, 255, 255, 0.2);
     color: #3285fa;
     padding: 10px 40px;
     text-align: left;
     grid-column: span 2;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 18px;
     position: relative;
     display: flex;
     justify-content: left;
@@ -55,18 +88,18 @@
 }
         
 .left-section {
-    padding: 20px;
-    margin: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .right-section {
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 10px;
     background-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Three-column layout */
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     gap: 10px;
 }
 
@@ -78,6 +111,11 @@
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+.grid-item img:hover {
+    transform: scale(1.1); /* Scale up images slightly on hover */
+}
+
 .footer {
     background-color: rgba(50, 133, 250, 0.8);
     color: #fff;
@@ -94,20 +132,6 @@
     grid-column: span 4; /* Span across all four columns */
     text-align: center; /* Center the heading */
     color: #3285fa;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    font-size: 14px; /* Adjust the font size as needed */
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9; /* Light gray background color */
-    color: #524c4f; /* Dark text color */
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two-column layout */
-    min-height: 100vh; /* Set a minimum height to ensure the footer stays visible */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    line-height: 1.6; /* Adjust the line height to increase the gap between sentences */
 }
 
 /* Scrolling Images Animation */
@@ -157,13 +181,7 @@ body {
     transition: transform 0.3s ease; /* Smooth scaling on hover */
 }
 
-
-.dark-grey-line-vertical {
-    width: 2px;
-    height: 100px; 
-    background-color: #3285fa; 
-}
-.dark-grey-line-horizontal {
+.horizontal-line {
     border: none;
     border-top: 2px solid #3285fa; 
     margin-top: 0px; 
@@ -175,7 +193,7 @@ a {
 }
 
 a:hover {
-    color: #34a734; 
+    color: #ca1f1f; 
 }
 
 .model-container {
@@ -183,45 +201,28 @@ a:hover {
     flex-direction: column; /* Stacks items vertically */
     align-items: center; /* Centers items horizontally */
     text-align: center; /* Centers text */
-    margin-bottom: 20px; /* Adds some space below each model container */
+    margin-bottom: 0px; /* Adds some space below each model container */
 }
 
 .model-caption {
     font-family: Arial, sans-serif;
-    color: #444; /* Dark grey color for the caption text */
+    color: #3285fa; /* Dark grey color for the caption text */
     font-size: 12px; /* Adjusts the size of the caption text */
     margin-top: 8px; /* Space between the model and the caption */
 }
 
-/* Logo container */
-.logo-container {
-    display: flex; /* Use flexbox layout */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
-}
-
-.logo-container img {
-    height: 80px; /* Set the desired height for the image */
-    margin-left: 10px; /* Optional: Add some space between text and image */
-}
-
-/* Background video/GIF covers the whole page */
-.background-media {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; 
-    overflow: hidden;
-}
-
-.background-media video,
-.background-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.5;
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px; /* Adjust the font size as needed */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light gray background color */
+    color: #524c4f; /* Dark text color */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    min-height: 100vh; /* Set a minimum height to ensure the footer stays visible */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    line-height: 1.2; /* Adjust the line height to increase the gap between sentences */
 }
 
 /* Fonts */
@@ -235,11 +236,13 @@ h2 {
     font-family: 'Dancing Script', cursive; 
     color: #3285fa; 
     font-size: 34px; 
+    margin-bottom: 1;
 }
 
 h3 {
     font-family: 'Dancing Script', cursive; 
     color: #3285fa; 
+    margin-bottom: 10px;
 }
 
 h4 {
@@ -247,10 +250,12 @@ h4 {
     font-size: 20px; 
     font-weight: normal; /* Ensures the text is not bold */
     font-style: italic; /* Ensures the text is not italic */
+    margin-bottom: 1;
 }
 
 .academic-projects-heading {
     font-family: 'Dancing Script', cursive; 
     color: #3285fa; 
     font-size: 34px; 
+    margin-bottom: 1;
 }
