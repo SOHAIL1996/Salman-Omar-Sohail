@@ -263,3 +263,42 @@ h4 {
     font-size: 34px; 
     margin-bottom: 1;
 }
+/* Robot Movement */
+#robot-container {
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+}
+
+#robot {
+    position: absolute;
+    top: 0;
+    left: -150px;
+    /* Start outside the view */
+    width: 150px;
+}
+
+@keyframes moveRobot {
+    0% {
+        transform: translateX(50vw);
+        /* Start off-screen */
+    }
+
+    100% {
+        transform: translateX(-50px);
+        /* Move across the viewport */
+    }
+}
+
+#robot.move {
+    animation: moveRobot 8s linear infinite;
+    /* Smooth infinite motion */
+}
+
+#robot img {
+    width: 100%;
+}
+
+#robot-body {
+    cursor: pointer;
+}
