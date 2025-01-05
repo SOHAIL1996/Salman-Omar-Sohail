@@ -1,4 +1,4 @@
-/* Profile Image Hover Animation */
+/* --------------------------------------------- Profile Image Hover Animation */
 .profile-image {
     width: 150px;
     height: 180px;
@@ -22,7 +22,7 @@
     object-fit: cover; /* Ensures image maintains aspect ratio and covers container */
 }
 
-/* Logo container */
+/* --------------------------------------------- Logo container */
 .logo-container {
     display: flex; /* Use flexbox layout */
     justify-content: space-between; /* Space between items */
@@ -38,7 +38,7 @@
     transform: scale(1.1); /* Scale up images slightly on hover */
 }
 
-/* Background video/GIF covers the whole page */
+/* --------------------------------------------- Background video/GIF covers the whole page */
 .background-media {
     position: fixed;
     top: 0;
@@ -96,7 +96,7 @@
 .right-section {
     padding: 10px;
     margin: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: grid;
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
@@ -134,7 +134,7 @@
     color: #3285fa;
 }
 
-/* Scrolling Images Animation */
+/* --------------------------------------------- Scrolling Images Animation */
 @keyframes scrollImages {
     0% {
         transform: translateX(0);
@@ -181,6 +181,8 @@
     transition: transform 0.3s ease; /* Smooth scaling on hover */
 }
 
+/* --------------------------------------------- Text */
+
 .horizontal-line {
     border: none;
     border-top: 2px solid #3285fa; 
@@ -188,7 +190,7 @@
 }
 
 a {
-    color: #34a734; 
+    color: #2157a3; 
     text-decoration: none; 
 }
 
@@ -212,22 +214,21 @@ a:hover {
 }
 
 body {
-    font-family: 'Aldrich';
-    font-size: 14px; /* Adjust the font size as needed */
+    /* font-family: 'Aldrich'; */
+    font-size: 16px; /* Adjust the font size as needed */
     margin: 0;
     padding: 0;
     background-color: #f9f9f9; /* Light gray background color */
     color: #2c2b2b; /* Dark text color */
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two-column layout */
-    min-height: 100vh; /* Set a minimum height to ensure the footer stays visible */
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    line-height: 1.2; /* Adjust the line height to increase the gap between sentences */
+    line-height: 1.3; /* Adjust the line height to increase the gap between sentences */
 }
 
-/* Fonts */
+/* --------------------------------------------- Fonts */
 h1 {
-    font-family: 'Dancing Script', cursive; /* Handwritten font for headings */
+    font-family: 'Dancing Script', cursive;
     font-size: 2.5em; 
     color: #3285fa; 
 }
@@ -248,8 +249,8 @@ h3 {
 h4 {
     color: #3285fa; 
     font-size: 20px; 
-    font-weight: normal; /* Ensures the text is not bold */
-    font-style: italic; /* Ensures the text is not italic */
+    font-weight: normal; 
+    font-style: italic; 
     margin-bottom: 1;
 }
 
@@ -263,10 +264,12 @@ h4 {
     font-size: 34px; 
     margin-bottom: 1;
 }
-/* Robot Movement */
+
+/* --------------------------------------------- Robot Movement */
+
 #robot-container {
     position: relative;
-    height: 100px;
+    height: 60px;
     overflow: hidden;
 }
 
@@ -280,12 +283,12 @@ h4 {
 
 @keyframes moveRobot {
     0% {
-        transform: translateX(50vw);
+        transform: translateX(-50px);
         /* Start off-screen */
     }
 
     100% {
-        transform: translateX(-50px);
+        transform: translateX(70vw);
         /* Move across the viewport */
     }
 }
