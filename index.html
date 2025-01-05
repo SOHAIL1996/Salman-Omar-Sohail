@@ -108,7 +108,24 @@
                 
                 Skilled in independently overseeing large-scale projects while also contributing effectively within 
                 collaborative team environments.
-            </p>           
+            </p>       
+
+            <div id="robot-container">
+                <div id="robot" class="move">
+                    <img id="robot-body" src="media/robots/hxg.png" alt="Robot Body">
+                </div>
+            </div>
+            <script>
+                // JavaScript for swappable robot body
+                const robotBody = document.getElementById("robot-body");
+                // Array of robot body images
+                const robotBodies = ["media/robots/rovo_side.png", "media/robots/robots.png", "media/robots/hsky_ur5e_front.png"];
+                let currentBodyIndex = 0;
+                robotBody.addEventListener("click", () => {
+                    currentBodyIndex = (currentBodyIndex + 1) % robotBodies.length;
+                    robotBody.src = robotBodies[currentBodyIndex];
+                });
+            </script>
 
             <div class="skill">
                 <i class="fas fa-code"></i>
