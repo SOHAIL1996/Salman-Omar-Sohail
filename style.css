@@ -266,35 +266,34 @@ h4 {
 }
 
 /* --------------------------------------------- Robot Movement */
-
 #robot-container {
     position: relative;
-    height: 60px;
+    height: 100px;
     overflow: hidden;
 }
 
 #robot {
     position: absolute;
     top: 0;
-    left: -150px;
+    left: -100px;
     /* Start outside the view */
-    width: 150px;
+    width: 145px;
 }
 
 @keyframes moveRobot {
     0% {
-        transform: translateX(-50px);
+        transform: translateX(110vw);
         /* Start off-screen */
     }
 
     100% {
-        transform: translateX(70vw);
+        transform: translateX(-50px);
         /* Move across the viewport */
     }
 }
 
 #robot.move {
-    animation: moveRobot 8s linear infinite;
+    animation: moveRobot 6s linear infinite;
     /* Smooth infinite motion */
 }
 
