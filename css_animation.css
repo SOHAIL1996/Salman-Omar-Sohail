@@ -1,0 +1,82 @@
+/* --------------------------------------------- Scrolling Images Animation */
+@keyframes scrollImages {
+    0% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(-50%);
+    }
+    90% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.scrolling-images {
+    overflow: hidden;
+    width: 100%; /* Ensure it takes up the full width of the screen */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+}
+
+.scrolling-container {
+    display: inline-flex; /* Inline flex for better scrolling control */
+    animation: scrollImages 30s ease-in-out infinite;
+    gap: 10px; /* Add spacing between images if needed */
+}
+
+.scrolling-container img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Makes images circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
+    margin: 5px; /* Optional spacing around images */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.scrolling-container img:hover {
+    transform: scale(1.1); /* Scale up images slightly on hover */
+}
+
+/* --------------------------------------------- Robot Movement */
+#robot-container {
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+}
+
+#robot {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    /* Start outside the view */
+    width: 145px;
+}
+
+@keyframes moveRobot {
+    0% {
+        transform: translateX(-50px);
+        /* Start off-screen */
+    }
+
+    100% {
+        transform: translateX(110vw);
+        /* Move across the viewport */
+    }
+}
+
+#robot.move {
+    animation: moveRobot 6s linear infinite;
+    /* Smooth infinite motion */
+}
+
+#robot img {
+    width: 100%;
+}
+
+#robot-body {
+    cursor: pointer;
+}

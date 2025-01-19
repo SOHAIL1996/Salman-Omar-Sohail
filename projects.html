@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salman Omar Sohail</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css_common.css">
     <link rel="stylesheet" href="css_animation.css">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -91,36 +90,51 @@
     </div>
 
     <div class="text-spec">
-        <h1>Profile</h1>
+        <h1 class="section-heading">Project Usecase</h1>
         <hr class="horizontal-line">
-        <p>
-            Seasoned Robotics Engineer distinguished by exceptional organizational skills
-            and a track record of success in managing diverse industrial, research, and academic projects.
+        TBA...
 
-            Proficient in utilizing state-of-the-art development tools and methodologies for robotic systems,
-            encompassing software development, hardware integration, technical documentation, and technical training.
-
-            Skilled in independently overseeing large-scale projects while also contributing effectively within
-            collaborative team environments.
-        </p>
-
-        <div id="robot-container">
-            <div id="robot" class="move">
-                <img id="robot-body" src="media/practical_experience/hsr_mv.png" alt="Robot Body">
-            </div>
-        </div>
-        <script>
-            // JavaScript for swappable robot body
-            const robotBody = document.getElementById("robot-body");
-            // Array of robot body images
-            // const robotBodies = ["media/robots/rovo_side.png", "media/robots/robots.png", "media/robots/hsky_ur5e_front.png"];
-            let currentBodyIndex = 0;
-            robotBody.addEventListener("click", () => {
-                currentBodyIndex = (currentBodyIndex + 1) % robotBodies.length;
-                robotBody.src = robotBodies[currentBodyIndex];
-            });
-        </script>
     </div>
+
+    <div class="text-spec">
+        <h1 class="section-heading">3D-Models</h1>
+        <hr class="horizontal-line">
+
+        <div class="gallery-item">
+            <p class="model-caption"><strong>Boston Dynamics Spot</strong></p>
+            <model-viewer src="assets/spot/scene.gltf" alt="Boston Dynamics Spot" auto-rotate camera-controls
+                shadow-intensity="1" exposure="0.6"
+                style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+
+            <p class="model-caption"><strong>Kuka</strong></p>
+            <model-viewer src="assets/kuka.glb" alt="Kuka" auto-rotate camera-controls shadow-intensity="1"
+                exposure="0.8"
+                style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+
+            <p class="model-caption"><strong>Inspire Robotics Hand</strong></p>
+            <model-viewer src="assets/inspire_hands.glb" alt="Inspire Hand" auto-rotate camera-controls
+                shadow-intensity="1" exposure="0.8"
+                style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+
+            <p class="model-caption"><strong>Unitree GO2</strong></p>
+            <model-viewer src="assets/go2.glb" alt="Unitree Go2" auto-rotate camera-controls shadow-intensity="1"
+                exposure="0.9"
+                style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+
+            <p class="model-caption"><strong>Clearpath Dingo</strong></p>
+            <model-viewer src="assets/dingo.glb" alt="Clearpath Dingo" auto-rotate camera-controls shadow-intensity="1"
+                exposure="0.8"
+                style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+
+            <p class="model-caption"><strong>Unitree H1</strong></p>
+            <model-viewer src="assets/h1.glb" alt="Unitree H1" auto-rotate camera-controls shadow-intensity="1"
+                exposure="0.8"
+                style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+        </div>
+
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+    </div>
+
 
     <footer class="footer">
         <p>&copy; Salman Omar Sohail 2025</p>
