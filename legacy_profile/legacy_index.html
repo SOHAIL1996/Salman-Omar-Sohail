@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salman Omar Sohail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+    <link rel="stylesheet" href="css_main.css">
+
+</head>
+<body>
+
+    <div class="background-media">
+        <!-- <video autoplay loop muted playsinline>
+            <source src="path/to/your-transparent-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video> -->
+
+        <!-- <img src="media/gifs/a1_viz.webp" alt="Background GIF"> -->
+        
+        <img src="media/robots/bz1.webp" alt="Background GIF">
+    </div>
+
+    <header class="header">
+        <div class="header-grid">
+            <div class="header-content">
+                <div class="profile-image">
+                    <img src="media/profile/profilephoto.webp" alt="Profile Image">
+                </div>
+                <div>
+                    <h1 class="name">Salman Omar Sohail</h1>
+                    <h3 class="title">(Robotics Engineer)</h3>
+                </div>
+            </div>
+            <div style="padding-left: 1000px;">
+                <img src="media/profile/robotics.webp" style="width: 150px; height: 150px; border-radius: 10%;">
+            </div>
+        </div>
+    </header>
+
+    <section class="scrolling-images">
+        <div class="scrolling-container">
+            <img src="media/logos/asme_logo.drawio.webp">
+            <img src="media/logos/bit_logo.drawio.webp">
+            <img src="media/logos/hbrs_logo.drawio.webp">
+            <img src="media/logos/pec_logo.drawio.webp">
+            <img src="media/logos/punjabgroupofcolleges_logo.drawio.webp">
+            <img src="media/logos/quadruped_logo.drawio.webp">
+            <img src="media/logos/mybotshop_logo.drawio.webp">
+            <img src="media/logos/ros_logo.drawio.webp">
+            <img src="media/logos/sesame_logo.drawio.webp">
+            <img src="media/logos/ieee_logo.drawio.webp">
+            <img src="media/logos/nvidiaomniverse_logo.drawio.webp">
+            <img src="media/logos/catiav5_logo.drawio.webp">
+            <img src="media/logos/meshlab_logo.drawio.webp">
+            <img src="media/logos/python_logo.drawio.webp">
+            <img src="media/logos/c++_logo.drawio.webp">
+            <img src="media/logos/html_logo.drawio.webp">
+            <img src="media/logos/gazebo_logo.drawio.webp">
+            <img src="media/logos/github_logo.drawio.webp">
+            <img src="media/logos/ubuntu_logo.drawio.webp">
+            <img src="media/logos/latex_logo.drawio.webp">
+            <img src="media/logos/jupyter_logo.drawio.webp">
+            <img src="media/logos/officesuite_logo.drawio.webp">
+            <img src="media/logos/fusion360_logo.drawio.webp">
+            <img src="media/logos/cottonweb_logo.drawio.webp">
+            <img src="media/logos/ros_logo.drawio.webp">
+        
+            <img src="media/logos/asme_logo.drawio.webp">
+            <img src="media/logos/bit_logo.drawio.webp">
+            <img src="media/logos/hbrs_logo.drawio.webp">
+            <img src="media/logos/pec_logo.drawio.webp">
+            <img src="media/logos/punjabgroupofcolleges_logo.drawio.webp">
+            <img src="media/logos/quadruped_logo.drawio.webp">
+            <img src="media/logos/mybotshop_logo.drawio.webp">
+            <img src="media/logos/ros_logo.drawio.webp">
+            <img src="media/logos/sesame_logo.drawio.webp">
+            <img src="media/logos/ieee_logo.drawio.webp">
+            <img src="media/logos/nvidiaomniverse_logo.drawio.webp">
+            <img src="media/logos/catiav5_logo.drawio.webp">
+            <img src="media/logos/meshlab_logo.drawio.webp">
+            <img src="media/logos/python_logo.drawio.webp">
+            <img src="media/logos/c++_logo.drawio.webp">
+            <img src="media/logos/html_logo.drawio.webp">
+            <img src="media/logos/gazebo_logo.drawio.webp">
+            <img src="media/logos/github_logo.drawio.webp">
+            <img src="media/logos/ubuntu_logo.drawio.webp">
+            <img src="media/logos/latex_logo.drawio.webp">
+            <img src="media/logos/jupyter_logo.drawio.webp">
+            <img src="media/logos/officesuite_logo.drawio.webp">
+            <img src="media/logos/fusion360_logo.drawio.webp">
+            <img src="media/logos/cottonweb_logo.drawio.webp">
+            <img src="media/logos/ros_logo.drawio.webp"></div>
+    </section>
+
+    <section class="left-section">
+        <div class="container">
+            <h2 class="academic-projects-heading">Profile</h2>
+            <hr class="horizontal-line">
+            <p>
+                Seasoned Robotics Engineer distinguished by exceptional organizational skills 
+                and a track record of success in managing diverse industrial, research, and academic projects. 
+
+                Proficient in utilizing state-of-the-art development tools and methodologies for robotic systems, 
+                encompassing software development, hardware integration, technical documentation, and technical training. 
+                
+                Skilled in independently overseeing large-scale projects while also contributing effectively within 
+                collaborative team environments.
+            </p>       
+
+            <div id="robot-container">
+                <div id="robot" class="move">
+                    <img id="robot-body" src="media/practical_experience/hsr_mv.png" alt="Robot Body">
+                </div>
+            </div>
+            <script>
+                // JavaScript for swappable robot body
+                const robotBody = document.getElementById("robot-body");
+                // Array of robot body images
+                // const robotBodies = ["media/robots/rovo_side.png", "media/robots/robots.png", "media/robots/hsky_ur5e_front.png"];
+                let currentBodyIndex = 0;
+                robotBody.addEventListener("click", () => {
+                    currentBodyIndex = (currentBodyIndex + 1) % robotBodies.length;
+                    robotBody.src = robotBodies[currentBodyIndex];
+                });
+            </script>
+
+            <div class="skill">
+                <i class="fas fa-code"></i>
+                <h3 class="academic-projects-heading">Experience</h3>
+                <hr class="horizontal-line">
+                <p>
+                    <h4 class="logo-container"> 
+                        <span>
+                            <a href="https://www.mybotshop.de/">MYBOTSHOP GmbH</a>
+                        </span>
+                        <img src="media/logos/mybotshop_logo.drawio.webp" alt="MyBotShop Logo" style="border-radius: 50%;">
+                    </h4>
+                    <strong>Team Lead – Robotic Software Engineer</strong><br>
+                    <p class="light-gray-text">
+                    July 2021 — Present<br>
+                    Bergheim, Germany <img src="https://flagcdn.com/w20/de.png" width="20"><br>
+                    </p>
+                    <br>
+                    ⦿ <strong>Robotic Software Development</strong> <br> <br> Specializing in the development and 
+                    integration of software for a variety of robots including ROVO2, Jackal, Ridgeback, Dingo-d/o, 
+                    Husky, Franka Emika, Open Manipulatior, Summit XL, Turtlebot*, Aloha, Kinova, UR*, and xARM*. 
+                    Expertise in creating navigation, manipulation, and perception stacks, sensor interfaces, 
+                    low-level drivers, and automated testing frameworks for multi-robot systems.<br>
+                    <br>
+                    ⦿ <strong>Sensor integration</strong> <br> <br> Proficient in integrating a range of sensors such 
+                    as Lidars (Ouster, Hokuyo, Blickfeld, Livox), Depth-Cameras (Intel Realsense D455/D435, ZED2/2i), 
+                    IMUs (Phidgets, Lord Microstrain, UM7), routers (Telefonica, Tenda), microphones (Bluez), and 
+                    GPS systems (EMLID RS2/M2, Fixposition). Skilled in installation, interfacing, and server integration.
+                     Furthermore, expertise in Linux kernel augmentation ensuring efficient utilization and management of these sensors.<br>
+                    <br>
+                    ⦿ <strong>Technical documentation</strong> <br> <br> Experienced in developing user guides, 
+                    blogs, manuals, and technical documentation. Provision of clear instructions and best 
+                    practices for integrating and operating robots, sensors, and software components. Helps 
+                    users understand and leverage the capabilities of the systems effectively.<br>
+                    <br>
+                    ⦿ <strong>Robotic Trainer</strong> <br> <br> Adept in providing comprehensive training for 
+                    robotic teams and specialists in the utilization of ROS|ROS2 (All distros.), including advanced supervision 
+                    of graduate theses focused on robotic applications.<br>
+                    <br>
+                    ⦿ <strong>Thesis Supervisor</strong> <br> <br>
+                    ➤ Development of a Strategy of Mobile Robot for Tunnel Exploration: Navigation and Gathering Data <br>
+                    (Ostbayerische Technische Hochschule Regensburg)<br><br>
+
+                    ➤ System Transparency Specification for Assistive Robots<br>
+                    (Hochschule Bonn Rhein Sieg)<br><br>
+
+                    ➤ Examination and testing of an image-based Robotic gripping approach for fruit harvesting<br>
+                    (Rheinisch-Westfälische Technische Hochschule Aachen)<br>
+                
+                </p>
+                <br>
+                <hr class="horizontal-line-dashed">
+                <p>
+                    <h4 class="logo-container"> 
+                        <span>
+                            <a href="https://www.quadruped.de/"> QUADRUPED GmbH</a> 
+                        </span>
+                        <img src="media/logos/quadruped_logo.drawio.webp" alt="Quadruped Logo" style="border-radius: 50%;">
+                    </h4>
+                    <strong>Team Lead – Robotic Software Engineer</strong><br>
+                    <p class="light-gray-text">
+                    July 2021 — Present<br>
+                    Bergheim, Germany <img src="https://flagcdn.com/w20/de.png" width="20"><br>
+                    </p>
+                    <br>
+                    ⦿ <strong>Robotic Software Development</strong> <br> <br> Specializing in the development and 
+                    integration of software for a variety of robots including ROVO2, A1, GO1, GO2, B1, B2, Z1, BZ1, 
+                    H1, G1, D1. 
+                    Expertise in creating navigation, manipulation, and perception stacks, sensor interfaces, 
+                    low-level drivers, and automated testing frameworks for multi-robot systems.<br>
+                    <br>
+                    ⦿ <strong>Sensor integration</strong> <br> <br> Proficient in integrating a range of sensors such 
+                    as Lidars (Ouster, Livox, ), Depth-Cameras (Intel Realsense D455/D435, ZED2/2i), and 
+                    GPS systems (EMLID RS2/M2, Fixposition). Skilled in installation, interfacing, and server integration.
+                     Furthermore, expertise in Linux kernel augmentation ensuring efficient utilization and management of these sensors.<br>
+                    <br>
+                    ⦿ <strong>Technical documentation</strong> <br> <br> Experienced in developing user guides, 
+                    blogs, manuals, and technical documentation. Provision of clear instructions and best 
+                    practices for integrating and operating robots, sensors, and software components. Helps 
+                    users understand and leverage the capabilities of the systems effectively.<br>
+                    <br>
+                    ⦿ <strong>Robotic Trainer</strong> <br> <br> Adept in providing comprehensive training for 
+                    robotic teams and specialists in the utilization of ROS|ROS2, including advanced supervision 
+                    of graduate theses focused on robotic applications.<br>
+
+                </p>
+            </div>
+
+            <div class="skill">
+                <i class="fas fa-robot"></i>
+                <h3 class="academic-projects-heading">Academic Projects</h3>
+                <hr class="horizontal-line">
+                <p>
+                    ⦿ <strong>PROPERTY-BASED TESTING: FORMALIZED ROBOTIC TESTING FOR STANDARD COMPLIANCE</strong>
+                    <br> <br>
+                    R&D that automates robotic standards validation through simulated testing, verifying compliance, identifying missing functionalities and software bugs in heterogeneous robots (Master Thesis).<br>
+                    <br>
+                    ⦿ <strong>FUNCTIONAL NEAR-INFRARED SPECTROSCOPY (FNIRS) TAP DETECTION</strong>
+                    <br> <br>
+                    Functional near-infrared spectroscopy (fNIR) detected finger taps from brain with a 92% test accuracy using Deep Neural Network.<br>
+                    <br>
+
+                    ⦿ <strong>OSMOSIS FAULT-TOLERANT SYSTEM</strong>
+                    <br> <br>
+                    Implementation of a fault-tolerant manager that detects errors within the Summit XL robot and executes the recovery process during a mission around an airport.<br>
+                    <br>
+                    
+                    ⦿ <strong>TOYOTA HSR TESTING FRAMEWORK</strong>
+                    <br> <br>
+                    Research and development of automated property-based testing for the Toyota HSR robot’s perception, manipulation, and navigation stacks.<br>
+                    <br>
+                    
+                    ⦿ <strong>INTELLIGENT WINDING MACHINE AS A FLEXIBLE MANUFACTURING SYSTEM</strong>
+                    <br> <br>
+                    Design and fabrication of an automated wireless coil-winding machine for stator coils of 70cc motorcycles (Bachelor’s Project).<br>
+                    <br>
+
+                    ⦿ <strong>DEEP-LEARNING & NATURAL LANGUAGE PROCESSING</strong>
+                    <br> <br>
+                    Development of entity detectors, image classifiers, text-extractors, text-summarizers, chatbots, form-fillers, test-suites, 3D spatial imitators, text-preprocessors, predictive control etc.
+                </p>
+            </div>
+
+            <div class="skill">
+                <i class="fas fa-code"></i>
+                <h3 class="academic-projects-heading">Education</h3>
+                <hr class="horizontal-line">
+                <p>
+                    <h4 class="logo-container"> 
+                        <span>
+                            <a href="https://www.h-brs.de/de"> Hochschule Bonn-Rhein-Sieg</a> 
+                        </span>
+                        <img src="media/logos/hbrs_logo.drawio.webp" alt="HBRS Logo" style="border-radius: 50%;">
+                    </h4>
+                    <strong>MSc. in Autonomous Systems</strong><br> <br> 
+                    <p class="light-gray-text">
+                        October 2019 — April 2023<br> 
+                        Sankt Augustin, Germany <img src="https://flagcdn.com/w20/de.png" width="20"><br> 
+                    </p>
+                    <br>
+                    Majors are in:<br> <br> 
+                    ⦿ Robotic Safety & Quality Assurance<br> 
+                    ⦿ Autonomous Mobile Robots & Manipulators<br> 
+                    ⦿ Machine Learning<br> 
+                    ⦿ Natural Language Processing <br> 
+                    <br>
+
+                    <hr class="horizontal-line-dashed">
+                    
+                    <h4 class="logo-container"> 
+                        <span>                
+                            <a href="https://uol.edu.pk/"> University of Lahore</a> 
+                        </span>
+                            <img src="media/logos/uol_logo.drawio.webp"alt="UOL Logo" style="border-radius: 50%;">
+                    </h4>
+                    <strong>BSc. in Mechanical Engineering</strong><br> <br> 
+                        <p class="light-gray-text">
+                            September 2014 — August 2018<br> 
+                            Lahore, Pakistan <img src="https://flagcdn.com/w20/pk.png" width="20"><br> 
+                        </p>
+                    <br>
+                    Majors are in:<br> <br> 
+                    ⦿ Mechatronics<br> 
+                    ⦿ Total Quality Management<br> 
+                    ⦿ Renewable Energy Resources<br> 
+                    ⦿ Engineering Economics<br> 
+                    ⦿ Mechanical design and fabrication<br> 
+                 </p>
+            </div>
+
+            <div class="skill">
+                <i class="fas fa-code"></i>
+                <h3 class="academic-projects-heading">Publications</h3>
+                <hr class="horizontal-line">
+                <p>
+                    <strong>Automated Testing of Standard Conformance for Robots <img src="https://flagcdn.com/w20/nz.png" width="20"></strong><br> 
+                    <a href="https://ieeexplore.ieee.org/document/10260447">IEEE, CONFERENCE ON AUTOMATION SCIENCE AND ENGINEERING (CASE), 2023 (Newzealand, Auckland)</a><br> 
+                    <br> 
+
+                    <strong>Property-Based Testing in Simulation for Verifying Robot Action Execution in Tabletop Manipulation <img src="https://flagcdn.com/w20/de.png" width="20"></strong><br> 
+                    <a href="https://ieeexplore.ieee.org/document/9568837">IEEE, EUROPEAN CONFERENCE ON MOBILE ROBOTS (ECMR), 2021 (Germany, Bonn)</a><br> 
+                </p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="right-section">
+        <h2 class="section-heading">Robotic Experience</h2>
+        
+        
+        <div class="grid-item">
+            <img src="media/practical_experience/go2.webp">
+            <br>
+            <img src="media/practical_experience/spot.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/practical_experience/h1.webp">
+            <br>
+            <img src="media/practical_experience/g1.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/practical_experience/hsr.drawio.webp">
+            <br>
+            <img src="media/practical_experience/rovo.drawio.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/practical_experience/warthog.drawio.webp">
+            <br>
+            <img src="media/practical_experience/husky_mmp.drawio.webp">
+        </div>    
+
+        <div class="grid-item">
+            <img src="media/practical_experience/a1.webp">
+            <br>
+            <img src="media/practical_experience/go1.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/practical_experience/p1.webp">
+            <br>
+            <img src="media/practical_experience/ascento.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/practical_experience/aloha.webp">
+            <br>
+            <img src="media/practical_experience/ur5e.webp">
+        </div>
+
+        <div class="grid-item">
+            <img src="media/practical_experience/mmp.webp">
+            <br>
+            <img src="media/practical_experience/ridgebackxarm.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/practical_experience/huskymu.webp">
+            <br>
+            <img src="media/practical_experience/jackal.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/practical_experience/diablo.webp">
+            <br>
+            <img src="media/practical_experience/dalu_platform.drawio.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/practical_experience/franka.webp">
+            <br>
+            <img src="media/practical_experience/xarm.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/practical_experience/dingo.webp">
+            <br>
+            <img src="media/practical_experience/hxg.webp">
+        </div>
+                
+
+        <h2 class="section-heading">Robotic Demos</h2>
+
+        <div class="grid-item">
+            <img src="media/gifs/a1_flip.webp">
+            <br>
+            <img src="media/gifs/a1_viz.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/gifs/xarm6.webp">
+            <br>
+            <img src="media/gifs/hsr.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/gifs/dingo-d.webp">
+            <br>
+            <img src="media/gifs/husky_random.webp">
+        </div>
+        <div class="grid-item">
+            <img src="media/gifs/jackal.webp">
+            <br>
+            <img src="media/gifs/b1_gazebo.webp">
+        </div>        
+
+        <h2 class="section-heading">Robotic Projects</h2>
+
+        <!-- Add 3d Models -->
+        <div class="model-container">
+            <p class="model-caption"><strong>MMP Husky</strong></p>
+            <model-viewer src="assets/mmp_husky.glb"
+                          alt="MYBOTSHOP MMP Husky"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          exposure="0.2"
+                          style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+        </div>
+
+        <div class="model-container">
+            <p class="model-caption"><strong>MMP RIDGEBACK</strong></p>
+            <model-viewer src="assets/mmp_ridgeback.glb"
+                          alt="MYBOTSHOP MMP RIDGEBACK"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          exposure="0.2"
+                          style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+        </div>
+
+        <!-- <div class="model-container">
+            <p class="model-caption"><strong>Clearpath Husky</strong></p>
+            <model-viewer src="assets/husky.glb"
+                          alt="Clearpath Husky"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          exposure="0.2"
+                          style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+        </div> -->
+
+        <!-- <div class="model-container">
+            <p class="model-caption"><strong>Universal Robots UR10</strong></p>
+            <model-viewer src="assets/ur10/scene.gltf"
+                          alt="Universal robots UR10"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          exposure="0.5"
+                          style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+        </div> -->
+        
+        <div class="model-container">
+            <p class="model-caption"><strong>Boston Dynamics Spot</strong></p>
+            <model-viewer src="assets/spot/scene.gltf"
+                          alt="Boston Dynamics Spot"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          exposure="0.6"
+                          style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>
+        </div>
+        
+        <div class="model-container">
+            <p class="model-caption"><strong>Kuka</strong></p>
+            <model-viewer src="assets/kuka.glb"
+                          alt="Kuka"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          exposure="0.8"
+                          style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>        
+        </div>
+
+        <div class="model-container">
+            <p class="model-caption"><strong>Inspire Robotics Hand</strong></p>
+            <model-viewer src="assets/inspire_hands.glb"
+                          alt="Inspire Hand"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          exposure="0.8"
+                          style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>        
+        </div>
+
+        <div class="model-container">
+            <p class="model-caption"><strong>Unitree GO2</strong></p>
+            <model-viewer src="assets/go2.glb"
+                          alt="Unitree Go2"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          exposure="0.9"
+                          style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>        
+        </div>
+
+        <div class="model-container">
+            <p class="model-caption"><strong>Clearpath Dingo</strong></p>
+            <model-viewer src="assets/dingo.glb"
+                          alt="Clearpath Dingo"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          exposure="0.8"
+                          style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>        
+        </div>
+
+        <div class="model-container">
+            <p class="model-caption"><strong>Unitree H1</strong></p>
+            <model-viewer src="assets/h1.glb"
+                          alt="Unitree H1"
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          exposure="0.8"
+                          style="width: 100%; height: 175px; background-color: #D3D3D3; border-radius: 20px;"></model-viewer>        
+        </div>
+
+        <!-- Push to the top for the grid -->
+        <div class="grid-item">
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+        </div>    
+                
+        
+    </section>
+
+
+    <footer class="footer">
+        <p>&copy; Salman Omar Sohail 2025</p>
+    </footer>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+</body>
+</html>
