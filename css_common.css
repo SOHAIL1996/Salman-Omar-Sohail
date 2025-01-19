@@ -147,6 +147,7 @@
 .logo-container img {
     height: 50px; /* Set the desired height for the image */
     margin-left: 10px; /* Optional: Add some space between text and image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .logo-container img:hover {
@@ -230,9 +231,10 @@ body {
 .footer {
     background-color: var(--background-color);
     color: #f9f9f9;
-    font-size: 1.2em; 
+    font-size: 1.0em; 
+    font-style: italic;
     text-align: center;
-    padding: 2px;
+    padding: 2.2px;
     position: static;
     bottom: 0;
     width: 100%;
