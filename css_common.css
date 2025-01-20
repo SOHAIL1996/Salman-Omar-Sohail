@@ -193,12 +193,12 @@ h2 {
 h3 {
     text-align: center;
     font-family: 'Dancing Script', cursive; 
-    color: #3285fa; 
+    color: var(--tertiary-color); 
     margin-bottom: 10px;
 }
 
 h4 {
-    color: #3285fa; 
+    color: var(--tertiary-color); 
     font-size: 20px; 
     font-weight: normal; 
     font-style: italic; 
