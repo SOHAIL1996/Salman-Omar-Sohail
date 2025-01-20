@@ -7,10 +7,10 @@
         transform: translateX(-50%);
     }
     90% {
-        transform: translateX(-100%);
+        transform: translateX(-55%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(0%);
     }
 }
 
@@ -23,13 +23,13 @@
 
 .scrolling-container {
     display: inline-flex; /* Inline flex for better scrolling control */
-    animation: scrollImages 30s ease-in-out infinite;
+    animation: scrollImages 40s ease-in-out infinite;
     gap: 10px; /* Add spacing between images if needed */
 }
 
 .scrolling-container img {
-    display: inline-block;
-    max-width: 100%;
+    display: block;
+    max-width: 180px;
     height: auto;
     border-radius: 50%; /* Makes images circular */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
