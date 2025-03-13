@@ -67,11 +67,11 @@
     overflow: hidden;
     margin-top: 20px;
     margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-image:hover {
@@ -84,7 +84,6 @@
     height: auto; /* Allows image to maintain aspect ratio */
     object-fit: cover; /* Ensures image maintains aspect ratio and covers container */
 }
-
 /* --------------------------------------------- Top Navigation Bar */
 .top-nav {
     background-color: var(--background-color);
@@ -342,6 +341,7 @@ body {
 .image-right {
     display: flex;
     justify-content: flex-end;
+    padding-right: 130px;
 }
 
 .image-right img {
