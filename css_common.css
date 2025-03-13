@@ -26,14 +26,25 @@
     font-style: normal;
 }
 
+/* --------------------------------------------- Main Panel */
+.main-panel {
+    background-color: rgba(0, 0, 0, 0.12);
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1600px;
+    box-sizing: border-box;
+}
+
 /* --------------------------------------------- Background Media */
 @keyframes zoomInOut {
     0% {
         transform: translate(-50%, -50%) scale(1);
     }
+
     50% {
         transform: translate(-50%, -50%) scale(1.1);
     }
+
     100% {
         transform: translate(-50%, -50%) scale(1);
     }
@@ -56,7 +67,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.3;
+    opacity: 0.17;
 }
 
 /* --------------------------------------------- Profile Image Hover Animation */
@@ -67,7 +78,7 @@
     overflow: hidden;
     margin-top: 20px;
     margin-right: 20px;
-    margin-left: 130px;
+    margin-left: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,15 +86,33 @@
 }
 
 .profile-image:hover {
-    transform: scale(1.05); /* Slight enlargement on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transform: scale(1.05);
+    /* Slight enlargement on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
 }
 
 .profile-image img {
-    width: 100%; /* Ensures image fills circular frame */
-    height: auto; /* Allows image to maintain aspect ratio */
-    object-fit: cover; /* Ensures image maintains aspect ratio and covers container */
+    width: 100%;
+    /* Ensures image fills circular frame */
+    height: auto;
+    /* Allows image to maintain aspect ratio */
+    object-fit: cover;
+    /* Ensures image maintains aspect ratio and covers container */
 }
+
+.image-right {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.image-right img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+}
+
 /* --------------------------------------------- Top Navigation Bar */
 .top-nav {
     background-color: var(--background-color);
@@ -92,6 +121,7 @@
     font-style: italic;
     font-weight: bold;
     padding: 10px 20px;
+    z-index: 10;
 }
 
 .top-nav ul {
@@ -102,11 +132,11 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .top-nav ul li {
-    position: relative; 
+    position: relative;
 }
 
 .top-nav ul li a {
@@ -115,7 +145,7 @@
     text-align: center;
     padding: 12px 18px;
     text-decoration: none;
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
     border-radius: 5px;
 }
 
@@ -169,8 +199,8 @@
 
 /* --------------------------------------------- Logo container */
 .logo {
-    height: 40px;  /* Adjust size as necessary */
-    margin-left: 10px;  /* Space between logos */
+    height: 40px;
+    margin-left: 10px;
     margin-right: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -178,28 +208,28 @@
 
 .logo-container {
     display: flex;
-    justify-content: space-between; /* Space between items */
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo-container img {
-    height: 50px; /* Set the desired height for the image */
-    margin-left: 10px; /* Optional: Add some space between text and image */
+    height: 50px;
+    margin-left: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .logo-container img:hover {
-    transform: scale(1.1); /* Scale up images slightly on hover */
+    transform: scale(1.1);
 }
 
 /* ---------------------------------------------  Gallery Grid Images */
 .gallery-item {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);  /* 4 items per row */
-    gap: 20px; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     padding: 20px;
-    padding-left:  160px;
-    padding-right: 160px;
+    /* padding-left:  160px;
+    padding-right: 160px; */
 }
 
 .gallery-item img {
@@ -212,14 +242,14 @@
 }
 
 .gallery-item img:hover {
-    transform: scale(1.1); /* Scale up images slightly on hover */
+    transform: scale(1.1);
 }
 
 .gallery-item figure {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px; /* or whatever works for your layout */
+    width: 200px;
     margin: 0;
 }
 
@@ -235,7 +265,7 @@
 /* ---------------------------------------------  Project Grid Images */
 .project-item {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
 }
 
@@ -249,58 +279,64 @@
 }
 
 .project-item img:hover {
-    transform: scale(1.1); /* Scale up images slightly on hover */
+    transform: scale(1.1);
+    /* Scale up images slightly on hover */
 }
 
 /* --------------------------------------------- Fonts */
 h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 3.5em; 
-    color: var(--primary-color); 
+    font-size: 3.5em;
+    color: var(--primary-color);
 }
 
 h2 {
     text-align: center;
-    font-family: 'Dancing Script', cursive; 
-    color: var(--secondary-color); 
-    font-size: 2.0em; 
+    font-family: 'Dancing Script', cursive;
+    color: var(--secondary-color);
+    font-size: 2.0em;
 }
 
 h3 {
     text-align: center;
     /* font-family: 'Dancing Script', cursive;  */
-    color: var(--tertiary-color); 
+    color: var(--tertiary-color);
 }
 
 h4 {
-    color: var(--tertiary-color); 
-    font-size: 20px; 
-    font-weight: normal; 
-    font-style: italic; 
+    color: var(--tertiary-color);
+    font-size: 20px;
+    font-weight: normal;
+    font-style: italic;
     margin-bottom: 1;
 }
 
 a {
-    color: var(--hyperlink-inactive-color); 
+    color: var(--hyperlink-inactive-color);
     font-style: italic;
     font-weight: 500;
-    text-decoration: none; 
+    text-decoration: none;
     text-decoration: underline;
 }
 
 a:hover {
-    color: var(--hyperlink-active-color); 
+    color: var(--hyperlink-active-color);
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px; /* Adjust the font size as needed */
+    font-size: 18px;
+    /* Adjust the font size as needed */
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9; /* Light gray background color */
-    color: var(--tertiary-color); /* Dark text color */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    line-height: 1.3; /* Adjust the line height to increase the gap between sentences */
+    background-color: #f9f9f9;
+    /* Light gray background color */
+    color: var(--tertiary-color);
+    /* Dark text color */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+    line-height: 1.3;
+    /* Adjust the line height to increase the gap between sentences */
 }
 
 .text-center {
@@ -308,46 +344,36 @@ body {
 }
 
 .text-spec {
-    padding-left:  160px;
-    padding-right: 160px;
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: justify;
 }
 
 .academic-projects-heading {
-    font-family: 'Dancing Script', cursive; 
-    color: var(--primary-color); 
-    font-size: 34px; 
+    font-family: 'Dancing Script', cursive;
+    color: var(--primary-color);
+    font-size: 34px;
     margin-bottom: 1;
 }
 
 .horizontal-line {
     border: none;
-    border-top: 2px solid var(--primary-color); 
-    margin-top: 0px; 
+    border-top: 2px solid var(--primary-color);
+    margin-top: 0px;
 }
+
 .horizontal-line-dashed {
     border: none;
-    border-top: 2px dashed var(--primary-color); 
-    margin-top: 0px; 
+    border-top: 2px dashed var(--primary-color);
+    margin-top: 0px;
 }
 
 .header-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Divide header into three sections */
+    grid-template-columns: 1fr 2fr 1fr;
+    /* Divide header into three sections */
     align-items: center;
     padding: 10px;
-}
-
-.image-right {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 130px;
-}
-
-.image-right img {
-    width: 150px;
-    height: 150px;
-    border-radius: 10%;
 }
 
 /* --------------------------------------------- Footer Styling */
