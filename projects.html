@@ -12,11 +12,18 @@
 </head>
 
 <body>
+    <!-- Background Media -->
     <div class="background-media">
-        <img src="media/robots/bz1.webp" alt="Background Media">
+        <img src="media/wallpaper/wallpaper.webp" alt="Background Media">
     </div>
+    <!-- Navigation Bar -->
     <nav class="top-nav">
         <ul>
+            <div class="logo-container">
+                <a href="https://www.linkedin.com/in/salman-omar-sohail/" target="_blank">
+                    <img src="media/logos/logo.webp" alt="Logo 1" class="logo">
+                </a>
+            </div>
             <li><a href="index.html">Home</a></li>
             <li><a href="experience.html">Experience</a></li>
             <li><a href="academia.html">Academia</a></li>
@@ -24,21 +31,14 @@
             <li><a href="gallery.html">Gallery</a></li>
             <li class="right">
             <li><a href="https://www.linkedin.com/in/salman-omar-sohail/">Contact</a></li>
-            <div class="container">
-                <li>
-                    <a href="#" class="dropdown-toggle">Docs</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://www.docs.mybotshop.de/">MBS</a></li>
-                        <li><a href="https://www.docs.quadruped.de/">QRE</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://forum.mybotshop.de/">Forums</a></li>
-            </div>
-            <div class="logo-container">
-                <a href="https://www.linkedin.com/in/salman-omar-sohail/" target="_blank">
-                    <img src="media/logos/logo.webp" alt="Logo 1" class="logo">
-                </a>
-            </div>
+            <li>
+                <a href="#" class="dropdown-toggle">Docs</a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://www.docs.mybotshop.de/" target="_blank">MBS</a></li>
+                    <li><a href="https://www.docs.quadruped.de/" target="_blank">QRE</a></li>
+                </ul>
+            </li>
+            <li><a href="https://forum.mybotshop.de/" target="_blank">Forums</a></li>
             </li>
         </ul>
     </nav>
@@ -139,7 +139,7 @@
         <h1 class="section-heading">Project Usecase</h1>
         <hr class="horizontal-line">
 
-        <div class="gallery-item">
+        <div class="project-item">
             <img src="media/gifs/xarm6.webp">
             <span>
                 <h3>Industrial Orchard Packaging</h3>
@@ -152,20 +152,21 @@
             <img src="media/gifs/jackal.webp">
             <span>
                 <h3>Outdoor Inspection Routine</h3>
-                ...
+                Custom GPS based security planner with Jackal
+                Utilizes ROS2 Nav2 for autonomous patrol
             </span>
-        </div>
-
-        <div class="gallery-item">
             <img src="media/gifs/husky_waypoint_navi.webp">
             <span>
                 <h3>Underground Pipe Inspection</h3>
-                ...
+                Observer rover used for 3D mapping & surveying of underground piping tunnels
+                ROS 2 combines data from over 12 sensors, including LiDAR, Depth-camera.
             </span>
             <img src="media/gifs/a1_viz.webp">
             <span>
                 <h3>Quadruped Low-Level Gait Planning</h3>
-                ...
+                Development of ROS1/2 wrappers for Unitree A1
+                Gait planning and control for Quadruped robots
+                using TOWR
             </span>
         </div>
 
@@ -177,7 +178,7 @@
 
         Takes a minute or so to load ...
 
-        <div class="gallery-item">
+        <div class="project-item">
 
             <p class="model-caption"><strong>Bi-pedal Ascento</strong></p>
             <model-viewer src="assets/ascento.glb" alt="MYBOTSHOP Ascento" auto-rotate camera-controls
@@ -235,8 +236,9 @@
     </div>
 
 
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; Salman Omar Sohail 2025 - Desktop Version</p>
+        <p>&copy; Salman Omar Sohail 2025 <br> Desktop Version</p>
     </footer>
 </body>
 
