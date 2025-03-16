@@ -7,7 +7,7 @@
     --background-color: #222222;
     --text-color: #333;
     --highlight-color: #fcb900;
-    --hyperlink-inactive-color: #747d8c ;
+    --hyperlink-inactive-color: #747d8c;
     --hyperlink-active-color: #01af70;
 }
 
@@ -276,6 +276,25 @@
 
 .project-item img:hover {
     transform: scale(1.1);
+}
+
+/* ---------------------------------------------  Model Viewer */
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-5px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+model-viewer {
+    animation: float 4s ease-in-out infinite;
 }
 
 /* --------------------------------------------- Fonts */
