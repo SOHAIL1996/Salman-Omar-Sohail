@@ -26,7 +26,7 @@
 
 .scrolling-container {
     display: inline-flex;
-    animation: scrollImages 40s ease-in-out infinite;
+    animation: scrollImages 30s ease-in-out infinite;
     gap: 10px;
 }
 
