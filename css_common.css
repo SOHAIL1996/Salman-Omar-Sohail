@@ -437,6 +437,11 @@ body {
     /* Add spacing before the flag */
 }
 
+/* --------------------------------------------- Table Styling */
+tr:has(td[rowspan]) + tr:not(:has(td[rowspan])) td {
+    border-top: 1px solid var(--hyperlink-inactive-color);
+}
+
 /* --------------------------------------------- Footer Styling */
 .footer {
     font-family: 'Quicksand';
