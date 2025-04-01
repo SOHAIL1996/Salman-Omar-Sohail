@@ -262,7 +262,7 @@
 /* ---------------------------------------------  Project Grid Images */
 .project-item {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 0.5fr 1.5fr 0.5fr 1.5fr;
     gap: 40px;
 }
 
