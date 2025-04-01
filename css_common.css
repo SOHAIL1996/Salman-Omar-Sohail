@@ -7,7 +7,8 @@
     --background-color: #222222;
     --text-color: #333;
     --highlight-color: #fcb900;
-    --hyperlink-inactive-color: #747d8c;
+    --hyperlink-inactive-color: #f42e2e86;
+    --theme-color: #f42e2e86;
     --hyperlink-active-color: #01af70;
 }
 
@@ -467,7 +468,7 @@ tr:has(td[rowspan]) + tr:not(:has(td[rowspan])) td {
 .hotspot-point {
     width: 8px;
     height: 8px;
-    background-color: #34a785;
+    background-color: var(--hyperlink-inactive-color);
     border-radius: 50%;
 }
 
