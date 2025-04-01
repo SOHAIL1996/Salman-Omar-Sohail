@@ -457,3 +457,36 @@ tr:has(td[rowspan]) + tr:not(:has(td[rowspan])) td {
     position: static;
     font-weight: lighter;
 }
+
+/* --------------------------------------------- 3D Model Hotspots */
+.hotspot {
+    position: relative; /* Required for absolute positioning of tooltip */
+    pointer-events: auto;
+}
+
+.hotspot-point {
+    width: 8px;
+    height: 8px;
+    background-color: #34a785;
+    border-radius: 50%;
+}
+
+.hotspot-tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    top: 20px;
+    left: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+}
+
+.hotspot:hover .hotspot-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
