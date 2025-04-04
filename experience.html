@@ -9,10 +9,128 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css_common.css">
     <link rel="stylesheet" href="css_animation.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/kTcXn9HcqIFVVqNCu9KcA7S3+5s8EGH1vB7u2G7fS+jCZKxZGnF7/2aK5ZzOZ+tbY1QZmjF0F4UBA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <!-- GPS MAP -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+        </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            try {
+                // Check if map container exists
+                if (!document.getElementById('experience-map')) {
+                    console.error('Map container not found');
+                    return;
+                }
+
+                // Initialize the map
+                const map = L.map('experience-map').setView([30, 0], 2);
+
+                // Add error handling for tile layer
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    maxZoom: 7,
+                    minZoom: 3
+                }).addTo(map).on('tileerror', function () {
+                    console.error('Failed to load map tiles');
+                });
+
+                // List of locations with lat, long, name, and other info
+                const locations = [
+                    {
+                        coords: [50.9667, 6.65],
+                        name: "DE",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/warthog.png',
+                        // iconSize: [50, 50],
+                        // iconAnchor: [25, 25],
+                        // popupAnchor: [0, -30]
+                    },
+                    {
+                        coords: [30.358, 69.820],
+                        name: "PK",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/go2_raw.png',
+                    },
+                    {
+                        coords: [40.7128, -74.0060],
+                        name: "US",
+                        period: "Undisclosed-",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/husky_mu.png',
+                    },
+                    {
+                        coords: [42.83, 12.35],
+                        name: "IT",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/rovo.png',
+                    },
+                    {
+                        coords: [-25.735, 134.388],
+                        name: "AU",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/xarm1.png',
+                    },
+                    {
+                        coords: [-8.986, -52.997],
+                        name: "BR",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/mbsascento.png',
+                    },
+                ];
+
+                // Create a feature group to store all markers
+                const markers = L.featureGroup();
+
+                // Add markers from the locations list
+                try {
+                    locations.forEach(location => {
+                        // Create custom icon for each location
+                        const customIcon = L.icon({
+                            iconUrl: location.iconUrl,
+                            // iconSize: location.iconSize,
+                            // iconAnchor: location.iconAnchor,
+                            // popupAnchor: location.popupAnchor
+                            iconSize: [50, 50],
+                            iconAnchor: [25, 50],
+                            popupAnchor: [0, -50]
+                        });
+
+                        const marker = L.marker(location.coords, {
+                            icon: customIcon,
+                            title: location.name
+                        }).addTo(map)
+                            .bindPopup(`
+                            <strong>${location.name}</strong><br>
+                            <em>${location.period}</em><br>
+                            ${location.description}
+                        `);
+
+                        markers.addLayer(marker);
+                    });
+
+                    // Fit map to show all markers with some padding
+                    if (locations.length > 0) {
+                        map.fitBounds(markers.getBounds().pad(0.5));
+                    }
+
+                } catch (markerError) {
+                    console.error('Error creating markers:', markerError);
+                }
+            } catch (mapError) {
+                console.error('Error initializing map:', mapError);
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -32,6 +150,7 @@
             <li><a href="experience.html">Experience</a></li>
             <li><a href="academia.html">Academia</a></li>
             <li><a href="projects.html">Projects</a></li>
+            <li><a href="rubric.html">Rubric</a></li>
             <li class="right">
             <li><a href="https://www.linkedin.com/in/salman-omar-sohail/">Contact</a></li>
             <li>
@@ -323,7 +442,8 @@
                         </tr>
 
                         <!-- Misc -->
-                        <td rowspan="6" style="color: var(--hyperlink-inactive-color); font-size: large;"> Miscellanious
+                        <td rowspan="6" style="color: var(--hyperlink-inactive-color); font-size: large;">
+                            Miscellanious
                         </td>
                         <tr>
                             <td>Stanford University</td>
@@ -336,7 +456,8 @@
                     </tbody>
                 </table>
                 <br>
-                Expertise in creating <strong>custom</strong> navigation, manipulation, and perception stacks, sensor
+                Expertise in creating <strong>custom</strong> navigation, manipulation, and perception stacks,
+                sensor
                 interfaces,
                 low-level drivers, and automated testing frameworks for multi-robot systems.
             </div>
@@ -389,7 +510,8 @@
 
                         <!-- Inertial Measurement Units (IMUs) -->
                         <tr>
-                            <td style="color: var(--hyperlink-inactive-color); font-size: large;">Inertial Measurement
+                            <td style="color: var(--hyperlink-inactive-color); font-size: large;">Inertial
+                                Measurement
                                 Units (IMUs)</td>
                             <td></td>
                             <td>
@@ -628,9 +750,11 @@
                     <h6>Sensor integration</h6>
                 </div>
                 <div class="smalltxt">
-                    Proficient in integrating a range of sensors as mentioned in the MYBOTSHOP GmbH section. Skilled in
+                    Proficient in integrating a range of sensors as mentioned in the MYBOTSHOP GmbH section. Skilled
+                    in
                     installation, interfacing, and server integration.
-                    Furthermore, expertise in Linux kernel augmentation ensuring efficient utilization and management of
+                    Furthermore, expertise in Linux kernel augmentation ensuring efficient utilization and
+                    management of
                     these sensors.
                 </div>
 
@@ -711,6 +835,15 @@
                 </div>
             </div>
         </div>
+
+        <hr class="horizontal-line-dashed">
+        <div class="world-map-section">
+            <h4><span style="font-size: 1.3em;">
+                    <a>Robot Deployments</a>
+                </span></h4>
+            <div id="experience-map"></div>
+        </div>
+        
     </div>
 
     <!-- Footer -->
