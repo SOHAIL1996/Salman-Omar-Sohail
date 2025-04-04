@@ -7,7 +7,7 @@
     --background-color: #222222;
     --text-color: #333;
     --highlight-color: #fcb900;
-    --hyperlink-inactive-color: #f42e2e86;
+    --hyperlink-inactive-color: #3d4389 ;
     --theme-color: #f42e2e86;
     --hyperlink-active-color: #01af70;
 }
@@ -267,8 +267,9 @@
 }
 
 .project-item img {
-    max-width: 80%;
-    height: auto;
+    /* max-width: 80%; */
+    height: 180px;
+    width:  180px;
     margin: auto;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
