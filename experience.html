@@ -33,7 +33,7 @@
                 // Add error handling for tile layer
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                    maxZoom: 7,
+                    maxZoom: 10,
                     minZoom: 3
                 }).addTo(map).on('tileerror', function () {
                     console.error('Failed to load map tiles');
@@ -46,42 +46,95 @@
                         name: "DE",
                         period: "Undisclosed",
                         description: "Robot Deployment",
-                        iconUrl: 'media/robots/warthog.png',
-                        // iconSize: [50, 50],
-                        // iconAnchor: [25, 25],
-                        // popupAnchor: [0, -30]
+                        iconUrl: 'media/robots/mbsascento.png',
                     },
                     {
-                        coords: [30.358, 69.820],
-                        name: "PK",
+                        coords: [23.657, 53.971],
+                        name: "UAE",
                         period: "Undisclosed",
                         description: "Robot Deployment",
-                        iconUrl: 'media/robots/go2_raw.png',
+                        iconUrl: 'media/robots/mbsascento.png',
                     },
                     {
                         coords: [40.7128, -74.0060],
                         name: "US",
                         period: "Undisclosed-",
                         description: "Robot Deployment",
-                        iconUrl: 'media/robots/husky_mu.png',
+                        iconUrl: 'media/robots/mbsascento.png',
                     },
                     {
                         coords: [42.83, 12.35],
                         name: "IT",
                         period: "Undisclosed",
                         description: "Robot Deployment",
-                        iconUrl: 'media/robots/rovo.png',
+                        iconUrl: 'media/robots/mbsascento.png',
                     },
                     {
                         coords: [-25.735, 134.388],
                         name: "AU",
                         period: "Undisclosed",
                         description: "Robot Deployment",
-                        iconUrl: 'media/robots/xarm1.png',
+                        iconUrl: 'media/robots/mbsascento.png',
                     },
                     {
                         coords: [-8.986, -52.997],
                         name: "BR",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/mbsascento.png',
+                    },
+                    {
+                        coords: [47.166, 9.521], // Liechtenstein
+                        name: "LI",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/mbsascento.png',
+                    },
+                    {
+                        coords: [56.2639, 9.5018], // Denmark
+                        name: "DK",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/mbsascento.png',
+                    },
+                    {
+                        coords: [46.2276, 2.2137], // France
+                        name: "FR",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/mbsascento.png',
+                    },
+                    {
+                        coords: [46.8182, 8.2275], // Switzerland
+                        name: "CH",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/mbsascento.png',
+                    },
+                    {
+                        coords: [26.8206, 30.8025], // Egypt
+                        name: "EG",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/mbsascento.png',
+                    },
+                    {
+                        coords: [56.1304, -106.3468], // Canada
+                        name: "CA",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/mbsascento.png',
+                    },
+                    {
+                        coords: [50.8333, 4.0000], // Belgium
+                        name: "BE",
+                        period: "Undisclosed",
+                        description: "Robot Deployment",
+                        iconUrl: 'media/robots/mbsascento.png',
+                    },
+                    {
+                        coords: [35.8616, 104.1954], // China
+                        name: "CN",
                         period: "Undisclosed",
                         description: "Robot Deployment",
                         iconUrl: 'media/robots/mbsascento.png',
@@ -100,9 +153,9 @@
                             // iconSize: location.iconSize,
                             // iconAnchor: location.iconAnchor,
                             // popupAnchor: location.popupAnchor
-                            iconSize: [50, 50],
-                            iconAnchor: [25, 50],
-                            popupAnchor: [0, -50]
+                            iconSize: [25, 30],
+                            iconAnchor: [10, 30],
+                            popupAnchor: [0, -30]
                         });
 
                         const marker = L.marker(location.coords, {
@@ -838,12 +891,11 @@
 
         <hr class="horizontal-line-dashed">
         <div class="world-map-section">
-            <h4><span style="font-size: 1.3em;">
-                    <a>Robot Deployments</a>
-                </span></h4>
+            <h1>Robot Deployments</h1>
+            <hr class="horizontal-line">
             <div id="experience-map"></div>
         </div>
-        
+
     </div>
 
     <!-- Footer -->
