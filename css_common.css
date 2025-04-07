@@ -469,7 +469,7 @@ tr:has(td[rowspan]) + tr:not(:has(td[rowspan])) td {
 .hotspot-point {
     width: 8px;
     height: 8px;
-    background-color: var(--hyperlink-inactive-color);
+    background-color: #01af70;
     border-radius: 50%;
 }
 
