@@ -1,15 +1,15 @@
 /* --------------------------------------------- Background video/GIF covers the whole page */
 :root {
     --primary-color: #333;
-    --secondary-color: #5a5a5a;
+    --secondary-color: #555555;
     --tertiary-color: #333;
     --light-white-color: #f9f9f9;
-    --background-color: #222222;
+    --background-color: #1f1c1cf6;
     --text-color: #333;
     --highlight-color: #fcb900;
-    --hyperlink-inactive-color: #616271;
-    --theme-color: #f42e2e86;
+    --hyperlink-inactive-color: #2d3055;
     --hyperlink-active-color: #01af70;
+    --unique-color: #000064;
 }
 
 /* --------------------------------------------- Font Import */
@@ -68,12 +68,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.07;
+    opacity: 0.2;
 }
 
 /* --------------------------------------------- Profile Image Hover Animation */
 .profile-image {
-    width: 150px;
+    width: 180px;
     height: 180px;
     border-radius: 50%;
     overflow: hidden;
@@ -111,7 +111,7 @@
 
 /* --------------------------------------------- Top Navigation Bar */
 .top-nav {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: var(--background-color);
     font-family: 'Quicksand', sans-serif;
     font-size: large;
     font-style: italic;
@@ -172,7 +172,7 @@
 
 .top-nav .dropdown-menu li a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
     padding: 10px;
     display: block;
     transition: background 0.3s;
@@ -252,7 +252,7 @@
     font-size: 14px;
     font-style: italic;
     font-weight: normal;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--background-color);
     padding: 10px;
     border-radius: 15px;
     color: #f9f9f9;
@@ -267,7 +267,6 @@
 }
 
 .project-item img {
-    /* max-width: 80%; */
     height: 180px;
     width: 180px;
     margin: auto;
@@ -303,15 +302,17 @@ model-viewer {
     font-size: 0.8em;
     font-style: italic;
     font-weight:100;
-    color: var(--hyperlink-active-color);
+    color: var(--unique-color);
 }
 
 /* --------------------------------------------- Fonts */
 h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 3.5em;
+    /* font-family: 'Quicksand', sans-serif; */
+    font-size: 2.5em;
     color: var(--primary-color);
     margin: 0;
+    padding: 5px;
 }
 
 h2 {
@@ -343,21 +344,13 @@ h5 {
 
 h6 {
     font-size: 1rem;
-    /* Adjust for your taste, 1rem = 16px usually */
     font-weight: 600;
-    /* Slightly bold, makes it clear but not too heavy */
-    color: #333;
-    /* A dark gray instead of pure black looks softer */
+    color: var(--text-color);
     margin: 1.5em 0 0.5em;
-    /* Space around it, adjust as per layout */
     padding-left: 10px;
-    /* A subtle indent for visual separation */
-    border-left: 4px solid var(--hyperlink-inactive-color);
-    /* Nice colored accent line */
+    border-left: 4px solid var(--unique-color);
     display: inline-block;
-    /* Keeps the size to content, not full width */
     border-radius: 4px;
-    /* Slight rounding for a modern touch */
 }
 
 a {
@@ -372,7 +365,6 @@ a:focus,
 a:active {
     color: var(--hyperlink-active-color);
     text-decoration: underline;
-    /* Optional: underline on hover */
 }
 
 body {
@@ -381,7 +373,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    color: var(--tertiary-color);
+    color: var(--text-color);
     overflow-x: hidden;
     line-height: 1.3;
 }
@@ -431,24 +423,19 @@ body {
 .experience-meta {
     font-family: 'Poppins', sans-serif;
     font-size: 0.9rem;
-    /* Slightly smaller than body text */
-    color: var(--hyperlink-inactive-color);
-    /* Softer color for secondary info */
+    color: var(--unique-color);
     margin-bottom: 1em;
     line-height: 1.6;
-    /* Makes it breathe a little */
 }
 
 .experience-meta img {
     vertical-align: middle;
-    /* Align the flag neatly with text */
     margin-left: 5px;
-    /* Add spacing before the flag */
 }
 
 /* --------------------------------------------- Table Styling */
 tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
-    border-top: 1px solid var(--hyperlink-inactive-color);
+    border-top: 1px solid var(--unique-color);
 }
 
 /* --------------------------------------------- Footer Styling */
@@ -469,14 +456,13 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 /* --------------------------------------------- 3D Model Hotspots */
 .hotspot {
     position: relative;
-    /* Required for absolute positioning of tooltip */
     pointer-events: auto;
 }
 
 .hotspot-point {
     width: 8px;
     height: 8px;
-    background-color: #01af70;
+    background-color: var(--unique-color);
     border-radius: 50%;
 }
 
@@ -556,10 +542,8 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     margin-bottom: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     background-color: #f5f5f5;
-    /* Add a background color */
 }
 
-/* Leaflet map tiles need this to display properly */
 .leaflet-container {
     background: transparent !important;
 }
