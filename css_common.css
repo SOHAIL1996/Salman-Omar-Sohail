@@ -310,7 +310,7 @@ model-viewer {
 h1 {
     font-family: 'Dancing Script', cursive;
     /* font-family: 'Quicksand', sans-serif; */
-    font-size: 2.5em;
+    font-size: 40px;
     color: var(--primary-color);
     margin: 0;
     padding: 5px;
@@ -320,12 +320,7 @@ h2 {
     text-align: center;
     font-family: 'Dancing Script', cursive;
     color: var(--secondary-color);
-    font-size: 2.0em;
-}
-
-h3 {
-    text-align: center;
-    color: var(--tertiary-color);
+    font-size: 30px;
 }
 
 h4 {
@@ -378,6 +373,7 @@ body {
 }
 
 .text-spec {
+    font-size: 16px;
     padding-left: 20px;
     padding-right: 20px;
     text-align: justify;
@@ -412,7 +408,7 @@ body {
 /* --------------------------------------------- Experience Styling */
 .experience-meta {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
+    font-size: 16px;
     color: var(--unique-color);
     margin-bottom: 1em;
     line-height: 1.6;
