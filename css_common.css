@@ -1,6 +1,6 @@
 /* --------------------------------------------- Background video/GIF covers the whole page */
 :root {
-    --primary-color: #333;
+    --primary-color: #333333;
     --secondary-color: #555555;
     --tertiary-color: #333;
     --light-white-color: #f9f9f9;
@@ -29,7 +29,7 @@
 
 /* --------------------------------------------- Main Panel */
 .main-panel {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(163, 238, 202, 0.7);
     padding: 20px;
     margin: 0 auto;
     max-width: 1600px;
