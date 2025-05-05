@@ -334,7 +334,6 @@ h6 {
     font-weight: 400;
     background-color: #f9f9f92d;
     color: var(--unique-color);
-    /* margin: 1.5em 0 0.5em; */
     padding-left: 10px;
     padding-right: 10px;
     border-left: 4px solid var(--unique-color);
