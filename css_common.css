@@ -348,6 +348,20 @@ a {
     font-weight: normal;
 }
 
+.gif-title {
+    background-image: url('media/gifs/matrix2.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 5rem;
+    font-weight:900;
+    text-align: center;
+}
+
 a:hover,
 a:focus,
 a:active {
