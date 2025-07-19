@@ -1,15 +1,21 @@
 /* --------------------------------------------- Background video/GIF covers the whole page */
 :root {
-    --primary-color: #086f49;
-    --secondary-color: #086f49;
-    --tertiary-color: #333;
-    --light-white-color: #f9f9f9;
-    --background-color: #1f1c1cf6;
-    --text-color: #000000;
-    --highlight-color: #fcb900;
-    --hyperlink-inactive-color: #086f49;
-    --hyperlink-active-color: #01af70;
-    --unique-color: #086f49;
+    --text-color: hsl(0, 0%, 0%);
+    --primary-color: hsl(100, 100%, 100%);
+    --secondary-color: hsl(217, 100%, 28%);
+    --tertiary-color: hsl(217, 50%, 40%);
+    --light-white-color: hsl(0, 0%, 97.6%);
+    --background-color: hsl(217, 100%, 5%);
+    --highlight-color: hsl(237, 59%, 18%);
+    --hyperlink-inactive-color: hsl(217, 100%, 50%);
+    --hyperlink-active-color: hsl(217, 100%, 70%);
+    --unique-color: hsl(217, 100%, 28%);
+
+    --project-font-size-huge: 1.5rem;
+    --project-font-size-large: 1.125rem;
+    --project-font-size-normal: 1rem;
+    --project-font-size-small: 0.85rem;
+    --project-font-size-mini: 0.75rem;
 }
 
 /* --------------------------------------------- Font Import */
@@ -28,12 +34,18 @@
 }
 
 /* --------------------------------------------- Main Panel */
-.main-panel {
-    background-color: rgba(163, 238, 202, 0.8);
-    padding: 20px;
+.global-overlay {
+    display: flex;
+    max-width: 1650px;
     margin: 0 auto;
-    max-width: 1600px;
+}
+
+.main-panel {
+    background-color: hsla(0, 0%, 90%, 0.98);
+    padding: 20px;
+    max-width: 1400px;
     box-sizing: border-box;
+    justify-self: center;
 }
 
 /* --------------------------------------------- Background Media */
@@ -68,13 +80,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.8;
+    opacity: 1.0;
 }
 
 /* --------------------------------------------- Profile Image Hover Animation */
 .profile-image {
-    width: 180px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     overflow: hidden;
     margin-top: 20px;
@@ -104,117 +116,132 @@
 }
 
 .image-right img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 10%;
 }
 
-/* --------------------------------------------- Top Navigation Bar */
-.top-nav {
-    background-color: var(--background-color);
-    font-family: 'Quicksand', sans-serif;
-    font-size: large;
-    font-style: italic;
+/* --------------------------------------------- Side Left Navigation Bar */
+.side-nav {
+    width: 250px;
+    background-color: var(--primary-color);
     font-weight: bold;
-    padding: 10px 20px;
-    z-index: 10;
+    overflow-y: auto;
+    height: 100vh;
+    z-index: 1000;
+    border: none;
+    position: sticky;
+    top: 0;
 }
 
-.top-nav ul {
+.side-nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.top-nav ul li {
+.side-nav ul li {
     position: relative;
+    z-index: 1000;
 }
 
-.top-nav ul li a {
+.side-nav ul li a {
+    font-family: var(--project-font-family);
+    font-size: var(--project-font-size-large);
     display: block;
-    color: var(--light-white-color);
-    text-align: center;
-    padding: 12px 18px;
+    color: var(--text-color);
+    padding: 15px 20px;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
-    border-radius: 5px;
 }
 
-.top-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: var(--light-white-color);
+.side-nav ul li a:hover {
+    background-color: var(--secondary-color) !important;
+    color: var(--light-white-color) !important;
 }
 
-.top-nav .dropdown-menu {
+/* --------------------------------------------- Vertical Dropdown Styling */
+.side-nav .dropdown-menu {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--light-white-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    min-width: 150px;
+    position: static;
+    background-color: var(--primary-color);
+    box-shadow: none;
+    border-radius: 0;
+    min-width: auto;
+    width: 100%;
     z-index: 10;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: none;
+    transition: none;
+    padding-left: 20px;
 }
 
-.top-nav .dropdown-menu li {
-    padding: 10px;
+.side-nav .dropdown-menu li {
+    padding: 0;
     white-space: nowrap;
 }
 
-.top-nav .dropdown-menu li a {
+.side-nav .dropdown-menu li a {
     text-decoration: none;
     color: var(--text-color);
-    padding: 10px;
     display: block;
     transition: background 0.3s;
-    border-radius: 5px;
+    border-radius: 0;
+    font-size: var(--project-font-size-small);
+    opacity: 0.8;
 }
 
-.top-nav .dropdown-menu li a:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+.side-nav .dropdown-menu li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-white-color) !important;
 }
 
-.top-nav li:hover .dropdown-menu {
+.side-nav li:hover .dropdown-menu {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
 }
 
-.top-nav ul li.right {
-    margin-left: auto;
+.side-nav .dropdown-toggle::after {
+    content: "▼";
+    font-size: var(--project-font-size-small);
+    float: right;
 }
 
-/* --------------------------------------------- Logo container */
-.logo {
-    height: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.nav-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border: none;
 }
 
+/* --------------------------------------------- Logo in sidebar */
 .logo-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    background-color: hsl(0, 0%, 86%, 1);
+    padding: 40px;
 }
 
-.logo-container img {
+.logo {
+    height: 80px;
+}
+
+/* ---------------------------------------------  Experience Containers */
+.experience-container {
+    display: flex;
+}
+
+.experience-container img {
+    margin-right: 20px;
     height: 50px;
-    margin-left: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border-radius: 50%;
+    top: 10px;
 }
 
-.logo-container img:hover {
+.experience-container img:hover {
     transform: scale(1.1);
 }
 
@@ -222,42 +249,32 @@
 .gallery-item {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
+    gap: 80px;
+    margin-left: 20px;
 }
 
 .gallery-item img {
-    max-width: 80%;
-    height: auto;
+    max-width: 100%;
+    height: 150px;
+    width: 150px;
     margin: auto;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid hsl(0, 0%, 50%, 0.5);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    justify-items: center;
 }
 
 .gallery-item img:hover {
     transform: scale(1.1);
 }
 
-.gallery-item figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-    margin: 0;
-}
-
 .gallery-item figcaption {
-    margin-top: 8px;
-    font-size: 14px;
-    font-style: italic;
-    font-weight: normal;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+    margin-top: 20px;
+    color: var(--text-color);
+    font-size: var(--project-font-size-small);
     border-radius: 15px;
-    color: #f9f9f9;
     text-align: center;
-    min-width: 140px;
 }
 
 /* ---------------------------------------------  Project Grid Images */
@@ -271,8 +288,9 @@
     height: 180px;
     width: 180px;
     margin: auto;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid hsl(0, 0%, 50%, 0.5);
+    border-radius: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
@@ -300,37 +318,35 @@ model-viewer {
 }
 
 .model-caption {
-    font-size: 0.8em;
+    font-size: var(--project-font-size-small);
     font-style: italic;
-    font-weight:100;
+    font-weight: 100;
     color: var(--unique-color);
 }
 
 /* --------------------------------------------- Fonts */
 h1 {
-    font-family: 'Dancing Script', cursive;
-    /* font-family: 'Quicksand', sans-serif; */
-    font-size: 40px;
-    color: var(--primary-color);
+    font-size: var(--project-font-size-huge);
+    color: var(--text-color);
     margin: 0;
-    padding: 5px;
+    padding-top: 20px;
 }
 
 h2 {
-    text-align: center;
-    font-family: 'Dancing Script', cursive;
-    color: var(--secondary-color);
-    font-size: 30px;
+    color: var(--text-color);
+    font-size: var(--project-font-size-large);
+    font-weight: light;
+    margin: 20px;
 }
 
 h4 {
-    font-size: 20px;
+    font-size: var(--project-font-size-large);
     font-weight: normal;
     font-style: italic;
 }
 
 h6 {
-    font-size: 18px;
+    font-size: var(--project-font-size-normal);
     font-weight: 400;
     background-color: #f9f9f92d;
     color: var(--unique-color);
@@ -339,6 +355,16 @@ h6 {
     border-left: 4px solid var(--unique-color);
     display: inline-block;
     border-radius: 4px;
+}
+
+.card {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    width: 250px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 3px 0px;
+    justify-items: center;
 }
 
 a {
@@ -350,6 +376,7 @@ a {
 
 .gif-title {
     background-image: url('media/gifs/matrix2.gif');
+    font-family: 'Dancing Script', cursive;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -357,9 +384,28 @@ a {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    font-size: 5rem;
-    font-weight:900;
-    text-align: center;
+    font-size: 4.2em;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.mini-title {
+    background-image: url('media/gifs/matrix2.gif');
+    font-family: 'Dancing Script', cursive;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 2.5em;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
 }
 
 a:hover,
@@ -370,11 +416,10 @@ a:active {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-family: "Outfit", sans-serif;
+    font-size: var(--project-font-size-normal);
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
     color: var(--text-color);
     overflow-x: hidden;
     line-height: 1.6;
@@ -385,28 +430,26 @@ body {
 }
 
 .text-spec {
-    font-size: 16px;
-    padding-left: 20px;
-    padding-right: 20px;
+    font-size: var(--project-font-size-normal);
     text-align: justify;
 }
 
 .academic-projects-heading {
     font-family: 'Dancing Script', cursive;
     color: var(--primary-color);
-    font-size: 34px;
+    font-size: var(--project-font-size-large);
     margin-bottom: 1;
 }
 
 .horizontal-line {
     border: none;
-    border-top: 2px solid var(--primary-color);
+    border-top: 2px solid hsl(0, 0%, 50%, 0.2);
     margin-top: 0px;
 }
 
 .horizontal-line-dashed {
     border: none;
-    border-top: 2px dashed var(--primary-color);
+    border-top: 2px dashed hsl(0, 0%, 50%, 0.2);
     margin-top: 0px;
 }
 
@@ -420,7 +463,7 @@ body {
 /* --------------------------------------------- Experience Styling */
 .experience-meta {
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: var(--project-font-size-small);
     color: var(--unique-color);
     line-height: 1.6;
 }
@@ -438,7 +481,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 /* --------------------------------------------- Footer Styling */
 .footer {
     font-family: 'Quicksand';
-    width: 100%;
+    width: 1650px;
     background-color: var(--background-color);
     color: var(--light-white-color);
     font-style: italic;
@@ -446,8 +489,8 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     padding: 10px;
     box-sizing: border-box;
     margin: 0;
-    position: static;
-    font-weight: lighter;
+    position: relative;
+    justify-self: center;
 }
 
 /* --------------------------------------------- 3D Model Hotspots */
@@ -466,10 +509,10 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 .hotspot-tooltip {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    color: var(--light-white-color);
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: var(--project-font-size-small);
     white-space: nowrap;
     top: 20px;
     left: 20px;

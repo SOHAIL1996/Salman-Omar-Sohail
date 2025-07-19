@@ -18,16 +18,17 @@
 }
 
 .scrolling-images {
+    display: flex;
+    align-items: center;
+    background-color: hsl(217, 50%, 40%);
     overflow: hidden;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    height: 200px;
 }
 
 .scrolling-container {
     display: inline-flex;
     animation: scrollImages 30s ease-in-out infinite;
-    gap: 10px;
 }
 
 .scrolling-container img {
@@ -35,8 +36,7 @@
     max-width: 180px;
     height: auto;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin: 20px;
+    margin: 40px;
     opacity: 0.9;
     transition: transform 0.3s ease;
 }

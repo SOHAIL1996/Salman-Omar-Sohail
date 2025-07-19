@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css_common.css">
     <link rel="stylesheet" href="css_animation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="module" src="javascripts/model_scripts.js"></script>
 </head>
 
@@ -17,460 +19,472 @@
     <div class="background-media">
         <img src="media/wallpaper/wallpaper.webp" alt="Background Media">
     </div>
-    <!-- Navigation Bar -->
-    <nav class="top-nav">
-        <ul>
-            <div class="logo-container">
-                <a href="https://www.linkedin.com/in/salman-omar-sohail/" target="_blank">
-                    <img src="media/logos/logo.webp" alt="Logo 1" class="logo">
-                </a>
-            </div>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="academia.html">Academia</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="projects.html">Rubric</a></li>
-            <li class="right">
-            <li>
-                <a href="#" class="dropdown-toggle">GitHub</a>
-                <ul class="dropdown-menu">
-                    <li><a href="https://github.com/SOHAILMBS" target="_blank">SOHAILMBS</a></li>
-                    <li><a href="https://github.com/SOHAIL1996" target="_blank">SOHAIL1996</a></li>
-                </ul>
-            </li>
-            <li><a href="https://www.linkedin.com/in/salman-omar-sohail/">Contact</a></li>
-            <!-- <li><a href="https://forum.mybotshop.de/" target="_blank">Forums</a></li> -->
-            </li>
-        </ul>
-    </nav>
 
-    <div class="main-panel">
-        <!-- Header Section -->
-        <div>
-            <div class="header-content">
-                <div class="header-grid">
-                    <div class="profile-image">
-                        <img src="media/profile/profilephoto.webp" alt="Profile Image">
-                    </div>
-                    <div class="text-center">
-                        <h1 class="gif-title">Salman Omar Sohail</h1>
-                        <h2 class="title">Robotics Engineer</h2>
-                    </div>
-                    <div class="image-right">
-                        <img src="media/profile/robotics.webp" alt="Robotics Image">
+    <div class="global-overlay">
+
+        <!-- Navigation Bar -->
+        <nav class="side-nav" id="sideNav">
+            <ul>
+                <div class="logo-container">
+                    <a href="https://www.linkedin.com/in/salman-omar-sohail/" target="_blank">
+                        <img src="media/logos/logo.webp" alt="Logo 1" class="logo">
+                    </a>
+                </div>
+
+                <li style="padding-top: 30px;"><a href="index.html"><i class="fa-solid fa-home"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> Home</a></li>
+                <li><a href="experience.html"><i class="fa-solid fa-terminal"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> Experience </a></li>
+                <li><a href="academia.html"><i class="fa-solid fa-graduation-cap"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> Academia</a></li>
+                <li><a href="projects.html"><i class="fa-solid fa-diagram-project"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> Projects</a></li>
+                <li><a href="rubric.html"><i class="fa-solid fa-list-check"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> Rubric</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle"><i class="fa-solid fa-book"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> GitHub</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://github.com/SOHAILMBS" target="_blank">SOHAILMBS</a></li>
+                        <li><a href="https://github.com/SOHAIL1996" target="_blank">SOHAIL1996</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <div class="nav-bottom">
+                    <li><a href="https://www.linkedin.com/in/salman-omar-sohail/"><i class="fa-solid fa-envelope"
+                                style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i>
+                            Contact</a></li>
+                </div>
+            </ul>
+        </nav>
+
+        <div class="main-panel">
+            <!-- Header Section -->
+            <div>
+                <div class="header-content">
+                    <div class="header-grid">
+                        <div class="profile-image">
+                            <img src="media/profile/profilephoto.webp" alt="Profile Image">
+                        </div>
+                        <div class="text-center">
+                            <h1 class="gif-title">Salman Omar Sohail</h1>
+                            <h2 class="mini-title">Robotics Engineer</h2>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Scrolling Section -->
-        <div class="scrolling-images">
-            <div class="scrolling-container">
-                <a href="https://www.asme.org" target="_blank">
-                    <img src="media/logos/asme_logo.drawio.webp" alt="ASME Logo">
-                </a>
-                <a href="https://www.h-brs.de/en/a2s/b-it-bots" target="_blank">
-                    <img src="media/logos/bit_logo.drawio.webp" alt="BIT Logo">
-                </a>
-                <a href="https://www.h-brs.de/de" target="_blank">
-                    <img src="media/logos/hbrs_logo.drawio.webp" alt="HBRS Logo">
-                </a>
-                <a href="https://www.pec.org.pk/" target="_blank">
-                    <img src="media/logos/pec_logo.drawio.webp" alt="PEC Logo">
-                </a>
-                <a href="https://www.pgc.edu" target="_blank">
-                    <img src="media/logos/punjabgroupofcolleges_logo.drawio.webp" alt="Punjab Group of Colleges Logo">
-                </a>
-                <a href="https://www.quadruped.de/" target="_blank">
-                    <img src="media/logos/quadruped_logo.drawio.webp" alt="Quadruped Logo">
-                </a>
-                <a href="https://www.mybotshop.de" target="_blank">
-                    <img src="media/logos/mybotshop_logo.drawio.webp" alt="MyBotShop Logo">
-                </a>
-                <a href="https://www.ros.org" target="_blank">
-                    <img src="media/logos/ros_logo.drawio.webp" alt="ROS Logo">
-                </a>
-                <a href="https://www.h-brs.de/de/pressemitteilung/eu-projekt-sesame-forschung-multi-roboter-systemen"
-                    target="_blank">
-                    <img src="media/logos/sesame_logo.drawio.webp" alt="Sesame Logo">
-                </a>
-                <a href="https://www.ieee.org" target="_blank">
-                    <img src="media/logos/ieee_logo.drawio.webp" alt="IEEE Logo">
-                </a>
-                <a href="https://www.nvidia.com/omniverse" target="_blank">
-                    <img src="media/logos/nvidiaomniverse_logo.drawio.webp" alt="NVIDIA Omniverse Logo">
-                </a>
-                <a href="https://www.3ds.com/products-services/catia/" target="_blank">
-                    <img src="media/logos/catiav5_logo.drawio.webp" alt="CATIA V5 Logo">
-                </a>
-                <a href="https://www.meshlab.net" target="_blank">
-                    <img src="media/logos/meshlab_logo.drawio.webp" alt="MeshLab Logo">
-                </a>
-                <a href="https://www.python.org" target="_blank">
-                    <img src="media/logos/python_logo.drawio.webp" alt="Python Logo">
-                </a>
-                <a href="https://isocpp.org" target="_blank">
-                    <img src="media/logos/c++_logo.drawio.webp" alt="C++ Logo">
-                </a>
-                <a href="https://www.w3.org/html/" target="_blank">
-                    <img src="media/logos/html_logo.drawio.webp" alt="HTML Logo">
-                </a>
-                <a href="http://gazebosim.org" target="_blank">
-                    <img src="media/logos/gazebo_logo.drawio.webp" alt="Gazebo Logo">
-                </a>
-                <a href="https://github.com/SOHAIL1996" target="_blank">
-                    <img src="media/logos/github_logo.drawio.webp" alt="GitHub Logo">
-                </a>
-                <a href="https://ubuntu.com" target="_blank">
-                    <img src="media/logos/ubuntu_logo.drawio.webp" alt="Ubuntu Logo">
-                </a>
-                <a href="https://www.latex-project.org" target="_blank">
-                    <img src="media/logos/latex_logo.drawio.webp" alt="LaTeX Logo">
-                </a>
-                <a href="https://jupyter.org" target="_blank">
-                    <img src="media/logos/jupyter_logo.drawio.webp" alt="Jupyter Logo">
-                </a>
-                <a href="https://www.microsoft.com/en-us/microsoft-365" target="_blank">
-                    <img src="media/logos/officesuite_logo.drawio.webp" alt="Office Suite Logo">
-                </a>
-                <a href="https://www.autodesk.com/products/fusion-360/" target="_blank">
-                    <img src="media/logos/fusion360_logo.drawio.webp" alt="Fusion 360 Logo">
-                </a>
-                <a href="https://www.cottonweb.net" target="_blank">
-                    <img src="media/logos/cottonweb_logo.drawio.webp" alt="Cotton Web Logo">
-                </a>
+            <!-- Scrolling Section -->
+            <div class="scrolling-images">
+                <div class="scrolling-container">
+                    <a href="https://www.asme.org" target="_blank">
+                        <img src="media/logos/asme_logo.drawio.webp" alt="ASME Logo">
+                    </a>
+                    <a href="https://www.h-brs.de/en/a2s/b-it-bots" target="_blank">
+                        <img src="media/logos/bit_logo.drawio.webp" alt="BIT Logo">
+                    </a>
+                    <a href="https://www.h-brs.de/de" target="_blank">
+                        <img src="media/logos/hbrs_logo.drawio.webp" alt="HBRS Logo">
+                    </a>
+                    <a href="https://www.pec.org.pk/" target="_blank">
+                        <img src="media/logos/pec_logo.drawio.webp" alt="PEC Logo">
+                    </a>
+                    <a href="https://www.pgc.edu" target="_blank">
+                        <img src="media/logos/punjabgroupofcolleges_logo.drawio.webp"
+                            alt="Punjab Group of Colleges Logo">
+                    </a>
+                    <a href="https://www.quadruped.de/" target="_blank">
+                        <img src="media/logos/quadruped_logo.drawio.webp" alt="Quadruped Logo">
+                    </a>
+                    <a href="https://www.mybotshop.de" target="_blank">
+                        <img src="media/logos/mybotshop_logo.drawio.webp" alt="MyBotShop Logo">
+                    </a>
+                    <a href="https://www.ros.org" target="_blank">
+                        <img src="media/logos/ros_logo.drawio.webp" alt="ROS Logo">
+                    </a>
+                    <a href="https://www.h-brs.de/de/pressemitteilung/eu-projekt-sesame-forschung-multi-roboter-systemen"
+                        target="_blank">
+                        <img src="media/logos/sesame_logo.drawio.webp" alt="Sesame Logo">
+                    </a>
+                    <a href="https://www.ieee.org" target="_blank">
+                        <img src="media/logos/ieee_logo.drawio.webp" alt="IEEE Logo">
+                    </a>
+                    <a href="https://www.nvidia.com/omniverse" target="_blank">
+                        <img src="media/logos/nvidiaomniverse_logo.drawio.webp" alt="NVIDIA Omniverse Logo">
+                    </a>
+                    <a href="https://www.3ds.com/products-services/catia/" target="_blank">
+                        <img src="media/logos/catiav5_logo.drawio.webp" alt="CATIA V5 Logo">
+                    </a>
+                    <a href="https://www.meshlab.net" target="_blank">
+                        <img src="media/logos/meshlab_logo.drawio.webp" alt="MeshLab Logo">
+                    </a>
+                    <a href="https://www.python.org" target="_blank">
+                        <img src="media/logos/python_logo.drawio.webp" alt="Python Logo">
+                    </a>
+                    <a href="https://isocpp.org" target="_blank">
+                        <img src="media/logos/c++_logo.drawio.webp" alt="C++ Logo">
+                    </a>
+                    <a href="https://www.w3.org/html/" target="_blank">
+                        <img src="media/logos/html_logo.drawio.webp" alt="HTML Logo">
+                    </a>
+                    <a href="http://gazebosim.org" target="_blank">
+                        <img src="media/logos/gazebo_logo.drawio.webp" alt="Gazebo Logo">
+                    </a>
+                    <a href="https://github.com/SOHAIL1996" target="_blank">
+                        <img src="media/logos/github_logo.drawio.webp" alt="GitHub Logo">
+                    </a>
+                    <a href="https://ubuntu.com" target="_blank">
+                        <img src="media/logos/ubuntu_logo.drawio.webp" alt="Ubuntu Logo">
+                    </a>
+                    <a href="https://www.latex-project.org" target="_blank">
+                        <img src="media/logos/latex_logo.drawio.webp" alt="LaTeX Logo">
+                    </a>
+                    <a href="https://jupyter.org" target="_blank">
+                        <img src="media/logos/jupyter_logo.drawio.webp" alt="Jupyter Logo">
+                    </a>
+                    <a href="https://www.microsoft.com/en-us/microsoft-365" target="_blank">
+                        <img src="media/logos/officesuite_logo.drawio.webp" alt="Office Suite Logo">
+                    </a>
+                    <a href="https://www.autodesk.com/products/fusion-360/" target="_blank">
+                        <img src="media/logos/fusion360_logo.drawio.webp" alt="Fusion 360 Logo">
+                    </a>
+                    <a href="https://www.cottonweb.net" target="_blank">
+                        <img src="media/logos/cottonweb_logo.drawio.webp" alt="Cotton Web Logo">
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <br>
-        <br>
-        <div class="text-spec">
-            <h1>Robot Categorization</h1>
-            <hr class="horizontal-line">
+            <br>
+            <br>
+            <div class="text-spec">
+                <h1>Robot Categorization</h1>
+                <hr class="horizontal-line">
 
-            <p>Robots are categorized based on <strong>personal</strong> experience on their capabilities and
-                applications. The following table provides a rubric for evaluating various robots based on different
-                criteria including vibe check.</p>
+                <p>Robots are categorized based on <strong>personal</strong> experience on their capabilities and
+                    applications. The following table provides a rubric for evaluating various robots based on different
+                    criteria including vibe check.</p>
 
-            <div>
-                <table border="0" cellpadding="10" style="width: 100%; border-collapse: collapse;">
-                    <thead>
-                        <tr>
-                            <th style="color: var(--unique-color);">Manufacturer</th>
-                            <th style="color: var(--unique-color);">Robot</th>
-                            <th style="text-align: center; color: var(--unique-color);">Hardware</th>
-                            <th style="text-align: center; color: var(--unique-color);">Software</th>
-                            <th style="text-align: center; color: var(--unique-color);">Documentation</th>
-                            <th style="text-align: center; color: var(--unique-color);">Integration</th>
-                            <th style="text-align: center; color: var(--unique-color);">Simulation</th>
-                            <th style="text-align: center; color: var(--unique-color);">Navigation</th>
-                            <th style="text-align: center; color: var(--unique-color);">Perception</th>
-                            <th style="text-align: center; color: var(--unique-color);">Manipulation</th>
-                            <th style="text-align: center; color: var(--unique-color);">Year</th>
-                            <th style="text-align: center; color: var(--unique-color);">Vibe</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div>
+                    <table border="0" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th style="color: var(--unique-color);">Manufacturer</th>
+                                <th style="color: var(--unique-color);">Robot</th>
+                                <th style="text-align: center; color: var(--unique-color);">Hardware</th>
+                                <th style="text-align: center; color: var(--unique-color);">Software</th>
+                                <th style="text-align: center; color: var(--unique-color);">Documentation</th>
+                                <th style="text-align: center; color: var(--unique-color);">Integration</th>
+                                <th style="text-align: center; color: var(--unique-color);">Simulation</th>
+                                <th style="text-align: center; color: var(--unique-color);">Navigation</th>
+                                <th style="text-align: center; color: var(--unique-color);">Perception</th>
+                                <th style="text-align: center; color: var(--unique-color);">Manipulation</th>
+                                <th style="text-align: center; color: var(--unique-color);">Year</th>
+                                <th style="text-align: center; color: var(--unique-color);">Vibe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                        <tr>
-                            <td>Clearpath</td>
-                            <td>Warthog W100</td>
-                            <td style="text-align: center;">9</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">7</td>
-                            <td style="text-align: center;">9</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">2025</td>
-                            <td style="text-align: center;">8</td>
-                        </tr>
+                            <tr>
+                                <td>Clearpath</td>
+                                <td>Warthog W100</td>
+                                <td style="text-align: center;">9</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">7</td>
+                                <td style="text-align: center;">9</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">2025</td>
+                                <td style="text-align: center;">8</td>
+                            </tr>
 
-                        <tr>
-                            <td>Clearpath</td>
-                            <td>Husky A200</td>
-                            <td style="text-align: center;">9</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">7</td>
-                            <td style="text-align: center;">9</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">2025</td>
-                            <td style="text-align: center;">9</td>
-                        </tr>
+                            <tr>
+                                <td>Clearpath</td>
+                                <td>Husky A200</td>
+                                <td style="text-align: center;">9</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">7</td>
+                                <td style="text-align: center;">9</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">2025</td>
+                                <td style="text-align: center;">9</td>
+                            </tr>
 
-                        <tr>
-                            <td>Clearpath</td>
-                            <td>Jackal J100</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">7</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">7</td>
-                            <td style="text-align: center;">9</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">2025</td>
-                            <td style="text-align: center;">8</td>
-                        </tr>
+                            <tr>
+                                <td>Clearpath</td>
+                                <td>Jackal J100</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">7</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">7</td>
+                                <td style="text-align: center;">9</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">2025</td>
+                                <td style="text-align: center;">8</td>
+                            </tr>
 
-                        <tr>
-                            <td>Clearpath</td>
-                            <td>Ridgeback R100</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">7</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">7</td>
-                            <td style="text-align: center;">9</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">2025</td>
-                            <td style="text-align: center;">9</td>
-                        </tr>
+                            <tr>
+                                <td>Clearpath</td>
+                                <td>Ridgeback R100</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">7</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">7</td>
+                                <td style="text-align: center;">9</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">2025</td>
+                                <td style="text-align: center;">9</td>
+                            </tr>
 
-                        <tr>
-                            <td>Clearpath</td>
-                            <td>Dingo d/o</td>
-                            <td style="text-align: center;">4</td> <!-- Hardware -->
-                            <td style="text-align: center;">8</td> <!-- Software -->
-                            <td style="text-align: center;">8</td> <!-- Documentation -->
-                            <td style="text-align: center;">5</td> <!-- Integration -->
-                            <td style="text-align: center;">9</td> <!-- Simulation -->
-                            <td style="text-align: center;">8</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">n/a</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2022</td> <!-- Year -->
-                            <td style="text-align: center;">3</td> <!-- Vibe -->
-                        </tr>
+                            <tr>
+                                <td>Clearpath</td>
+                                <td>Dingo d/o</td>
+                                <td style="text-align: center;">4</td> <!-- Hardware -->
+                                <td style="text-align: center;">8</td> <!-- Software -->
+                                <td style="text-align: center;">8</td> <!-- Documentation -->
+                                <td style="text-align: center;">5</td> <!-- Integration -->
+                                <td style="text-align: center;">9</td> <!-- Simulation -->
+                                <td style="text-align: center;">8</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2022</td> <!-- Year -->
+                                <td style="text-align: center;">3</td> <!-- Vibe -->
+                            </tr>
 
-                        <tr>
-                            <td>Unitree</td>
-                            <td>A1</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">1</td>
-                            <td style="text-align: center;">0</td>
-                            <td style="text-align: center;">2</td>
-                            <td style="text-align: center;">1</td>
-                            <td style="text-align: center;">1</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">2022</td>
-                            <td style="text-align: center;">3</td>
-                        </tr>
+                            <tr>
+                                <td>Unitree</td>
+                                <td>A1</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">1</td>
+                                <td style="text-align: center;">0</td>
+                                <td style="text-align: center;">2</td>
+                                <td style="text-align: center;">1</td>
+                                <td style="text-align: center;">1</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">2022</td>
+                                <td style="text-align: center;">3</td>
+                            </tr>
 
-                        <tr>
-                            <td>Unitree</td>
-                            <td>GO1</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">4</td>
-                            <td style="text-align: center;">2</td>
-                            <td style="text-align: center;">4</td>
-                            <td style="text-align: center;">1</td>
-                            <td style="text-align: center;">5</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">2023</td>
-                            <td style="text-align: center;">4</td>
-                        </tr>
+                            <tr>
+                                <td>Unitree</td>
+                                <td>GO1</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">4</td>
+                                <td style="text-align: center;">2</td>
+                                <td style="text-align: center;">4</td>
+                                <td style="text-align: center;">1</td>
+                                <td style="text-align: center;">5</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">2023</td>
+                                <td style="text-align: center;">4</td>
+                            </tr>
 
-                        <tr>
-                            <td>Unitree</td>
-                            <td>Z1</td>
-                            <td style="text-align: center;">4</td> <!-- Hardware -->
-                            <td style="text-align: center;">2</td> <!-- Software -->
-                            <td style="text-align: center;">1</td> <!-- Documentation -->
-                            <td style="text-align: center;">1</td> <!-- Integration -->
-                            <td style="text-align: center;">8</td> <!-- Simulation -->
-                            <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">5</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2022</td> <!-- Year -->
-                            <td style="text-align: center;">2</td> <!-- Vibe -->
-                        </tr>
+                            <tr>
+                                <td>Unitree</td>
+                                <td>Z1</td>
+                                <td style="text-align: center;">4</td> <!-- Hardware -->
+                                <td style="text-align: center;">2</td> <!-- Software -->
+                                <td style="text-align: center;">1</td> <!-- Documentation -->
+                                <td style="text-align: center;">1</td> <!-- Integration -->
+                                <td style="text-align: center;">8</td> <!-- Simulation -->
+                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">5</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2022</td> <!-- Year -->
+                                <td style="text-align: center;">2</td> <!-- Vibe -->
+                            </tr>
 
-                        <tr>
-                            <td>Unitree</td>
-                            <td>B1</td>
-                            <td style="text-align: center;">8</td>
-                            <td style="text-align: center;">5</td>
-                            <td style="text-align: center;">2</td>
-                            <td style="text-align: center;">5</td>
-                            <td style="text-align: center;">1</td>
-                            <td style="text-align: center;">7</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">n/a</td>
-                            <td style="text-align: center;">2022</td>
-                            <td style="text-align: center;">6</td>
-                        </tr>
+                            <tr>
+                                <td>Unitree</td>
+                                <td>B1</td>
+                                <td style="text-align: center;">8</td>
+                                <td style="text-align: center;">5</td>
+                                <td style="text-align: center;">2</td>
+                                <td style="text-align: center;">5</td>
+                                <td style="text-align: center;">1</td>
+                                <td style="text-align: center;">7</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">n/a</td>
+                                <td style="text-align: center;">2022</td>
+                                <td style="text-align: center;">6</td>
+                            </tr>
 
-                        <tr>
-                            <td>Unitree</td>
-                            <td>GO2/GO2-W</td>
-                            <td style="text-align: center;">8</td> <!-- Hardware -->
-                            <td style="text-align: center;">5</td> <!-- Software -->
-                            <td style="text-align: center;">8</td> <!-- Documentation -->
-                            <td style="text-align: center;">8</td> <!-- Integration -->
-                            <td style="text-align: center;">8</td> <!-- Simulation -->
-                            <td style="text-align: center;">8</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">n/a</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2025</td> <!-- Year -->
-                            <td style="text-align: center;">8</td> <!-- Vibe -->
-                        </tr>
+                            <tr>
+                                <td>Unitree</td>
+                                <td>GO2/GO2-W</td>
+                                <td style="text-align: center;">8</td> <!-- Hardware -->
+                                <td style="text-align: center;">5</td> <!-- Software -->
+                                <td style="text-align: center;">8</td> <!-- Documentation -->
+                                <td style="text-align: center;">8</td> <!-- Integration -->
+                                <td style="text-align: center;">8</td> <!-- Simulation -->
+                                <td style="text-align: center;">8</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2025</td> <!-- Year -->
+                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                            </tr>
 
-                        <tr>
-                            <td>Unitree</td>
-                            <td>B2/B2-W</td>
-                            <td style="text-align: center;">8</td> <!-- Hardware -->
-                            <td style="text-align: center;">5</td> <!-- Software -->
-                            <td style="text-align: center;">8</td> <!-- Documentation -->
-                            <td style="text-align: center;">8</td> <!-- Integration -->
-                            <td style="text-align: center;">8</td> <!-- Simulation -->
-                            <td style="text-align: center;">8</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">n/a</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2025</td> <!-- Year -->
-                            <td style="text-align: center;">8</td> <!-- Vibe -->
-                        </tr>
+                            <tr>
+                                <td>Unitree</td>
+                                <td>B2/B2-W</td>
+                                <td style="text-align: center;">8</td> <!-- Hardware -->
+                                <td style="text-align: center;">5</td> <!-- Software -->
+                                <td style="text-align: center;">8</td> <!-- Documentation -->
+                                <td style="text-align: center;">8</td> <!-- Integration -->
+                                <td style="text-align: center;">8</td> <!-- Simulation -->
+                                <td style="text-align: center;">8</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2025</td> <!-- Year -->
+                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                            </tr>
 
-                        <tr>
-                            <td>Ascento Research</td>
-                            <td>Ascento</td>
-                            <td style="text-align: center;">7</td> <!-- Hardware -->
-                            <td style="text-align: center;">7</td> <!-- Software -->
-                            <td style="text-align: center;">6</td> <!-- Documentation -->
-                            <td style="text-align: center;">7</td> <!-- Integration -->
-                            <td style="text-align: center;">6</td> <!-- Simulation -->
-                            <td style="text-align: center;">4</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">n/a</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2025</td> <!-- Year -->
-                            <td style="text-align: center;">6</td> <!-- Vibe -->
-                        </tr>
+                            <tr>
+                                <td>Ascento Research</td>
+                                <td>Ascento</td>
+                                <td style="text-align: center;">7</td> <!-- Hardware -->
+                                <td style="text-align: center;">7</td> <!-- Software -->
+                                <td style="text-align: center;">6</td> <!-- Documentation -->
+                                <td style="text-align: center;">7</td> <!-- Integration -->
+                                <td style="text-align: center;">6</td> <!-- Simulation -->
+                                <td style="text-align: center;">4</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2025</td> <!-- Year -->
+                                <td style="text-align: center;">6</td> <!-- Vibe -->
+                            </tr>
 
-                        <tr>
-                            <td>Ufactory</td>
-                            <td>xARM6 (lite)</td>
-                            <td style="text-align: center;">4</td> <!-- Hardware -->
-                            <td style="text-align: center;">9</td> <!-- Software -->
-                            <td style="text-align: center;">7</td> <!-- Documentation -->
-                            <td style="text-align: center;">9</td> <!-- Integration -->
-                            <td style="text-align: center;">9</td> <!-- Simulation -->
-                            <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">5</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2021</td> <!-- Year -->
-                            <td style="text-align: center;">4</td> <!-- Vibe -->
-                        </tr>
-                        <tr>
-                            <td>Ufactory</td>
-                            <td>xARM5</td>
-                            <td style="text-align: center;">8</td> <!-- Hardware -->
-                            <td style="text-align: center;">9</td> <!-- Software -->
-                            <td style="text-align: center;">7</td> <!-- Documentation -->
-                            <td style="text-align: center;">9</td> <!-- Integration -->
-                            <td style="text-align: center;">9</td> <!-- Simulation -->
-                            <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">6</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2022</td> <!-- Year -->
-                            <td style="text-align: center;">6</td> <!-- Vibe -->
-                        </tr>
-                        <tr>
-                            <td>Ufactory</td>
-                            <td>xARM6</td>
-                            <td style="text-align: center;">8</td> <!-- Hardware -->
-                            <td style="text-align: center;">9</td> <!-- Software -->
-                            <td style="text-align: center;">7</td> <!-- Documentation -->
-                            <td style="text-align: center;">9</td> <!-- Integration -->
-                            <td style="text-align: center;">9</td> <!-- Simulation -->
-                            <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">9</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2022</td> <!-- Year -->
-                            <td style="text-align: center;">9</td> <!-- Vibe -->
-                        </tr>
-                        <tr>
-                            <td>Ufactory</td>
-                            <td>xARM7</td>
-                            <td style="text-align: center;">8</td> <!-- Hardware -->
-                            <td style="text-align: center;">9</td> <!-- Software -->
-                            <td style="text-align: center;">7</td> <!-- Documentation -->
-                            <td style="text-align: center;">9</td> <!-- Integration -->
-                            <td style="text-align: center;">9</td> <!-- Simulation -->
-                            <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">9</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2023</td> <!-- Year -->
-                            <td style="text-align: center;">9</td> <!-- Vibe -->
-                        </tr>
-                        <tr>
-                            <td>Ufactory</td>
-                            <td>850</td>
-                            <td style="text-align: center;">8</td> <!-- Hardware -->
-                            <td style="text-align: center;">9</td> <!-- Software -->
-                            <td style="text-align: center;">7</td> <!-- Documentation -->
-                            <td style="text-align: center;">9</td> <!-- Integration -->
-                            <td style="text-align: center;">9</td> <!-- Simulation -->
-                            <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">9</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2023</td> <!-- Year -->
-                            <td style="text-align: center;">9</td> <!-- Vibe -->
-                        </tr>
+                            <tr>
+                                <td>Ufactory</td>
+                                <td>xARM6 (lite)</td>
+                                <td style="text-align: center;">4</td> <!-- Hardware -->
+                                <td style="text-align: center;">9</td> <!-- Software -->
+                                <td style="text-align: center;">7</td> <!-- Documentation -->
+                                <td style="text-align: center;">9</td> <!-- Integration -->
+                                <td style="text-align: center;">9</td> <!-- Simulation -->
+                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">5</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2021</td> <!-- Year -->
+                                <td style="text-align: center;">4</td> <!-- Vibe -->
+                            </tr>
+                            <tr>
+                                <td>Ufactory</td>
+                                <td>xARM5</td>
+                                <td style="text-align: center;">8</td> <!-- Hardware -->
+                                <td style="text-align: center;">9</td> <!-- Software -->
+                                <td style="text-align: center;">7</td> <!-- Documentation -->
+                                <td style="text-align: center;">9</td> <!-- Integration -->
+                                <td style="text-align: center;">9</td> <!-- Simulation -->
+                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">6</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2022</td> <!-- Year -->
+                                <td style="text-align: center;">6</td> <!-- Vibe -->
+                            </tr>
+                            <tr>
+                                <td>Ufactory</td>
+                                <td>xARM6</td>
+                                <td style="text-align: center;">8</td> <!-- Hardware -->
+                                <td style="text-align: center;">9</td> <!-- Software -->
+                                <td style="text-align: center;">7</td> <!-- Documentation -->
+                                <td style="text-align: center;">9</td> <!-- Integration -->
+                                <td style="text-align: center;">9</td> <!-- Simulation -->
+                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2022</td> <!-- Year -->
+                                <td style="text-align: center;">9</td> <!-- Vibe -->
+                            </tr>
+                            <tr>
+                                <td>Ufactory</td>
+                                <td>xARM7</td>
+                                <td style="text-align: center;">8</td> <!-- Hardware -->
+                                <td style="text-align: center;">9</td> <!-- Software -->
+                                <td style="text-align: center;">7</td> <!-- Documentation -->
+                                <td style="text-align: center;">9</td> <!-- Integration -->
+                                <td style="text-align: center;">9</td> <!-- Simulation -->
+                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2023</td> <!-- Year -->
+                                <td style="text-align: center;">9</td> <!-- Vibe -->
+                            </tr>
+                            <tr>
+                                <td>Ufactory</td>
+                                <td>850</td>
+                                <td style="text-align: center;">8</td> <!-- Hardware -->
+                                <td style="text-align: center;">9</td> <!-- Software -->
+                                <td style="text-align: center;">7</td> <!-- Documentation -->
+                                <td style="text-align: center;">9</td> <!-- Integration -->
+                                <td style="text-align: center;">9</td> <!-- Simulation -->
+                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2023</td> <!-- Year -->
+                                <td style="text-align: center;">9</td> <!-- Vibe -->
+                            </tr>
 
-                        <tr>
-                            <td>Universal Robots</td>
-                            <td>UR5e</td>
-                            <td style="text-align: center;">10</td> <!-- Hardware -->
-                            <td style="text-align: center;">9</td> <!-- Software -->
-                            <td style="text-align: center;">8</td> <!-- Documentation -->
-                            <td style="text-align: center;">8</td> <!-- Integration -->
-                            <td style="text-align: center;">8</td> <!-- Simulation -->
-                            <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">9</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2022</td> <!-- Year -->
-                            <td style="text-align: center;">8</td> <!-- Vibe -->
-                        </tr>
+                            <tr>
+                                <td>Universal Robots</td>
+                                <td>UR5e</td>
+                                <td style="text-align: center;">10</td> <!-- Hardware -->
+                                <td style="text-align: center;">9</td> <!-- Software -->
+                                <td style="text-align: center;">8</td> <!-- Documentation -->
+                                <td style="text-align: center;">8</td> <!-- Integration -->
+                                <td style="text-align: center;">8</td> <!-- Simulation -->
+                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2022</td> <!-- Year -->
+                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                            </tr>
 
-                        <tr>
-                            <td>Universal Robots</td>
-                            <td>UR20e</td>
-                            <td style="text-align: center;">10</td> <!-- Hardware -->
-                            <td style="text-align: center;">9</td> <!-- Software -->
-                            <td style="text-align: center;">8</td> <!-- Documentation -->
-                            <td style="text-align: center;">8</td> <!-- Integration -->
-                            <td style="text-align: center;">8</td> <!-- Simulation -->
-                            <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">9</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2022</td> <!-- Year -->
-                            <td style="text-align: center;">8</td> <!-- Vibe -->
-                        </tr>
+                            <tr>
+                                <td>Universal Robots</td>
+                                <td>UR20e</td>
+                                <td style="text-align: center;">10</td> <!-- Hardware -->
+                                <td style="text-align: center;">9</td> <!-- Software -->
+                                <td style="text-align: center;">8</td> <!-- Documentation -->
+                                <td style="text-align: center;">8</td> <!-- Integration -->
+                                <td style="text-align: center;">8</td> <!-- Simulation -->
+                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2022</td> <!-- Year -->
+                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                            </tr>
 
-                        <tr>
-                            <td>Segway</td>
-                            <td>E1</td>
-                            <td style="text-align: center;">7</td> <!-- Hardware -->
-                            <td style="text-align: center;">1</td> <!-- Software -->
-                            <td style="text-align: center;">2</td> <!-- Documentation -->
-                            <td style="text-align: center;">5</td> <!-- Integration -->
-                            <td style="text-align: center;">0</td> <!-- Simulation -->
-                            <td style="text-align: center;">3</td> <!-- Navigation -->
-                            <td style="text-align: center;">n/a</td> <!-- Perception -->
-                            <td style="text-align: center;">n/a</td> <!-- Manipulation -->
-                            <td style="text-align: center;">2025</td> <!-- Year -->
-                            <td style="text-align: center;">2</td> <!-- Vibe -->
-                        </tr>
+                            <tr>
+                                <td>Segway</td>
+                                <td>E1</td>
+                                <td style="text-align: center;">7</td> <!-- Hardware -->
+                                <td style="text-align: center;">1</td> <!-- Software -->
+                                <td style="text-align: center;">2</td> <!-- Documentation -->
+                                <td style="text-align: center;">5</td> <!-- Integration -->
+                                <td style="text-align: center;">0</td> <!-- Simulation -->
+                                <td style="text-align: center;">3</td> <!-- Navigation -->
+                                <td style="text-align: center;">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td style="text-align: center;">2025</td> <!-- Year -->
+                                <td style="text-align: center;">2</td> <!-- Vibe -->
+                            </tr>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
 
+                </div>
             </div>
         </div>
     </div>

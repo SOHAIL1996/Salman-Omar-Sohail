@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css_common.css">
     <link rel="stylesheet" href="css_animation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="module" src="javascripts/model_scripts.js"></script>
 </head>
 
@@ -17,442 +19,542 @@
     <div class="background-media">
         <img src="media/wallpaper/wallpaper.webp" alt="Background Media">
     </div>
-    <!-- Navigation Bar -->
-    <nav class="top-nav">
-        <ul>
-            <div class="logo-container">
-                <a href="https://www.linkedin.com/in/salman-omar-sohail/" target="_blank">
-                    <img src="media/logos/logo.webp" alt="Logo 1" class="logo">
-                </a>
-            </div>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="academia.html">Academia</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="rubric.html">Rubric</a></li>
-            <li class="right">
-            <li>
-                <a href="#" class="dropdown-toggle">GitHub</a>
-                <ul class="dropdown-menu">
-                    <li><a href="https://github.com/SOHAILMBS" target="_blank">SOHAILMBS</a></li>
-                    <li><a href="https://github.com/SOHAIL1996" target="_blank">SOHAIL1996</a></li>
-                </ul>
-            </li>
-            <li><a href="https://www.linkedin.com/in/salman-omar-sohail/">Contact</a></li>
-            <!-- <li><a href="https://forum.mybotshop.de/" target="_blank">Forums</a></li> -->
-            </li>
-        </ul>
-    </nav>
 
-    <div class="main-panel">
-        <!-- Header Section -->
-        <div>
-            <div class="header-content">
-                <div class="header-grid">
-                    <div class="profile-image">
-                        <img src="media/profile/profilephoto.webp" alt="Profile Image">
-                    </div>
-                    <div class="text-center">
-                        <h1 class="gif-title">Salman Omar Sohail</h1>
-                        <h2 class="title">Robotics Engineer</h2>
-                    </div>
-                    <div class="image-right">
-                        <img src="media/profile/robotics.webp" alt="Robotics Image">
+    <div class="global-overlay">
+
+        <!-- Navigation Bar -->
+        <nav class="side-nav" id="sideNav">
+            <ul>
+                <div class="logo-container">
+                    <a href="https://www.linkedin.com/in/salman-omar-sohail/" target="_blank">
+                        <img src="media/logos/logo.webp" alt="Logo 1" class="logo">
+                    </a>
+                </div>
+
+                <li style="padding-top: 30px;"><a href="index.html"><i class="fa-solid fa-home"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> Home</a></li>
+                <li><a href="experience.html"><i class="fa-solid fa-terminal"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> Experience </a></li>
+                <li><a href="academia.html"><i class="fa-solid fa-graduation-cap"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> Academia</a></li>
+                <li><a href="projects.html"><i class="fa-solid fa-diagram-project"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> Projects</a></li>
+                <li><a href="rubric.html"><i class="fa-solid fa-list-check"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> Rubric</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle"><i class="fa-solid fa-book"
+                            style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i> GitHub</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://github.com/SOHAILMBS" target="_blank">SOHAILMBS</a></li>
+                        <li><a href="https://github.com/SOHAIL1996" target="_blank">SOHAIL1996</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <div class="nav-bottom">
+                    <li><a href="https://www.linkedin.com/in/salman-omar-sohail/"><i class="fa-solid fa-envelope"
+                                style="color: hsl(0, 0%, 50%, 1); padding-right: 10px;"></i>
+                            Contact</a></li>
+                </div>
+            </ul>
+        </nav>
+
+        <div class="main-panel">
+            <!-- Header Section -->
+            <div>
+                <div class="header-content">
+                    <div class="header-grid">
+                        <div class="profile-image">
+                            <img src="media/profile/profilephoto.webp" alt="Profile Image">
+                        </div>
+                        <div class="text-center">
+                            <h1 class="gif-title">Salman Omar Sohail</h1>
+                            <h2 class="mini-title">Robotics Engineer</h2>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Scrolling Section -->
-        <div class="scrolling-images">
-            <div class="scrolling-container">
-                <a href="https://www.asme.org" target="_blank">
-                    <img src="media/logos/asme_logo.drawio.webp" alt="ASME Logo">
-                </a>
-                <a href="https://www.h-brs.de/en/a2s/b-it-bots" target="_blank">
-                    <img src="media/logos/bit_logo.drawio.webp" alt="BIT Logo">
-                </a>
-                <a href="https://www.h-brs.de/de" target="_blank">
-                    <img src="media/logos/hbrs_logo.drawio.webp" alt="HBRS Logo">
-                </a>
-                <a href="https://www.pec.org.pk/" target="_blank">
-                    <img src="media/logos/pec_logo.drawio.webp" alt="PEC Logo">
-                </a>
-                <a href="https://www.pgc.edu" target="_blank">
-                    <img src="media/logos/punjabgroupofcolleges_logo.drawio.webp" alt="Punjab Group of Colleges Logo">
-                </a>
-                <a href="https://www.quadruped.de/" target="_blank">
-                    <img src="media/logos/quadruped_logo.drawio.webp" alt="Quadruped Logo">
-                </a>
-                <a href="https://www.mybotshop.de" target="_blank">
-                    <img src="media/logos/mybotshop_logo.drawio.webp" alt="MyBotShop Logo">
-                </a>
-                <a href="https://www.ros.org" target="_blank">
-                    <img src="media/logos/ros_logo.drawio.webp" alt="ROS Logo">
-                </a>
-                <a href="https://www.h-brs.de/de/pressemitteilung/eu-projekt-sesame-forschung-multi-roboter-systemen"
-                    target="_blank">
-                    <img src="media/logos/sesame_logo.drawio.webp" alt="Sesame Logo">
-                </a>
-                <a href="https://www.ieee.org" target="_blank">
-                    <img src="media/logos/ieee_logo.drawio.webp" alt="IEEE Logo">
-                </a>
-                <a href="https://www.nvidia.com/omniverse" target="_blank">
-                    <img src="media/logos/nvidiaomniverse_logo.drawio.webp" alt="NVIDIA Omniverse Logo">
-                </a>
-                <a href="https://www.3ds.com/products-services/catia/" target="_blank">
-                    <img src="media/logos/catiav5_logo.drawio.webp" alt="CATIA V5 Logo">
-                </a>
-                <a href="https://www.meshlab.net" target="_blank">
-                    <img src="media/logos/meshlab_logo.drawio.webp" alt="MeshLab Logo">
-                </a>
-                <a href="https://www.python.org" target="_blank">
-                    <img src="media/logos/python_logo.drawio.webp" alt="Python Logo">
-                </a>
-                <a href="https://isocpp.org" target="_blank">
-                    <img src="media/logos/c++_logo.drawio.webp" alt="C++ Logo">
-                </a>
-                <a href="https://www.w3.org/html/" target="_blank">
-                    <img src="media/logos/html_logo.drawio.webp" alt="HTML Logo">
-                </a>
-                <a href="http://gazebosim.org" target="_blank">
-                    <img src="media/logos/gazebo_logo.drawio.webp" alt="Gazebo Logo">
-                </a>
-                <a href="https://github.com/SOHAIL1996" target="_blank">
-                    <img src="media/logos/github_logo.drawio.webp" alt="GitHub Logo">
-                </a>
-                <a href="https://ubuntu.com" target="_blank">
-                    <img src="media/logos/ubuntu_logo.drawio.webp" alt="Ubuntu Logo">
-                </a>
-                <a href="https://www.latex-project.org" target="_blank">
-                    <img src="media/logos/latex_logo.drawio.webp" alt="LaTeX Logo">
-                </a>
-                <a href="https://jupyter.org" target="_blank">
-                    <img src="media/logos/jupyter_logo.drawio.webp" alt="Jupyter Logo">
-                </a>
-                <a href="https://www.microsoft.com/en-us/microsoft-365" target="_blank">
-                    <img src="media/logos/officesuite_logo.drawio.webp" alt="Office Suite Logo">
-                </a>
-                <a href="https://www.autodesk.com/products/fusion-360/" target="_blank">
-                    <img src="media/logos/fusion360_logo.drawio.webp" alt="Fusion 360 Logo">
-                </a>
-                <a href="https://www.cottonweb.net" target="_blank">
-                    <img src="media/logos/cottonweb_logo.drawio.webp" alt="Cotton Web Logo">
-                </a>
-            </div>
-        </div>
-
-        <!-- Project Section -->
-        <br>
-        <div class="text-spec">
-            <h1 class="section-heading">Developed Project Use Cases (Highlights)</h1>
-            <hr class="horizontal-line">
-            <br>
-            <div class="project-item">
-                <img src="media/gifs/xarm6.webp">
-                <span>
-                    <h6>Industrial Orchard Packaging</h6>
-                    <div>
-                        This project tackled the automation of apple packaging, employing a robotic arm (iFactory uARM5)
-                        and a depth camera (ZED2) to identify, orient for optimal presentation (vibrant colours facing
-                        up),
-                        and carefully place apples into diverse packaging. This aims to increase efficiency, reduce
-                        manual labour,
-                        and improve the visual appeal of packaged fruit in agricultural processing.
-                    </div>
-                </span>
-
-                <img src="media/gifs/jackal.webp">
-                <span>
-                    <h6>Outdoor Inspection Routine</h6>
-                    <div>
-                        A custom GPS-based security system was developed for a Jackal UGV, leveraging the ROS2 Nav2
-                        framework for autonomous
-                        patrol missions. This initiative seeks to create a reliable and cost-effective solution for
-                        outdoor security, surveillance,
-                        and potentially initial incident response by enabling robots to navigate and monitor designated
-                        areas.
-                    </div>
-                </span>
-
-                <img src="media/gifs/husky_waypoint_navi.webp">
-                <span>
-                    <h6>Underground Pipe Inspection</h6>
-                    <div>
-                        An innovative "observer rover" was designed for the challenging task of inspecting underground
-                        piping tunnels. Equipped with over 12 sensors,
-                        including LiDAR and a depth-camera, and managed by ROS 2, the rover generates detailed 3D maps
-                        and surveys, enabling remote assessment of
-                        infrastructure integrity and identification of potential maintenance needs, improving safety and
-                        efficiency.
-                    </div>
-                </span>
-
-                <img src="media/gifs/a1_viz.webp">
-                <span>
-                    <h6>Quadruped Low-Level Gait Planning</h6>
-                    <div>
-                        This research focused on enhancing the mobility of Unitree A1/Go1 quadruped robots through
-                        advanced gait planning and control.
-                        By developing ROS/2 wrappers and utilizing the TOWR optimization framework, the project aims to
-                        enable these robots to navigate
-                        complex and uneven terrains with greater stability and efficiency, expanding their potential
-                        applications in diverse environments.
-                    </div>
-                </span>
-
-                <img src="media/gifs/husky_vineyard.webp">
-                <span>
-                    <h6>Vineyard 3D Reconstruction</h6>
-                    <div>
-                        This project explored the use of Husky A200 equipped with various sensors to capture data for
-                        generating precise 3D models of vineyards.
-                        The goal is to provide valuable insights for precision agriculture, including detailed mapping,
-                        plant health monitoring, yield prediction,
-                        and optimization of resource management for improved vineyard productivity and sustainability.
-                    </div>
-                </span>
-
-                <img src="media/robots/retailbot_ai.jpeg">
-                <span>
-                    <h6>Retail Service Bot</h6>
-                    <div>
-                        The development of a retail service bot (ai image due to NDA) aimed to automate various tasks
-                        within retail spaces to
-                        enhance customer experience
-                        and operational efficiency. Potential functionalities include guiding customers, managing
-                        inventory, providing product information,
-                        and potentially even assisting with order fulfilment, showcasing the growing role of robotics in
-                        the retail sector.
-                    </div>
-                </span>
-
-                <img src="media/gifs/h1.webp">
-                <span>
-                    <h6>Logistics Humanoid Demo</h6>
-                    <div>
-                        This project served as a demonstration of how humanoid robots can be effectively utilized in
-                        logistics and warehousing.
-                        By showcasing tasks such as object manipulation, transportation, and interaction within
-                        human-designed environments,
-                        the demo aimed to highlight the potential for humanoid robots to augment or automate
-                        labour-intensive processes in supply chain operations.
-                    </div>
-                </span>
-
-                <img src="media/robots/hxg.webp">
-                <span>
-                    <h6>Robotic Bar</h6>
-                    <div>
-                        The creation of a robotic bar focused on automating the process of preparing and serving drinks.
-                        This involves robotic arms for manipulation, precise dispensing mechanisms, and a control system
-                        to manage orders and create consistent beverages, potentially offering benefits in terms of
-                        speed, accuracy, and operational hours in the hospitality industry.
-                    </div>
-                </span>
-
-                <img src="media/gifs/aloha.gif">
-                <span>
-                    <h6>Aloha Tele-operation</h6>
-                    <div>
-                        This project focuses on utilizing the ALOHA robot, a low-cost open-source hardware system
-                        designed for bimanual teleoperation.
-                        The system typically involves a human operator controlling a master set of robotic arms, which
-                        in turn precisely mirror their
-                        movements on a follower set of arms (the ALOHA robot itself). Often equipped with multiple
-                        cameras for enhanced perception,
-                        ALOHA enables the collection of high-quality real-world demonstrations for imitation learning in
-                        robotics.
-                    </div>
-                </span>
-
-                <img src="media/gifs/webinterface.webp">
-                <span>
-                    <h6>Robot Web Control Interface</h6>
-                    <div>
-                        The Robot Web Control Interface is a web-based platform designed to facilitate the control and
-                        monitoring of robotic systems.
-                        It typically includes features such as real-time video streaming, sensor data visualization,
-                        and control interfaces for various robotic components,
-                        enabling users to interact with and manage robots remotely through a user-friendly web
-                        interface.
-                    </div>
-                </span>
-
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="text-spec">
-            <h1 class="section-heading">Project Closeup</h1>
-            <hr class="horizontal-line">
-
-            <br>
-            Takes a minute or so to load ... Click on the models to interact with them.
-            <br>
-            <br>
-
-            <div class="project-item">
-                <!-- G1 -->
-                <p class="model-caption"><strong>Unitree G1</strong></p>
-                <model-viewer src="assets/g1.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls shadow-intensity="1"
-                    exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2" environment-image="neutral"
-                    style="width: 100%; height: 600px; border-radius: 20px;">
-
-                    <div class="hotspot" slot="hotspot-sensor-01" data-position="-0.13 64.3 3.23" data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Depth Camera: Realsense D435i </div>
-                    </div>
-
-                    <div class="hotspot" slot="hotspot-sensor-02" data-position="5.58 61.39 -0.38" data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Lidar: Livox Mid 360</div>
-                    </div>
-
-                    <div class="hotspot" slot="hotspot-sensor-03" data-position="8.27 54.11 -0.01" data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Access Hub: Nvidia Jetson Orin NX</div>
-                    </div>
-
-                    <div class="hotspot" slot="hotspot-sensor-04" data-position="5.32 35.74 9.69" data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Battery: Lithum Ion</div>
-                    </div>
-
-                    <div class="hotspot" slot="hotspot-sensor-05" data-position="-15.24 1.84 -14.35"
-                        data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Dexterous Hand: Inspire Hands</div>
-                    </div>
-                </model-viewer>
-                <!-- /G1 -->
-
-                <!-- Ascento -->
-                <p class="model-caption"><strong>Bi-pedal Ascento</strong></p>
-                <model-viewer src="assets/ascento.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                    shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                    environment-image="neutral" style="width: 90%; height: 600px; border-radius: 20px;">
-                    <!-- x z y -->
-                    <div class="hotspot" slot="hotspot-sensor-01" data-position="16.14 4.78 0.0" data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Depth Camera: Realsense D435i </div>
-                    </div>
-
-                    <div class="hotspot" slot="hotspot-sensor-02" data-position="10.14 18.6 0.0" data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Lidar: Livox Mid 360</div>
-                    </div>
-
-                    <div class="hotspot" slot="hotspot-sensor-03" data-position="-18.60 12.69 -0.17"
-                        data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Access Hub: Nvidia Jetson Orin NX</div>
-                    </div>
-
-                    <div class="hotspot" slot="hotspot-sensor-04" data-position="-16.68 1.53 0.0" data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">GPS: Fix position</div>
-                    </div>
-
-                    <div class="hotspot" slot="hotspot-sensor-05" data-position="17.56 7.02 9.14" data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Hazard Lights</div>
-                    </div>
-
-                    <div class="hotspot" slot="hotspot-sensor-06" data-position="15.31 -6.80 10.17" data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Flood Lights</div>
-                    </div>
-
-                    <div class="hotspot" slot="hotspot-sensor-07" data-position="19.5 12.0 0.0" data-normal="0 0 1">
-                        <div class="hotspot-point"></div>
-                        <div class="hotspot-tooltip">Depth Camera: ZED2i</div>
-                    </div>
-                </model-viewer>
-                <!-- /Ascento -->
-
-                <!-- Unitree GO2 -->
-                <p class="model-caption"><strong>Unitree GO2</strong></p>
-                <model-viewer src="assets/go2.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                    shadow-intensity="1" exposure="0.9" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                    environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                </model-viewer>
-                <!-- /Unitree GO2 -->
-
-                <!-- Unitree H1 -->
-                <p class="model-caption"><strong>Unitree H1</strong></p>
-                <model-viewer src="assets/h1.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls shadow-intensity="1"
-                    exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2" environment-image="neutral"
-                    style="width: 100%; height: 600px; border-radius: 20px;">
-                </model-viewer>
-                <!-- /Unitree H1 -->
-
-                <!-- Mobile Manipulation Platform Husky -->
-                <p class="model-caption"><strong>MMP Husky</strong></p>
-                <model-viewer src="assets/mmp_husky.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                    shadow-intensity="1" exposure="0.2" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                    environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                </model-viewer>
-                <!-- /Mobile Manipulation Platform Husky -->
-
-                <!-- Mobile Manipulation Platform Ridgeback -->
-                <p class="model-caption"><strong>MMP Ridgeback</strong></p>
-                <model-viewer src="assets/mmp_ridgeback.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                    shadow-intensity="1" exposure="0.3" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                    environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                </model-viewer>
-                <!-- /Mobile Manipulation Platform Ridgeback -->
-
-                <!-- Boston Dynamics Spot -->
-                <p class="model-caption"><strong>Boston Dynamics Spot</strong></p>
-                <model-viewer src="assets/spot.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                    shadow-intensity="1" exposure="0.6" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                    environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                </model-viewer>
-                <!-- /Boston Dynamics Spot -->
-
-                <!-- Kuka -->
-                <p class="model-caption"><strong>Kuka</strong></p>
-                <model-viewer src="assets/kuka.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                    shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                    environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                </model-viewer>
-                <!-- /Kuka -->
-
-                <!-- Clearpath Dingo -->
-                <p class="model-caption"><strong>Clearpath Dingo</strong></p>
-                <model-viewer src="assets/dingo.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                    shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                    environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                </model-viewer>
-                <!-- /Clearpath Dingo -->
-
-                <!-- Inspire Robotics Hand -->
-                <p class="model-caption"><strong>Inspire Robotics Hand</strong></p>
-                <model-viewer src="assets/inspire_hands.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                    shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                    environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                </model-viewer>
-                <!-- /Inspire Robotics Hand -->
-
-                <!-- /UR10 -->
-                <p class="model-caption"><strong>Universal Robot 10e</strong></p>
-                <model-viewer src="assets/ur10.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                    shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                    environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                </model-viewer>
-                <!-- /UR10 -->
-
-                <!-- /Unitree B2 -->
-                <p class="model-caption"><strong>Unitree B2</strong></p>
-                <model-viewer src="assets/b2.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls shadow-intensity="1"
-                    exposure="0.9" camera-orbit="45deg 65deg" auto-rotate-speed="2" environment-image="neutral"
-                    style="width: 100%; height: 600px; border-radius: 20px;">
-                </model-viewer>
-                <!-- /Unitree B2 -->
-
+            <!-- Scrolling Section -->
+            <div class="scrolling-images">
+                <div class="scrolling-container">
+                    <a href="https://www.asme.org" target="_blank">
+                        <img src="media/logos/asme_logo.drawio.webp" alt="ASME Logo">
+                    </a>
+                    <a href="https://www.h-brs.de/en/a2s/b-it-bots" target="_blank">
+                        <img src="media/logos/bit_logo.drawio.webp" alt="BIT Logo">
+                    </a>
+                    <a href="https://www.h-brs.de/de" target="_blank">
+                        <img src="media/logos/hbrs_logo.drawio.webp" alt="HBRS Logo">
+                    </a>
+                    <a href="https://www.pec.org.pk/" target="_blank">
+                        <img src="media/logos/pec_logo.drawio.webp" alt="PEC Logo">
+                    </a>
+                    <a href="https://www.pgc.edu" target="_blank">
+                        <img src="media/logos/punjabgroupofcolleges_logo.drawio.webp"
+                            alt="Punjab Group of Colleges Logo">
+                    </a>
+                    <a href="https://www.quadruped.de/" target="_blank">
+                        <img src="media/logos/quadruped_logo.drawio.webp" alt="Quadruped Logo">
+                    </a>
+                    <a href="https://www.mybotshop.de" target="_blank">
+                        <img src="media/logos/mybotshop_logo.drawio.webp" alt="MyBotShop Logo">
+                    </a>
+                    <a href="https://www.ros.org" target="_blank">
+                        <img src="media/logos/ros_logo.drawio.webp" alt="ROS Logo">
+                    </a>
+                    <a href="https://www.h-brs.de/de/pressemitteilung/eu-projekt-sesame-forschung-multi-roboter-systemen"
+                        target="_blank">
+                        <img src="media/logos/sesame_logo.drawio.webp" alt="Sesame Logo">
+                    </a>
+                    <a href="https://www.ieee.org" target="_blank">
+                        <img src="media/logos/ieee_logo.drawio.webp" alt="IEEE Logo">
+                    </a>
+                    <a href="https://www.nvidia.com/omniverse" target="_blank">
+                        <img src="media/logos/nvidiaomniverse_logo.drawio.webp" alt="NVIDIA Omniverse Logo">
+                    </a>
+                    <a href="https://www.3ds.com/products-services/catia/" target="_blank">
+                        <img src="media/logos/catiav5_logo.drawio.webp" alt="CATIA V5 Logo">
+                    </a>
+                    <a href="https://www.meshlab.net" target="_blank">
+                        <img src="media/logos/meshlab_logo.drawio.webp" alt="MeshLab Logo">
+                    </a>
+                    <a href="https://www.python.org" target="_blank">
+                        <img src="media/logos/python_logo.drawio.webp" alt="Python Logo">
+                    </a>
+                    <a href="https://isocpp.org" target="_blank">
+                        <img src="media/logos/c++_logo.drawio.webp" alt="C++ Logo">
+                    </a>
+                    <a href="https://www.w3.org/html/" target="_blank">
+                        <img src="media/logos/html_logo.drawio.webp" alt="HTML Logo">
+                    </a>
+                    <a href="http://gazebosim.org" target="_blank">
+                        <img src="media/logos/gazebo_logo.drawio.webp" alt="Gazebo Logo">
+                    </a>
+                    <a href="https://github.com/SOHAIL1996" target="_blank">
+                        <img src="media/logos/github_logo.drawio.webp" alt="GitHub Logo">
+                    </a>
+                    <a href="https://ubuntu.com" target="_blank">
+                        <img src="media/logos/ubuntu_logo.drawio.webp" alt="Ubuntu Logo">
+                    </a>
+                    <a href="https://www.latex-project.org" target="_blank">
+                        <img src="media/logos/latex_logo.drawio.webp" alt="LaTeX Logo">
+                    </a>
+                    <a href="https://jupyter.org" target="_blank">
+                        <img src="media/logos/jupyter_logo.drawio.webp" alt="Jupyter Logo">
+                    </a>
+                    <a href="https://www.microsoft.com/en-us/microsoft-365" target="_blank">
+                        <img src="media/logos/officesuite_logo.drawio.webp" alt="Office Suite Logo">
+                    </a>
+                    <a href="https://www.autodesk.com/products/fusion-360/" target="_blank">
+                        <img src="media/logos/fusion360_logo.drawio.webp" alt="Fusion 360 Logo">
+                    </a>
+                    <a href="https://www.cottonweb.net" target="_blank">
+                        <img src="media/logos/cottonweb_logo.drawio.webp" alt="Cotton Web Logo">
+                    </a>
+                </div>
             </div>
 
+            <!-- Company Project Section -->
+            <br>
+            <div class="text-spec">
+                <h1 class="section-heading">Developed Project Use Cases (Highlights)</h1>
+                <hr class="horizontal-line">
+                <br>
+                <div class="project-item">
+                    <img src="media/gifs/xarm6.webp">
+                    <span>
+                        <h6>Industrial Orchard Packaging</h6>
+                        <div>
+                            This project tackled the automation of apple packaging, employing a robotic arm (iFactory
+                            uARM5)
+                            and a depth camera (ZED2) to identify, orient for optimal presentation (vibrant colours
+                            facing
+                            up),
+                            and carefully place apples into diverse packaging. This aims to increase efficiency, reduce
+                            manual labour,
+                            and improve the visual appeal of packaged fruit in agricultural processing.
+                        </div>
+                    </span>
+
+                    <img src="media/gifs/jackal.webp">
+                    <span>
+                        <h6>Outdoor Inspection Routine</h6>
+                        <div>
+                            A custom GPS-based security system was developed for a Jackal UGV, leveraging the ROS2 Nav2
+                            framework for autonomous
+                            patrol missions. This initiative seeks to create a reliable and cost-effective solution for
+                            outdoor security, surveillance,
+                            and potentially initial incident response by enabling robots to navigate and monitor
+                            designated
+                            areas.
+                        </div>
+                    </span>
+
+                    <img src="media/gifs/husky_waypoint_navi.webp">
+                    <span>
+                        <h6>Underground Pipe Inspection</h6>
+                        <div>
+                            An innovative "observer rover" was designed for the challenging task of inspecting
+                            underground
+                            piping tunnels. Equipped with over 12 sensors,
+                            including LiDAR and a depth-camera, and managed by ROS 2, the rover generates detailed 3D
+                            maps
+                            and surveys, enabling remote assessment of
+                            infrastructure integrity and identification of potential maintenance needs, improving safety
+                            and
+                            efficiency.
+                        </div>
+                    </span>
+
+                    <img src="media/gifs/a1_viz.webp">
+                    <span>
+                        <h6>Quadruped Low-Level Gait Planning</h6>
+                        <div>
+                            This research focused on enhancing the mobility of Unitree A1/Go1 quadruped robots through
+                            advanced gait planning and control.
+                            By developing ROS/2 wrappers and utilizing the TOWR optimization framework, the project aims
+                            to
+                            enable these robots to navigate
+                            complex and uneven terrains with greater stability and efficiency, expanding their potential
+                            applications in diverse environments.
+                        </div>
+                    </span>
+
+                    <img src="media/gifs/husky_vineyard.webp">
+                    <span>
+                        <h6>Vineyard 3D Reconstruction</h6>
+                        <div>
+                            This project explored the use of Husky A200 equipped with various sensors to capture data
+                            for
+                            generating precise 3D models of vineyards.
+                            The goal is to provide valuable insights for precision agriculture, including detailed
+                            mapping,
+                            plant health monitoring, yield prediction,
+                            and optimization of resource management for improved vineyard productivity and
+                            sustainability.
+                        </div>
+                    </span>
+
+                    <img src="media/robots/retailbot_ai.jpeg">
+                    <span>
+                        <h6>Retail Service Bot</h6>
+                        <div>
+                            The development of a retail service bot (ai image due to NDA) aimed to automate various
+                            tasks
+                            within retail spaces to
+                            enhance customer experience
+                            and operational efficiency. Potential functionalities include guiding customers, managing
+                            inventory, providing product information,
+                            and potentially even assisting with order fulfilment, showcasing the growing role of
+                            robotics in
+                            the retail sector.
+                        </div>
+                    </span>
+
+                    <img src="media/gifs/h1.webp">
+                    <span>
+                        <h6>Logistics Humanoid Demo</h6>
+                        <div>
+                            This project served as a demonstration of how humanoid robots can be effectively utilized in
+                            logistics and warehousing.
+                            By showcasing tasks such as object manipulation, transportation, and interaction within
+                            human-designed environments,
+                            the demo aimed to highlight the potential for humanoid robots to augment or automate
+                            labour-intensive processes in supply chain operations.
+                        </div>
+                    </span>
+
+                    <img src="media/robots/hxg.webp">
+                    <span>
+                        <h6>Robotic Bar</h6>
+                        <div>
+                            The creation of a robotic bar focused on automating the process of preparing and serving
+                            drinks.
+                            This involves robotic arms for manipulation, precise dispensing mechanisms, and a control
+                            system
+                            to manage orders and create consistent beverages, potentially offering benefits in terms of
+                            speed, accuracy, and operational hours in the hospitality industry.
+                        </div>
+                    </span>
+
+                    <img src="media/gifs/aloha.gif">
+                    <span>
+                        <h6>Aloha Tele-operation</h6>
+                        <div>
+                            This project focuses on utilizing the ALOHA robot, a low-cost open-source hardware system
+                            designed for bimanual teleoperation.
+                            The system typically involves a human operator controlling a master set of robotic arms,
+                            which
+                            in turn precisely mirror their
+                            movements on a follower set of arms (the ALOHA robot itself). Often equipped with multiple
+                            cameras for enhanced perception,
+                            ALOHA enables the collection of high-quality real-world demonstrations for imitation
+                            learning in
+                            robotics.
+                        </div>
+                    </span>
+
+                    <img src="media/gifs/webinterface.webp">
+                    <span>
+                        <h6>Robot Web Control Interface</h6>
+                        <div>
+                            The Robot Web Control Interface is a web-based platform designed to facilitate the control
+                            and
+                            monitoring of robotic systems.
+                            It typically includes features such as real-time video streaming, sensor data visualization,
+                            and control interfaces for various robotic components,
+                            enabling users to interact with and manage robots remotely through a user-friendly web
+                            interface.
+                        </div>
+                    </span>
+
+                </div>
+            </div>
+            <br>
+            <!-- Academic Project Section -->
+            <br>
+            <div class="text-spec">
+                <h1 class="section-heading">Academic Projects (Highlights)</h1>
+                <hr class="horizontal-line">
+                <br>
+                <div class="project-item">
+                    <img src="media/gifs/b1_gazebo.webp">
+                    <span>
+                        <h6>PROPERTY-BASED TESTING: FORMALIZED ROBOTIC TESTING FOR STANDARD COMPLIANCE</h6>
+                        <div>
+                            R&D that automates robotic standards validation through simulated testing, verifying
+                            compliance, identifying missing functionalities and software bugs in heterogeneous robots.
+                        </div>
+                    </span>
+
+                    <img src="media/projects/fnirs.png">
+                    <span>
+                        <h6>FUNCTIONAL NEAR-INFRARED SPECTROSCOPY (FNIRS) TAP DETECTION</h6>
+                        <div>
+                            Functional near-infrared spectroscopy (fNIR) detected finger taps from brain
+                            with a 92% test accuracy using a Deep Neural Network.
+                        </div>
+                    </span>
+
+                    <img src="media/projects/iwm.jpg">
+                    <span>
+                        <h6>INTELLIGENT WINDING MACHINE AS A FLEXIBLE MANUFACTURING SYSTEM</h6>
+                        <div>
+                            Design and fabrication of an automated wireless coil-winding machine for
+                            stator coils of 70cc motorcycles (Bachelor’s Project).
+                        </div>
+                    </span>
+
+                    <img src="media/gifs/hsr.webp">
+                    <span>
+                        <h6>TOYOTA HUMAN SUPPORT ROBOT TESTING FRAMEWORK</h6>
+                        <div>
+                            Research and development of automated property-based testing for the Toyota
+                            HSR robot’s perception, manipulation, and navigation stacks.
+                        </div>
+                    </span>
+
+                    <img src="media/projects/summitxl.webp">
+                    <span>
+                        <h6>OSMOSIS FAULT-TOLERANT SYSTEM</h6>
+                        <div>
+                            Implementation of a fault-tolerant manager that detects errors within the
+                            \href{https://robotnik.eu/products/mobile-robots/summit-xl-en-2/}{Summit XL robot} and
+                            executes the recovery process during a mission around an airport.
+                        </div>
+                    </span>
+
+                    <img src="media/projects/neural_networks.webp">
+                    <span>
+                        <h6>DEEP-LEARNING & NATURAL LANGUAGE PROCESSING</h6>
+                        <div>
+                            Development of entity detectors, image classifiers, text-extractors,
+                            text-summarizers, chatbots, form-fillers, text-preprocessors and more.
+                        </div>
+                    </span>
+
+                </div>
+            </div>
+            <br>
+            <div class="text-spec">
+                <h1 class="section-heading">Project Closeup</h1>
+                <hr class="horizontal-line">
+
+                <br>
+                Takes a minute or so to load ... Click on the models to interact with them.
+                <br>
+                <br>
+
+                <div class="project-item">
+                    <!-- G1 -->
+                    <p class="model-caption"><strong>Unitree G1</strong></p>
+                    <model-viewer src="assets/g1.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+
+                        <div class="hotspot" slot="hotspot-sensor-01" data-position="-0.13 64.3 3.23"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Depth Camera: Realsense D435i </div>
+                        </div>
+
+                        <div class="hotspot" slot="hotspot-sensor-02" data-position="5.58 61.39 -0.38"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Lidar: Livox Mid 360</div>
+                        </div>
+
+                        <div class="hotspot" slot="hotspot-sensor-03" data-position="8.27 54.11 -0.01"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Access Hub: Nvidia Jetson Orin NX</div>
+                        </div>
+
+                        <div class="hotspot" slot="hotspot-sensor-04" data-position="5.32 35.74 9.69"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Battery: Lithum Ion</div>
+                        </div>
+
+                        <div class="hotspot" slot="hotspot-sensor-05" data-position="-15.24 1.84 -14.35"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Dexterous Hand: Inspire Hands</div>
+                        </div>
+                    </model-viewer>
+                    <!-- /G1 -->
+
+                    <!-- Ascento -->
+                    <p class="model-caption"><strong>Bi-pedal Ascento</strong></p>
+                    <model-viewer src="assets/ascento.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 90%; height: 600px; border-radius: 20px;">
+                        <!-- x z y -->
+                        <div class="hotspot" slot="hotspot-sensor-01" data-position="16.14 4.78 0.0"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Depth Camera: Realsense D435i </div>
+                        </div>
+
+                        <div class="hotspot" slot="hotspot-sensor-02" data-position="10.14 18.6 0.0"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Lidar: Livox Mid 360</div>
+                        </div>
+
+                        <div class="hotspot" slot="hotspot-sensor-03" data-position="-18.60 12.69 -0.17"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Access Hub: Nvidia Jetson Orin NX</div>
+                        </div>
+
+                        <div class="hotspot" slot="hotspot-sensor-04" data-position="-16.68 1.53 0.0"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">GPS: Fix position</div>
+                        </div>
+
+                        <div class="hotspot" slot="hotspot-sensor-05" data-position="17.56 7.02 9.14"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Hazard Lights</div>
+                        </div>
+
+                        <div class="hotspot" slot="hotspot-sensor-06" data-position="15.31 -6.80 10.17"
+                            data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Flood Lights</div>
+                        </div>
+
+                        <div class="hotspot" slot="hotspot-sensor-07" data-position="19.5 12.0 0.0" data-normal="0 0 1">
+                            <div class="hotspot-point"></div>
+                            <div class="hotspot-tooltip">Depth Camera: ZED2i</div>
+                        </div>
+                    </model-viewer>
+                    <!-- /Ascento -->
+
+                    <!-- Unitree GO2 -->
+                    <p class="model-caption"><strong>Unitree GO2</strong></p>
+                    <model-viewer src="assets/go2.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.9" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+                    </model-viewer>
+                    <!-- /Unitree GO2 -->
+
+                    <!-- Unitree H1 -->
+                    <p class="model-caption"><strong>Unitree H1</strong></p>
+                    <model-viewer src="assets/h1.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+                    </model-viewer>
+                    <!-- /Unitree H1 -->
+
+                    <!-- Mobile Manipulation Platform Husky -->
+                    <p class="model-caption"><strong>MMP Husky</strong></p>
+                    <model-viewer src="assets/mmp_husky.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.2" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+                    </model-viewer>
+                    <!-- /Mobile Manipulation Platform Husky -->
+
+                    <!-- Mobile Manipulation Platform Ridgeback -->
+                    <p class="model-caption"><strong>MMP Ridgeback</strong></p>
+                    <model-viewer src="assets/mmp_ridgeback.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.3" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+                    </model-viewer>
+                    <!-- /Mobile Manipulation Platform Ridgeback -->
+
+                    <!-- Boston Dynamics Spot -->
+                    <p class="model-caption"><strong>Boston Dynamics Spot</strong></p>
+                    <model-viewer src="assets/spot.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.6" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+                    </model-viewer>
+                    <!-- /Boston Dynamics Spot -->
+
+                    <!-- Kuka -->
+                    <p class="model-caption"><strong>Kuka</strong></p>
+                    <model-viewer src="assets/kuka.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+                    </model-viewer>
+                    <!-- /Kuka -->
+
+                    <!-- Clearpath Dingo -->
+                    <p class="model-caption"><strong>Clearpath Dingo</strong></p>
+                    <model-viewer src="assets/dingo.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+                    </model-viewer>
+                    <!-- /Clearpath Dingo -->
+
+                    <!-- Inspire Robotics Hand -->
+                    <p class="model-caption"><strong>Inspire Robotics Hand</strong></p>
+                    <model-viewer src="assets/inspire_hands.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+                    </model-viewer>
+                    <!-- /Inspire Robotics Hand -->
+
+                    <!-- /UR10 -->
+                    <p class="model-caption"><strong>Universal Robot 10e</strong></p>
+                    <model-viewer src="assets/ur10.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+                    </model-viewer>
+                    <!-- /UR10 -->
+
+                    <!-- /Unitree B2 -->
+                    <p class="model-caption"><strong>Unitree B2</strong></p>
+                    <model-viewer src="assets/b2.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
+                        shadow-intensity="1" exposure="0.9" camera-orbit="45deg 65deg" auto-rotate-speed="2"
+                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
+                    </model-viewer>
+                    <!-- /Unitree B2 -->
+                </div>
+            </div>
         </div>
     </div>
 
