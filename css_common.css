@@ -484,9 +484,8 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     width: 1650px;
     background-color: var(--background-color);
     color: var(--light-white-color);
-    font-style: italic;
     text-align: center;
-    padding: 10px;
+    padding: 4px;
     box-sizing: border-box;
     margin: 0;
     position: relative;
