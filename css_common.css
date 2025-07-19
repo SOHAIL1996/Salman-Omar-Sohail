@@ -46,6 +46,7 @@
     box-sizing: border-box;
     justify-self: center;
 }
+
 /* --------------------------------------------- Background Media */
 @keyframes zoomInOut {
     0% {
@@ -295,6 +296,11 @@
 
 .project-item img:hover {
     transform: scale(1.1);
+}
+
+.project-container img{
+    position: relative; 
+    top: 30px;
 }
 
 /* ---------------------------------------------  Model Viewer */
