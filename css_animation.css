@@ -20,7 +20,8 @@
 .scrolling-images {
     display: flex;
     align-items: center;
-    background-color: hsl(217, 50%, 40%);
+    background-color: hsl(217, 50%, 40%); 
+    /* background-color: hsl(0, 0%, 86%, 1);  */
     overflow: hidden;
     width: 100%;
     height: 200px;
