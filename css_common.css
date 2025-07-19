@@ -462,7 +462,6 @@ body {
 
 /* --------------------------------------------- Experience Styling */
 .experience-meta {
-    font-family: 'Poppins', sans-serif;
     font-size: var(--project-font-size-small);
     color: var(--unique-color);
     line-height: 1.6;
