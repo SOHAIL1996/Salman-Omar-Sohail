@@ -59,7 +59,7 @@
 
 #robot-container {
     position: relative;
-    height: 100px;
+    height: 90px;
     overflow: hidden;
 }
 
@@ -71,11 +71,12 @@
 }
 
 #robot.move {
-    animation: moveRobot 6s linear infinite;
+    animation: moveRobot 12s linear infinite;
 }
 
 #robot img {
-    width: 100%;
+    /* width: 100px; */
+    height: 250px;
 }
 
 #robot-body {
