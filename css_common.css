@@ -42,7 +42,7 @@
 .main-panel {
     background-color: hsla(0, 0%, 90%, 0.98);
     padding: 20px;
-    max-width: 1400px;
+    max-width: 1200px;
     box-sizing: border-box;
     justify-self: center;
 }
@@ -249,7 +249,7 @@
 .gallery-item {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 80px;
+    gap: 20px;
     margin-left: 20px;
 }
 
