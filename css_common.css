@@ -483,18 +483,14 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 
 /* --------------------------------------------- Footer Styling */
 .footer {
-    font-family: 'Quicksand';
+    font-family: var(--project-font-family);
     width: 1400px;
     background-color: var(--background-color);
     color: var(--light-white-color);
     text-align: center;
-    padding: 4px;
-    box-sizing: border-box;
-    margin: 0;
-    position: relative;
+    padding: 6px;
     justify-self: center;
 }
-
 /* --------------------------------------------- 3D Model Hotspots */
 .hotspot {
     position: relative;
@@ -585,16 +581,4 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 
 .leaflet-container {
     background: transparent !important;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #experience-map {
-        height: 350px;
-    }
-
-    .map-legend ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
 }

@@ -45,7 +45,6 @@
 .scrolling-container img:hover {
     transform: scale(1.1);
 }
-
 /* --------------------------------------------- Robot Movement */
 @keyframes moveRobot {
     0% {
