@@ -470,7 +470,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 /* --------------------------------------------- Footer Styling */
 .footer {
     font-family: var(--project-font-family);
-    width: 1400px;
+    width: 100vw;
     background-color: white;
     color: var(--secondary-color);
     text-align: center;
