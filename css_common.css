@@ -602,7 +602,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 1400px) {
+/* @media (max-width: 1400px) {
     .page-navigation {
         flex-direction: column;
         gap: 10px;
@@ -611,9 +611,9 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     }
 
     .nav-button {
-        width: 45%; /* Full width on mobile */
+        width: 45%; 
         text-align: center;
-        display: block; /* Ensure it's block-level to take full width */
+        display: block; 
         padding: 10px 0;
     }
 
@@ -622,4 +622,4 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
         padding: 10px;
         width: 100%;
     }
-}
+} */
