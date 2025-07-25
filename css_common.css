@@ -576,18 +576,18 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 .page-navigation {
     max-width: 1400px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    margin: 40px auto; 
-    padding: 0 20px; 
+    margin: 40px auto;
+    padding: 0 20px;
     flex-wrap: wrap;
 }
 
 .nav-button {
-    width: 200px; 
+    width: 200px;
     background-color: white;
     color: var(--secondary-color);
-    padding: 10px 0; 
+    padding: 10px 0;
     border: 1px solid var(--secondary-color);
     border-radius: 10px;
     text-decoration: none;
@@ -602,24 +602,29 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 1600px) {
+@media (max-width: 768px) {
+    .global-overlay {
+        width: 768px;
+    }
+    
     .page-navigation {
         flex-direction: column;
         gap: 10px;
-        width: 1600px;
-        padding: 0; 
+        width: 768px;
+        padding: 0;
     }
 
     .nav-button {
-        width: 45%; 
+        width: 25%;
         text-align: center;
-        display: block; 
+        display: block;
         padding: 10px 0;
+        font-size: var(--project-font-size-mini);
     }
 
     .footer {
         font-size: var(--project-font-size-mini);
         padding: 10px;
-        width: 100%;
+        width: 768px;
     }
 }
