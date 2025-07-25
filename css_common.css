@@ -2,7 +2,7 @@
 :root {
     --text-color: hsl(0, 0%, 0%);
     --primary-color: hsl(100, 100%, 100%);
-    --secondary-color: hsl(217, 50%, 40%);
+    --secondary-color: hsla(217, 55%, 30%,1);
     --light-white-color: hsl(0, 0%, 97.6%);
     --background-color: hsl(217, 100%, 5%);
     --highlight-color: hsl(237, 59%, 18%);
@@ -31,7 +31,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 /* --------------------------------------------- Main Panel */
 .global-overlay {
     display: flex;
@@ -46,7 +45,6 @@
     box-sizing: border-box;
     justify-self: center;
 }
-
 /* --------------------------------------------- Background Media */
 @keyframes zoomInOut {
     0% {
@@ -81,7 +79,6 @@
     object-fit: cover;
     opacity: 1.0;
 }
-
 /* --------------------------------------------- Profile Image Hover Animation */
 .profile-image {
     width: 250px;
@@ -119,13 +116,10 @@
     height: 200px;
     border-radius: 10%;
 }
-
 /* --------------------------------------------- Side Left Navigation Bar */
 .side-nav {
     width: 250px;
-    background-color: hsl(0, 0%, 86%, 1);
-
-    font-weight: bold;
+    background-color: white;
     overflow-y: auto;
     height: 100vh;
     z-index: 1000;
@@ -161,7 +155,6 @@
     background-color: var(--secondary-color) !important;
     color: var(--light-white-color) !important;
 }
-
 /* --------------------------------------------- Vertical Dropdown Styling */
 .side-nav .dropdown-menu {
     display: none;
@@ -214,20 +207,18 @@
     width: 100%;
     border: none;
 }
-
 /* --------------------------------------------- Logo in sidebar */
 .logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: hsl(0, 0%, 86%, 1);
-    padding: 20px;
+    background-color: white;
+    padding: 10px;
 }
 
 .logo {
     height: 200px;
 }
-
 /* ---------------------------------------------  Experience Containers */
 .experience-container {
     display: flex;
