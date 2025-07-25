@@ -603,11 +603,11 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
     .page-navigation {
         flex-direction: column;
         gap: 10px;
-        width: 768px;
+        width: 1400px;
         padding: 0; 
     }
 
