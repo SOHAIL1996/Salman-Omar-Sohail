@@ -585,9 +585,9 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 .nav-button {
-    width: 160px; 
-    background-color: var(--secondary-color);
-    color: white;
+    width: 200px; 
+    background-color: white;
+    color: var(--secondary-color);
     padding: 10px 0; 
     border-radius: 10px;
     text-decoration: none;
@@ -599,7 +599,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 
 
 .nav-button:hover {
-    background-color: var(--secondary-color);
+    background-color: white;
 }
 
 /* Mobile responsiveness */
@@ -608,11 +608,11 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
         flex-direction: column;
         gap: 10px;
         width: 100%;
-        padding: 0; /* Remove side padding to allow full width */
+        padding: 0; 
     }
 
     .nav-button {
-        width: 100%; /* Full width on mobile */
+        width: 45%; /* Full width on mobile */
         background-color: var(--secondary-color); /* Ensure background color is applied */
         text-align: center;
         display: block; /* Ensure it's block-level to take full width */
