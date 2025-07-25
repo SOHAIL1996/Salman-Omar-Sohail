@@ -607,12 +607,16 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     .page-navigation {
         flex-direction: column;
         gap: 10px;
-        text-align: center;
+        width: 100%;
+        padding: 0; /* Remove side padding to allow full width */
     }
 
     .nav-button {
-        max-width: 1400px;
+        width: 100%; /* Full width on mobile */
+        background-color: var(--secondary-color); /* Ensure background color is applied */
         text-align: center;
+        display: block; /* Ensure it's block-level to take full width */
+        padding: 10px 0;
     }
 
     .footer {
