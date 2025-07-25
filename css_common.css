@@ -557,3 +557,41 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 .leaflet-container {
     background: transparent !important;
 }
+
+/* --------------------------------------------- Mobile View */
+@media (max-width: 768px) {
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background: white;
+        transition: left 0.3s ease-in-out;
+        z-index: 1100;
+    }
+
+    .side-nav.open {
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 1.2rem;
+        border-radius: 6px;
+        z-index: 1200;
+        cursor: pointer;
+    }
+}
+
+/* Hide the toggle on desktop */
+.menu-toggle {
+    display: none;
+}
