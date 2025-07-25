@@ -605,7 +605,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 @media screen and (max-width: 768px) {
     /* Footer */
     .footer {
-        width: 100%;
+        width: 100vw;
         font-size: var(--project-font-size-small);
         padding: 10px;
         box-sizing: border-box;
@@ -651,6 +651,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 @media screen and (max-width: 480px) {
     /* Footer */
     .footer {
+        width: 100vw;
         text-align: center;
         font-size: var(--project-font-size-mini);
     }
