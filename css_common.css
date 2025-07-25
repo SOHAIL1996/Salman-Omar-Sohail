@@ -597,17 +597,16 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     transition: background-color 0.3s ease;
 }
 
-
 .nav-button:hover {
     background-color: white;
 }
 
 /* Mobile responsiveness */
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
     .page-navigation {
         flex-direction: column;
         gap: 10px;
-        width: 1400px;
+        width: 1600px;
         padding: 0; 
     }
 
