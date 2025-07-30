@@ -26,6 +26,7 @@
 
     <!-- Model Viewer -->
     <script type="module" src="javascripts/model_scripts.js"></script>
+    <script type="text/javascript" src="javascripts/3d_assets_script.js" defer></script>
 </head>
 
 <body>
@@ -165,6 +166,39 @@
 
             <!-- Company Project Section -->
             <div class="text-spec">
+                <h1 class="section-heading">PROJECT CLOSEUP</h1>
+                <hr class="horizontal-line">
+                <h2 id="model-title"> ROBOTS</h2>
+                <!-- 3D Robot Assets -->
+                <section id="Assets">
+                    <!-- 3D Carousel Container -->
+                    <div style="position: relative; width: 100%; height: 750px;">
+                        <div id="carousel"
+                            style="display: flex; justify-content: center; align-items: center; gap: 1rem; height: 100%;">
+                            <!-- 3 visible model-viewers -->
+                            <model-viewer class="carousel-model" id="prev-model" camera-controls disable-zoom
+                                environment-image="neutral"
+                                style="width: 30%; height: 100%; opacity: 0.2; transform: scale(0.5); pointer-events: none;">
+                            </model-viewer>
+                            <model-viewer class="carousel-model" id="center-model" camera-controls auto-rotate
+                                shadow-intensity="1" exposure="0.3" auto-rotate-speed="2" environment-image="neutral"
+                                style="width: 30%; height: 100%; border-radius: 20px;">
+                            </model-viewer>
+                            <model-viewer class="carousel-model" id="next-model" camera-controls disable-zoom
+                                environment-image="neutral"
+                                style="width: 30%; height: 100%; opacity: 0.2; transform: scale(0.5); pointer-events: none;">
+                            </model-viewer>
+                        </div>
+                        <!-- Navigation Buttons -->
+                        <button onclick="prevModel()" class="carousel-nav-btn prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button onclick="nextModel()" class="carousel-nav-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </section>
+
                 <h1 class="section-heading">INDUSTRIAL PROJECT HIGHLIGHTS</h1>
                 <hr class="horizontal-line">
                 <br>
@@ -417,206 +451,21 @@
             </div>
             <br>
             <div class="text-spec">
-                <h1 class="section-heading">PROJECT CLOSEUP</h1>
-                <hr class="horizontal-line">
 
-                <br>
-                Takes a minute or so to load ... Click on the models to interact with them.
-                <br>
-                <br>
-
-                <div class="project-item">
-                    <!-- Agile X Hunter 2.0 -->
-                    <p class="model-caption"><strong>Agile X Hunter 2.0</strong></p>
-                    <model-viewer src="assets/agilex_hunter.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.3" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /Agile X Hunter 2.0 -->
-
-                    <!-- G1 -->
-                    <p class="model-caption"><strong>Unitree G1</strong></p>
-                    <model-viewer src="assets/g1.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-
-                        <div class="hotspot" slot="hotspot-sensor-01" data-position="-0.13 64.3 3.23"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Depth Camera: Realsense D435i </div>
-                        </div>
-
-                        <div class="hotspot" slot="hotspot-sensor-02" data-position="5.58 61.39 -0.38"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Lidar: Livox Mid 360</div>
-                        </div>
-
-                        <div class="hotspot" slot="hotspot-sensor-03" data-position="8.27 54.11 -0.01"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Access Hub: Nvidia Jetson Orin NX</div>
-                        </div>
-
-                        <div class="hotspot" slot="hotspot-sensor-04" data-position="5.32 35.74 9.69"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Battery: Lithum Ion</div>
-                        </div>
-
-                        <div class="hotspot" slot="hotspot-sensor-05" data-position="-15.24 1.84 -14.35"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Dexterous Hand: Inspire Hands</div>
-                        </div>
-                    </model-viewer>
-                    <!-- /G1 -->
-
-                    <!-- Ascento -->
-                    <p class="model-caption"><strong>Bi-pedal Ascento</strong></p>
-                    <model-viewer src="assets/ascento.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 90%; height: 600px; border-radius: 20px;">
-                        <!-- x z y -->
-                        <div class="hotspot" slot="hotspot-sensor-01" data-position="16.14 4.78 0.0"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Depth Camera: Realsense D435i </div>
-                        </div>
-
-                        <div class="hotspot" slot="hotspot-sensor-02" data-position="10.14 18.6 0.0"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Lidar: Livox Mid 360</div>
-                        </div>
-
-                        <div class="hotspot" slot="hotspot-sensor-03" data-position="-18.60 12.69 -0.17"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Access Hub: Nvidia Jetson Orin NX</div>
-                        </div>
-
-                        <div class="hotspot" slot="hotspot-sensor-04" data-position="-16.68 1.53 0.0"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">GPS: Fix position</div>
-                        </div>
-
-                        <div class="hotspot" slot="hotspot-sensor-05" data-position="17.56 7.02 9.14"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Hazard Lights</div>
-                        </div>
-
-                        <div class="hotspot" slot="hotspot-sensor-06" data-position="15.31 -6.80 10.17"
-                            data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Flood Lights</div>
-                        </div>
-
-                        <div class="hotspot" slot="hotspot-sensor-07" data-position="19.5 12.0 0.0" data-normal="0 0 1">
-                            <div class="hotspot-point"></div>
-                            <div class="hotspot-tooltip">Depth Camera: ZED2i</div>
-                        </div>
-                    </model-viewer>
-                    <!-- /Ascento -->
-
-                    <!-- Unitree GO2 -->
-                    <p class="model-caption"><strong>Unitree GO2</strong></p>
-                    <model-viewer src="assets/go2.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.9" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /Unitree GO2 -->
-
-                    <!-- Unitree H1 -->
-                    <p class="model-caption"><strong>Unitree H1</strong></p>
-                    <model-viewer src="assets/h1.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /Unitree H1 -->
-
-                    <!-- Mobile Manipulation Platform Husky -->
-                    <p class="model-caption"><strong>MMP Husky</strong></p>
-                    <model-viewer src="assets/mmp_husky.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.2" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /Mobile Manipulation Platform Husky -->
-
-                    <!-- Mobile Manipulation Platform Ridgeback -->
-                    <p class="model-caption"><strong>MMP Ridgeback</strong></p>
-                    <model-viewer src="assets/mmp_ridgeback.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.3" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /Mobile Manipulation Platform Ridgeback -->
-
-                    <!-- Boston Dynamics Spot -->
-                    <p class="model-caption"><strong>Boston Dynamics Spot</strong></p>
-                    <model-viewer src="assets/spot.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.6" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /Boston Dynamics Spot -->
-
-                    <!-- Kuka -->
-                    <p class="model-caption"><strong>Kuka</strong></p>
-                    <model-viewer src="assets/kuka.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /Kuka -->
-
-                    <!-- Clearpath Dingo -->
-                    <p class="model-caption"><strong>Clearpath Dingo</strong></p>
-                    <model-viewer src="assets/dingo.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /Clearpath Dingo -->
-
-                    <!-- Inspire Robotics Hand -->
-                    <p class="model-caption"><strong>Inspire Robotics Hand</strong></p>
-                    <model-viewer src="assets/inspire_hands.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /Inspire Robotics Hand -->
-
-                    <!-- /UR10 -->
-                    <p class="model-caption"><strong>Universal Robot 10e</strong></p>
-                    <model-viewer src="assets/ur10.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.5" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /UR10 -->
-
-                    <!-- /Unitree B2 -->
-                    <p class="model-caption"><strong>Unitree B2</strong></p>
-                    <model-viewer src="assets/b2.glb" alt="MYBOTSHOP ROBOT" auto-rotate camera-controls
-                        shadow-intensity="1" exposure="0.9" camera-orbit="45deg 65deg" auto-rotate-speed="2"
-                        environment-image="neutral" style="width: 100%; height: 600px; border-radius: 20px;">
-                    </model-viewer>
-                    <!-- /Unitree B2 -->
+                <!-- Page Navigation -->
+                <div class="page-navigation">
+                    <a class="nav-button prev" href="academia.html"><i class="fa-solid fa-arrow-left"
+                            style="padding-right: 15px;"></i> Academia</a>
+                    <a class="nav-button next" href="rubric.html">Rubric <i class="fa-solid fa-arrow-right"
+                            style="padding-left: 10px;"></i></a>
                 </div>
-            </div>
 
-            <!-- Page Navigation -->
-            <div class="page-navigation">
-                <a class="nav-button prev" href="academia.html"><i class="fa-solid fa-arrow-left"
-                        style="padding-right: 15px;"></i> Academia</a>
-                <a class="nav-button next" href="rubric.html">Rubric <i class="fa-solid fa-arrow-right"
-                        style="padding-left: 10px;"></i></a>
+                <!-- Footer -->
+                <footer class="footer">
+                    <p>&copy; Salman Omar Sohail 2025 <br> Desktop Version</p>
+                </footer>
             </div>
-
-            <!-- Footer -->
-            <footer class="footer">
-                <p>&copy; Salman Omar Sohail 2025 <br> Desktop Version</p>
-            </footer>
         </div>
-    </div>
 
 </body>
 

@@ -19,3 +19,10 @@
 
 1. [Automated Testing of Standard Conformance for Robots](https://github.com/SOHAIL1996/property_based_tester)
 2. [Property-Based Testing in Simulation for Verifying Robot Action Execution in Tabletop Manipulation](https://github.com/SOHAIL1996/Automatic_Test_Generation_For_Robot_Self_Examination)
+
+
+## Test Server
+
+```bash
+python -m http.server 8000
+```
