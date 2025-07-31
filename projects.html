@@ -168,36 +168,20 @@
             <div class="text-spec">
                 <h1 class="section-heading">PROJECT CLOSEUP</h1>
                 <hr class="horizontal-line">
-                <h2 id="model-title"> ROBOTS</h2>
-                <!-- 3D Robot Assets -->
-                <section id="Assets">
-                    <!-- 3D Carousel Container -->
-                    <div style="position: relative; width: 100%; height: 750px;">
-                        <div id="carousel"
-                            style="display: flex; justify-content: center; align-items: center; gap: 1rem; height: 100%;">
-                            <!-- 3 visible model-viewers -->
-                            <model-viewer class="carousel-model" id="prev-model" camera-controls disable-zoom
-                                environment-image="neutral"
-                                style="width: 30%; height: 100%; opacity: 0.2; transform: scale(0.5); pointer-events: none;">
-                            </model-viewer>
-                            <model-viewer class="carousel-model" id="center-model" camera-controls auto-rotate
-                                shadow-intensity="1" exposure="0.3" auto-rotate-speed="2" environment-image="neutral"
-                                style="width: 30%; height: 100%; border-radius: 20px;">
-                            </model-viewer>
-                            <model-viewer class="carousel-model" id="next-model" camera-controls disable-zoom
-                                environment-image="neutral"
-                                style="width: 30%; height: 100%; opacity: 0.2; transform: scale(0.5); pointer-events: none;">
-                            </model-viewer>
-                        </div>
-                        <!-- Navigation Buttons -->
-                        <button onclick="prevModel()" class="carousel-nav-btn prev">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button onclick="nextModel()" class="carousel-nav-btn next">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
+
+                <h2 id="model-title">Mobile Manipulation Platform Ridgeback UR5e</h2>
+
+                <div class="carousel-container">
+                    <div id="carousel">
                     </div>
-                </section>
+                    <!-- Navigation Buttons -->
+                    <button onclick="navigateCarousel('prev')" class="carousel-nav-btn prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="navigateCarousel('next')" class="carousel-nav-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
 
                 <h1 class="section-heading">INDUSTRIAL PROJECT HIGHLIGHTS</h1>
                 <hr class="horizontal-line">
