@@ -280,4 +280,4 @@ setInterval(() => {
     if (!isTransitioning) {
         navigateCarousel('next');
     }
-}, 8000);
+}, 10000);
