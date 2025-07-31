@@ -531,6 +531,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 /* ------------------------------------ Carousels */
+/* Carousel Container */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -604,7 +605,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 /* Title styling */
 #model-title {
     text-align: center;
-    color: var(--sa-primary-color);
+    color: var(--primary-color);
     font-weight: 400;
     font-size: 1.5em;
     text-transform: uppercase;
@@ -634,5 +635,41 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
         width: 40px;
         height: 40px;
         font-size: 14px;
+    }
+}
+
+#model-info {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#model-details {
+    margin-top: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.detail-item {
+    display: inline-block;
+    margin: 0 15px 10px 0;
+    font-size: 0.9em;
+}
+
+.detail-label {
+    color: var(--secondary-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-value {
+    color: var(--text-color);
+    font-weight: 300;
+    margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+    .detail-item {
+        display: block;
+        margin: 5px 0;
     }
 }

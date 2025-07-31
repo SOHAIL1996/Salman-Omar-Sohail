@@ -2,10 +2,47 @@ const carousel = document.getElementById("carousel");
 const titleDisplay = document.getElementById("model-title");
 
 const models = [
-    { src: "assets/agilex_hunter.glb", title: "Agile X Hunter 2.0" },
-    { src: "assets/mmp_ridgeback.glb", title: "Mobile Manipulation Platform Ridgeback UR5e" },
-    { src: "assets/mmp_husky.glb", title: "Mobile Manipulation Platform Husky" },
-    { src: "assets/ascento.glb", title: "Ascento Research" },
+    {
+        src: "assets/mmp_ridgeback.glb",
+        title: "Mobile Manipulation Platform Ridgeback UR5e",
+        robot_type: "Omniwheel",
+        robot_arm: "Universal Robots UR5e",
+        Lidar: "Ouster OS1-64",
+        depth_camera: "Intel Realsense D405",
+        rig: "MBS Vertical Lift",
+    },
+    {
+        src: "assets/mmp_husky.glb",
+        title: "Mobile Manipulation Platform Husky",
+        robot_type: "Differential Drive",
+        sensors: "Hokuyo UST-20LX",
+        depth_camera: "Intel Realsense D435i",
+
+    },
+    {
+        src: "assets/agilex_hunter.glb",
+        title: "Agile X Hunter 2.0",
+        robot_type: "4WD",
+        lidars: "Ouster OS1-64",
+        gps: "Drotek GPS",
+        depth_camera: "Intel Realsense D435i",
+    },
+    {
+        src: "assets/ascento.glb",
+        title: "Ascento Research",
+        robot_type: "Bipedal Wheeled",
+        sensors: "Livox Mid-360",
+        depth_cameras: "ZED2i | Intel Realsense D435i",
+        cameras: "4 Surveilence Cameras",
+    },
+    {
+        src: "assets/mbs_rovo2.glb",
+        title: "MYBOTSHOP ROVO2",
+        robot_type: "Tracked",
+        lidars: "Ouster OS1-64",
+        gps: "Emlid RS2",
+    },
+
     { src: "assets/g1.glb", title: "Unitree G1" },
     { src: "assets/go2.glb", title: "Unitree GO2" },
     { src: "assets/inspire_hands.glb", title: "Inspire Hands" },
@@ -15,8 +52,6 @@ const models = [
     { src: "assets/ur10.glb", title: "Universal Robot 10e" },
     { src: "assets/dingo.glb", title: "Clearpath Dingo" },
     { src: "assets/b2.glb", title: "Unitree B2" },
-    { src: "assets/mbs_rovo2.glb", title: "MYBOTSHOP ROVO2" },
-
 ];
 
 let currentIndex = 0;
@@ -188,9 +223,25 @@ function updateAllPositions() {
 
 function updateTitle() {
     titleDisplay.style.opacity = '0';
+    const detailsDisplay = document.getElementById('model-details');
+    detailsDisplay.style.opacity = '0';
+
     setTimeout(() => {
-        titleDisplay.textContent = models[currentIndex].title;
+        const currentModel = models[currentIndex];
+        titleDisplay.textContent = currentModel.title;
+
+        // Build details HTML
+        let detailsHTML = '';
+        Object.keys(currentModel).forEach(key => {
+            if (key !== 'src' && key !== 'title') {
+                const label = key.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
+                detailsHTML += `<span class="detail-item"><span class="detail-label">${label}:</span> <span class="detail-value">${currentModel[key]}</span></span>`;
+            }
+        });
+
+        detailsDisplay.innerHTML = detailsHTML;
         titleDisplay.style.opacity = '1';
+        detailsDisplay.style.opacity = '1';
     }, 150);
 }
 
