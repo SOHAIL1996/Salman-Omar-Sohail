@@ -33,7 +33,7 @@ const models = [
         robot_type: "Bipedal Wheeled",
         sensors: "Livox Mid-360",
         depth_cameras: "ZED2i | Intel Realsense D435i",
-        cameras: "4 Surveilence Cameras",
+        cameras: "4 Surveillance Cameras",
     },
     {
         src: "assets/mbs_rovo2.glb",
