@@ -10,7 +10,7 @@
 
     --project-font-size-huge: 1.5rem;
     --project-font-size-large: 1.125rem;
-    --project-font-size-normal: 1rem;
+    --project-font-size-normal: 1.0rem;
     --project-font-size-small: 0.85rem;
     --project-font-size-mini: 0.75rem;
 }
@@ -307,6 +307,7 @@ h6 {
     display: inline-block;
     border-radius: 8px;
     min-width: 250px;
+    text-transform: uppercase;
 }
 
 .card {
@@ -382,7 +383,6 @@ body {
 }
 
 .text-spec {
-    font-size: var(--project-font-size-normal);
     text-align: justify;
 }
 
