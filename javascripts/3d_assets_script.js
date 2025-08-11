@@ -43,7 +43,13 @@ const models = [
         gps: "Emlid RS2",
     },
 
-    { src: "assets/g1.glb", title: "Unitree G1" },
+    {
+        src: "assets/g1.glb",
+        title: "Unitree G1",
+        robot_type: "Humanoid",
+        lidars: "Livox Mid360",
+        depth_camera: "Intel Realsense D435i",
+    },
     { src: "assets/go2.glb", title: "Unitree GO2" },
     { src: "assets/inspire_hands.glb", title: "Inspire Hands" },
     { src: "assets/h1.glb", title: "Unitree H1" },
