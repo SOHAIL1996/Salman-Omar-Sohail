@@ -608,14 +608,6 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     backdrop-filter: blur(5px);
 }
 
-/* First map block (kept for original cascade) */
-#experience-map {
-    height: 500px;
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
 /* Legend */
 .map-legend {
     background: rgba(255, 255, 255, 0.1);
@@ -651,9 +643,8 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     background: transparent !important;
 }
 
-/* Second map block (intentionally last to preserve final look) */
 #experience-map {
-    height: 500px;
+    height: 100vh;
     width: 100%;
     border-radius: 20px;
     margin-bottom: 1rem;
