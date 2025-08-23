@@ -2,13 +2,18 @@
    THEME TOKENS
    ========================================================= */
 :root {
-    --primary-color: hsl(225, 70%, 45%);      /* royal blue */
-    --secondary-color: hsl(229, 50%, 31%);    /* indigo navy */
-    --text-color: hsl(228, 3%, 30%);         /* very dark blue-gray */
-    --background-color: hsl(220, 25%, 97%);   /* light gray-blue */
+    --primary-color: hsl(225, 70%, 45%);
+    /* royal blue */
+    --secondary-color: hsl(229, 50%, 31%);
+    /* indigo navy */
+    --text-color: hsl(228, 3%, 30%);
+    /* very dark blue-gray */
+    --background-color: hsl(220, 25%, 97%);
+    /* light gray-blue */
     --light-white-color: hsl(0, 0%, 100%);
     --hyperlink-inactive-color: hsl(225, 65%, 50%);
-    --hyperlink-active-color: hsl(210, 55%, 35%); /* cool blue */
+    --hyperlink-active-color: hsl(210, 55%, 35%);
+    /* cool blue */
 
     --project-font-size-huge: 1.5rem;
     --project-font-size-large: 1.125rem;
@@ -21,6 +26,7 @@
    BASE TYPOGRAPHY & GLOBALS
    ========================================================= */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&display=swap');
+
 body {
     font-family: "Outfit", sans-serif;
     font-weight: 300;
@@ -81,8 +87,13 @@ a:active {
 }
 
 /* Utility text */
-.text-center { text-align: center; }
-.text-spec { text-align: justify; }
+.text-center {
+    text-align: center;
+}
+
+.text-spec {
+    text-align: justify;
+}
 
 /* Titles with GIF fill */
 .gif-title {
@@ -171,9 +182,17 @@ a:active {
    BACKGROUND MEDIA (Video/GIF Cover)
    ========================================================= */
 @keyframes zoomInOut {
-    0%   { transform: translate(-50%, -50%) scale(1); }
-    50%  { transform: translate(-50%, -50%) scale(1.1); }
-    100% { transform: translate(-50%, -50%) scale(1); }
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 .background-media {
@@ -200,10 +219,21 @@ a:active {
    SCROLLING IMAGES
    ========================================================= */
 @keyframes scrollImages {
-    0%   { transform: translateX(0); }
-    45%  { transform: translateX(-50%); }
-    90%  { transform: translateX(-55%); }
-    100% { transform: translateX(0%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    45% {
+        transform: translateX(-50%);
+    }
+
+    90% {
+        transform: translateX(-55%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 .scrolling-images {
@@ -235,12 +265,18 @@ a:active {
 .scrolling-container img:hover {
     transform: scale(1.1);
 }
+
 /* =========================================================
    ROBOT MOVEMENT
    ========================================================= */
 @keyframes moveRobot {
-    0%   { transform: translateX(-50px); }
-    100% { transform: translateX(110vw); }
+    0% {
+        transform: translateX(-50px);
+    }
+
+    100% {
+        transform: translateX(110vw);
+    }
 }
 
 #robot-container {
@@ -314,7 +350,9 @@ a:active {
     z-index: 10;
 }
 
-.side-nav .dropdown-menu li { white-space: nowrap; }
+.side-nav .dropdown-menu li {
+    white-space: nowrap;
+}
 
 .side-nav .dropdown-menu a {
     font-size: var(--project-font-size-small);
@@ -327,7 +365,9 @@ a:active {
     color: var(--hyperlink-active-color) !important;
 }
 
-.side-nav li:hover .dropdown-menu { display: block; }
+.side-nav li:hover .dropdown-menu {
+    display: block;
+}
 
 .side-nav .dropdown-toggle::after {
     content: "▼";
@@ -350,6 +390,15 @@ a:active {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: var(--project-font-size-small);
+    color: gray;
+    font-style: italic;
+}
+
+.build-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: var(--project-font-size-mini);
     color: gray;
     font-style: italic;
@@ -358,8 +407,46 @@ a:active {
 .version-divider {
     margin-top: 10px;
     border: none;
-    border-top: 1px solid #ccc; 
+    border-top: 1px solid #ccc;
     width: 80%;
+}
+
+/* =========================================================
+   SEARCH BAR
+   ========================================================= */
+.search-wrap {
+    position: relative;
+}
+
+#navSearch {
+    width: 90%;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    padding: 10px 12px;
+    outline: none;
+}
+
+#navSearch::placeholder {
+    color: var(--muted);
+}
+
+#navSearch:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent);
+}
+
+.search-count {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 6px;
+    border-radius: 10px;
+    background: var(--bg-elev);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    font-size: 11px;
 }
 
 /* =========================================================
@@ -417,7 +504,9 @@ a:active {
     top: 10px;
 }
 
-.experience-container img:hover { transform: scale(1.1); }
+.experience-container img:hover {
+    transform: scale(1.1);
+}
 
 .experience-meta {
     font-size: var(--project-font-size-small);
@@ -452,7 +541,9 @@ a:active {
     justify-items: center;
 }
 
-.gallery-item img:hover { transform: scale(1.1); }
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
 
 .gallery-item figcaption {
     margin-top: 20px;
@@ -482,7 +573,9 @@ a:active {
     transition: transform 0.3s ease;
 }
 
-.project-item img:hover { transform: scale(1.1); }
+.project-item img:hover {
+    transform: scale(1.1);
+}
 
 .project-container img {
     position: relative;
@@ -492,7 +585,7 @@ a:active {
 /* =========================================================
    TABLES
    ========================================================= */
-tr:has(td[rowspan]) + tr:not(:has(td[rowspan])) td {
+tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     border-top: 1px solid hsl(0, 0%, 50%, 0.2);
 }
 
@@ -559,7 +652,9 @@ tr:has(td[rowspan]) + tr:not(:has(td[rowspan])) td {
     gap: 0.5rem;
 }
 
-.leaflet-container { background: transparent !important; }
+.leaflet-container {
+    background: transparent !important;
+}
 
 /* Second map block (intentionally last to preserve final look) */
 #experience-map {
@@ -598,7 +693,9 @@ tr:has(td[rowspan]) + tr:not(:has(td[rowspan])) td {
     transition: background-color 0.3s ease;
 }
 
-.nav-button:hover { background-color: white; }
+.nav-button:hover {
+    background-color: white;
+}
 
 /* =========================================================
    CAROUSEL

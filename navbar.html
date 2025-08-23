@@ -1,18 +1,20 @@
 <!-- navbar.html -->
 <nav class="side-nav" id="sideNav">
     <ul>
-        <div class="logo-container" style="text-align: center; padding: 10px;">
+        <span class="logo-container" style="text-align: center;">
             <a href="https://www.linkedin.com/in/salman-omar-sohail/" target="_blank">
                 <img src="media/logos/logo.webp" alt="Logo 1" class="logo">
             </a>
-        </div>
-        <p class="version">
-            v2.7
-        </p>
+        </span>
+        <span class="version"> v2.9 </span>
+        <span class="build-date"><span id="buildDate"></span></span>
         <hr class="version-divider">
-
-        <li style="padding-top: 30px;"><a href="index.html"><i class="fa-solid fa-home"
-                    style="padding-right: 15px;"></i> Home</a></li>
+        <li style="padding:15px;">
+            <input id="navSearch" type="text" placeholder="Search…" inputmode="search" />
+            <small id="searchCount" class="search-count" hidden></small>
+        </li>
+        <!-- <li><a href="#" id="themeToggle"><i class="fa-solid fa-moon" style="padding-right:15px;"></i> Theme</a></li> -->
+        <li><a href="index.html"><i class="fa-solid fa-home" style="padding-right: 15px;"></i> Home</a></li>
         <li><a href="experience.html"><i class="fa-solid fa-briefcase" style="padding-right: 15px;"></i> Experience</a>
         </li>
         <li><a href="academia.html"><i class="fa-solid fa-graduation-cap" style="padding-right: 15px;"></i> Academia</a>
