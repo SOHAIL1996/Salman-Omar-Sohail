@@ -2,18 +2,13 @@
    THEME TOKENS
    ========================================================= */
 :root {
-    --primary-color: hsl(225, 70%, 45%);
-    /* royal blue */
+    --primary-color: hsl(225, 44%, 40%);
     --secondary-color: hsl(229, 50%, 31%);
-    /* indigo navy */
     --text-color: hsl(228, 3%, 30%);
-    /* very dark blue-gray */
     --background-color: hsl(220, 25%, 97%);
-    /* light gray-blue */
     --light-white-color: hsl(0, 0%, 100%);
     --hyperlink-inactive-color: hsl(225, 65%, 50%);
     --hyperlink-active-color: hsl(210, 55%, 35%);
-    /* cool blue */
 
     --project-font-size-huge: 1.5rem;
     --project-font-size-large: 1.125rem;
