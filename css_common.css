@@ -2,13 +2,13 @@
    THEME TOKENS
    ========================================================= */
 :root {
-    --primary-color: hsl(217, 42%, 49%);
-    --secondary-color: hsl(217, 65%, 25%);
-    --text-color: hsl(237, 30%, 12%);
-    --background-color: hsl(220, 40%, 6%);
-    --light-white-color: hsl(0, 0%, 98%);
-    --hyperlink-inactive-color: hsl(217, 70%, 60%);
-    --hyperlink-active-color: hsl(145, 60%, 30%);
+    --primary-color: hsl(201, 68%, 46%);      /* strong blue */
+    --secondary-color: hsl(210, 40%, 25%);    /* deep navy */
+    --text-color: hsl(210, 15%, 15%);         /* near-black text */
+    --background-color: hsl(210, 20%, 97%);   /* soft light gray */
+    --light-white-color: hsl(0, 0%, 100%);
+    --hyperlink-inactive-color: hsl(210, 60%, 50%);
+    --hyperlink-active-color: hsl(145, 55%, 32%); /* teal-green accent */
 
     --project-font-size-huge: 1.5rem;
     --project-font-size-large: 1.125rem;
@@ -353,14 +353,25 @@ a:active {
 
 /* Logo in sidebar */
 .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    padding: 10px;
+    text-align: center;
 }
 
-.logo { height: 200px; }
+.logo-container .logo {
+    height: 200px;
+}
+
+.logo-container .version {
+    font-size: var(--project-font-size-mini);
+    color: gray;
+    font-style: italic;
+}
+
+.logo-container .logo-divider {
+    margin-top: 10px;
+    border: none;
+    border-top: 1px solid #ccc; 
+    width: 80%;
+}
 
 /* =========================================================
    PROFILE IMAGE

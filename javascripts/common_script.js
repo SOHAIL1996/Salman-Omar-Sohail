@@ -5,20 +5,11 @@ Software License Agreement (BSD)
 */
 
 // Dynamically load the navbar 
-const nav = document.querySelector('.navbar');
-const navBarUrl = "navbar.html";
-fetch(navBarUrl)
-    .then(response => response.text())
-    .then(data => {
-        nav.innerHTML = data;
-    });
-
-// Dynamically load the footer
-// const footer_ = document.querySelector('.footer_');
-// const footerBarUrl = "../static/common/footer.html";
-// fetch(footerBarUrl)
-//     .then(response => response.text())
-//     .then(data => {
-//         footer_.innerHTML = data;
-//     });
-
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("../navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+});
