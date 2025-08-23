@@ -353,20 +353,25 @@ a:active {
 
 /* Logo in sidebar */
 .logo-container {
-    text-align: center;
+    display: fixed;
+    align-items: center;
+    justify-content: center;
 }
 
-.logo-container .logo {
+.logo {
     height: 200px;
 }
 
-.logo-container .version {
+.version {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: var(--project-font-size-mini);
     color: gray;
     font-style: italic;
 }
 
-.logo-container .logo-divider {
+.version-divider {
     margin-top: 10px;
     border: none;
     border-top: 1px solid #ccc; 

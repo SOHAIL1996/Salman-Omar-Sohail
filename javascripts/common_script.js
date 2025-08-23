@@ -12,4 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("navbar").innerHTML = data;
         })
         .catch(error => console.error("Error loading navbar:", error));
+    
+    fetch("scrolling_images.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("scrollingImages").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading scrolling images:", error));
 });
