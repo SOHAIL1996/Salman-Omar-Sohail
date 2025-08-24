@@ -22,7 +22,7 @@ const models = [
     {
         src: "assets/agilex_hunter.glb",
         title: "Agile X Hunter 2.0",
-        robot_type: "4WD",
+        robot_type: "2WD",
         lidars: "Ouster OS1-64",
         gps: "Drotek GPS",
         depth_camera: "Intel Realsense D435i",
