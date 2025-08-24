@@ -34,7 +34,6 @@ const SKILLS = [
     { area: "Software", group: "Web", title: "JavaScript", level: 4, tags: ["Back-end"] },
 
     // --- Hardware ---
-    { area: "Hardware", group: "Integration", title: "R. Software Integration", level: 5, tags: ["Drivers", "Middlewares"] },
     { area: "Hardware", group: "Integration", title: "R. Hardware Integration", level: 5, tags: ["Sensors", "Actuators"] },
     { area: "Hardware", group: "Integration", title: "R. Electrical Integration", level: 4, tags: ["Wiring", "Power"] },
 
