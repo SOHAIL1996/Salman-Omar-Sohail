@@ -861,7 +861,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 .skill-card.hardware {
-    background: #0b1020; 
+    background: #0b1020;
 }
 
 .skill-head {
@@ -972,6 +972,44 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 @media (prefers-reduced-motion: reduce) {
     .dot.filled::after {
         animation: none;
+    }
+}
+
+/* =========================================================
+   Troll Interaction
+   ========================================================= */
+.sprite {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    background-image:  url("media/robots/uh1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    transition: none;
+    pointer-events: none;
+}
+
+.giggle {
+    position: fixed;
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: 1001;
+    animation: giggleFloat 1s ease-out forwards;
+}
+
+@keyframes giggleFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(0.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50px) scale(1.2);
     }
 }
 

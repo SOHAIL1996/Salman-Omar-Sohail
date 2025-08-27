@@ -6,9 +6,11 @@ Software License Agreement (BSD)
 (function () {
   // ------- Utilities -------
   const fmtDate = (d) =>
-    d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) +
-    " " +
-    d.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit" });
+    d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+    // +
+    // " " +
+    // d.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit" })
+    ;
 
   // Unwrap all <mark data-nav-search>
   function clearHighlights(container = document.body) {
