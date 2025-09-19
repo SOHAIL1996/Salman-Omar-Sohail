@@ -3,6 +3,15 @@ const titleDisplay = document.getElementById("model-title");
 
 const models = [
     {
+        src: "assets/h1_2.glb",
+        title: "Unitree H1-2",
+        robot_type: "Bi-Pedal",
+        Software: "ROS2 Humble",
+        Lidar: "Ouster OS1-64",
+        Depth_Camera_i: "Intel Realsense D435i",
+        Depth_Camera_ii: "ZED2i",
+    },
+    {
         src: "assets/mmp_ridgeback.glb",
         title: "Mobile Manipulation Platform Ridgeback UR5e",
         robot_type: "Omniwheel",
@@ -41,24 +50,7 @@ const models = [
         robot_type: "Tracked",
         lidars: "Ouster OS1-64",
         gps: "Emlid RS2",
-    },
-
-    {
-        src: "assets/g1.glb",
-        title: "Unitree G1",
-        robot_type: "Humanoid",
-        lidars: "Livox Mid360",
-        depth_camera: "Intel Realsense D435i",
     },    
-    {
-        src: "assets/h1_2.glb",
-        title: "Unitree H1-2",
-        robot_type: "Bi-Pedal",
-        Software: "ROS2 Humble",
-        Lidar: "Ouster OS1-64",
-        Depth_Camera_i: "Intel Realsense D435i",
-        Depth_Camera_ii: "ZED2i",
-    },
     {
         src: "assets/go2.glb",
         title: "Unitree GO2",
@@ -96,8 +88,8 @@ const models = [
     { src: "assets/inspire_hands.glb", title: "Inspire Hands" },
     { src: "assets/spot.glb", title: "Boston Dynamics Spot" },
     { src: "assets/kuka.glb", title: "Kuka Robotic Arm" },
-    { src: "assets/ur10.glb", title: "Universal Robot 10e" },
-    { src: "assets/dingo.glb", title: "Clearpath Dingo" },
+    // { src: "assets/ur10.glb", title: "Universal Robot 10e" },
+    // { src: "assets/dingo.glb", title: "Clearpath Dingo" },
 ];
 
 let currentIndex = 0;
