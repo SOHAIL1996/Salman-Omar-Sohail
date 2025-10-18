@@ -29,6 +29,17 @@ const models = [
 
     },
     {
+        src: "assets/rovo3.glb",
+        title: "MBS ROVO3",
+        robot_type: "Tracked",
+    },
+    {
+        src: "assets/a300.glb",
+        title: "Clearpath Husky A300",
+        robot_type: "Differential Drive",
+        sensors: "Hokuyo UST-20LX",
+    },
+    {
         src: "assets/agilex_hunter.glb",
         title: "Agile X Hunter 2.0",
         robot_type: "2WD",
@@ -88,6 +99,7 @@ const models = [
     { src: "assets/inspire_hands.glb", title: "Inspire Hands" },
     { src: "assets/spot.glb", title: "Boston Dynamics Spot" },
     { src: "assets/kuka.glb", title: "Kuka Robotic Arm" },
+    
     // { src: "assets/ur10.glb", title: "Universal Robot 10e" },
     // { src: "assets/dingo.glb", title: "Clearpath Dingo" },
 ];
