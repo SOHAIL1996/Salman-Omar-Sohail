@@ -21,7 +21,7 @@ const models = [
         rig: "MBS Vertical Lift",
     },
     {
-        src: "assets/mmp_husky.glb",
+        src: "assets/a200.glb",
         title: "Mobile Manipulation Platform Husky",
         robot_type: "Differential Drive",
         sensors: "Hokuyo UST-20LX",
