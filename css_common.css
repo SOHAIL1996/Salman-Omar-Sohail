@@ -325,7 +325,15 @@ a:active {
 .side-nav li {
     position: relative;
     z-index: 1000;
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+    transition: background 0.3s ease, border-left 0.3s ease;
 }
+
+.side-nav li:hover {
+    background: hsl(0, 0%, 98%);
+    border-left: 4px solid var(--primary-color);
+}
+
 
 .side-nav a {
     display: block;
@@ -334,7 +342,45 @@ a:active {
     font-size: var(--project-font-size-large);
     color: var(--secondary-color);
     text-decoration: none;
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* hover highlight bar */
+.side-nav a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 60%;
+    background: var(--primary-color);
+    opacity: 0.3;
+    transition: width 0.3s ease;
+}
+
+.side-nav a:hover::before {
+    width: 4px;
+}
+
+.side-nav a:hover {
+    padding-left: 28px;
+    color: var(--primary-color);
+}
+
+/* ACTIVE PAGE HIGHLIGHT */
+.side-nav a.active {
+    background: hsl(0, 0%, 98%);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 28px;
+    color: var(--primary-color);
+    font-weight: 900; /* stronger, like reference */
+    box-shadow: inset 0 0 10px rgba(52, 73, 94, 0.15); /* soft inner glow */
+}
+
+.side-nav a.active::before {
+    width: 4px;
 }
 
 .side-nav .dropdown-menu {
@@ -357,7 +403,9 @@ a:active {
 }
 
 .side-nav .dropdown-menu a:hover {
-    color: var(--hyperlink-active-color) !important;
+    padding-left: 40px;
+    color: var(--primary-color) !important;
+    background: hsl(0, 0%, 97%);
 }
 
 .side-nav li:hover .dropdown-menu {
