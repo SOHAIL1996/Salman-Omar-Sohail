@@ -3,6 +3,17 @@ const titleDisplay = document.getElementById("model-title");
 
 const models = [
     {
+        src: "assets/mmp_ridgeback_dualxarm.glb",
+        title: "Mobile Manipulation Platform Dual xARM850",
+        robot_type: "Omniwheel",
+        robot_arm: "Dual Ufactory xARM850",
+        Lidar: "Ouster OS1-64 | x2 Hokuyo UST-10LX",
+        depth_camera: "x2 Intel Realsense D405 | ZED2i",
+        rig: "MBS Rig System x3",
+        gripper: "x2 Robotiq 2f-140",
+        Software: "ROS2 Humble",
+    },
+    {
         src: "assets/h1_2.glb",
         title: "Unitree H1-2",
         robot_type: "Bi-Pedal",
@@ -12,13 +23,15 @@ const models = [
         Depth_Camera_ii: "ZED2i",
     },
     {
-        src: "assets/mmp_ridgeback.glb",
+        src: "assets/mmp_ridgeback_ur5e.glb",
         title: "Mobile Manipulation Platform Ridgeback UR5e",
         robot_type: "Omniwheel",
         robot_arm: "Universal Robots UR5e",
-        Lidar: "Ouster OS1-64",
+        Lidar: "Ouster OS1-64 | x2 Hokuyo UST-10LX",
         depth_camera: "Intel Realsense D405",
         rig: "MBS Vertical Lift",
+        gripper: "Robotiq 2f-140",
+        Software: "ROS Noetic | ROS2 Humble",
     },
     {
         src: "assets/a200.glb",
