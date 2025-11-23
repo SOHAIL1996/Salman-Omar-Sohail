@@ -26,6 +26,17 @@
     <!-- Javascript -->
     <script src="javascripts/common_script.js"></script>
     <script src="javascripts/circuitry_background.js" defer></script>
+
+    <!-- PDF -->
+    <script src="javascripts/pdf/pdf.min.js" defer></script>
+    <script defer>
+        window.addEventListener('DOMContentLoaded', function () {
+            if (window.pdfjsLib) {
+                pdfjsLib.GlobalWorkerOptions.workerSrc = "javascripts/pdf/pdf.worker.min.js";
+            }
+        });
+    </script>
+    <script src="javascripts/pdf/pdf_viewer.js" defer></script>
 </head>
 
 <body>
@@ -79,7 +90,35 @@
                     <a href="https://ieeexplore.ieee.org/document/9568837">IEEE, EUROPEAN CONFERENCE ON MOBILE ROBOTS
                         (ECMR),
                         2021 (Germany, Bonn)</a>
-                </div><br>
+                </div>
+
+                <!-- PDF Viewer -->
+                <section class="pdfv" id="pdfv">
+                    <div class="pdfv-controls">
+                        <label class="pdfv-label" for="pdfv-select">Publications</label>
+                        <select id="pdfv-select" class="pdfv-select" aria-label="Choose a PDF"></select>
+
+                        <label class="pdfv-label" for="pdfv-zoom">Zoom</label>
+                        <select id="pdfv-zoom" class="pdfv-select" aria-label="Zoom">
+                            <option value="fit-page" selected>Fit page</option>
+                            <option value="fit-width">Fit width</option>
+                            <option value="1.50">150%</option>
+                            <option value="1.25">125%</option>
+                            <option value="1.00">100%</option>
+                            <option value="0.75">75%</option>
+                        </select>
+
+                        <a id="pdfv-download" class="pdfv-btn" href="#" download title="Download this PDF">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+
+                    <div class="pdfv-viewport">
+                        <div id="pdfv-pages" class="pdfv-pages" aria-live="polite"></div>
+                    </div>
+                </section>
+                <!-- End PDF Viewer -->
+
             </div>
 
             <!-- Academic Section -->
@@ -217,4 +256,5 @@
         </div>
     </div>
 </body>
+
 </html>

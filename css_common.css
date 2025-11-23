@@ -1080,6 +1080,79 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 /* =========================================================
+   PDF VIEWER
+   ========================================================= */
+.pdfv-controls {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    width: 100%;
+}
+
+.pdfv-label {
+    color: var(--sa-accent-color);
+    font-weight: 600;
+}
+
+.pdfv-select {
+    min-width: 0;
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    border: 1px solid #d0d5dd;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.pdfv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #d0d5dd;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+    cursor: pointer;
+    text-decoration: none;
+    font: inherit;
+}
+
+.pdfv-btn:hover {
+    background: #f1f5f9;
+}
+
+.pdfv-viewport {
+    height: clamp(420px, 72vh, 900px);
+    overflow: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: transparent;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    min-height: 0;
+    --pdf-max-w: 950px;
+}
+
+.pdfv-pages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    background: transparent;
+    align-items: center;
+    max-width: var(--pdf-max-w);
+    margin-inline: auto;
+}
+
+.pdfv-page {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    background: transparent;
+}
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width: 768px) {
