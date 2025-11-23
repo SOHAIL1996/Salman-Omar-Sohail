@@ -45,6 +45,8 @@ const models = [
         src: "assets/rovo3.glb",
         title: "MBS ROVO3",
         robot_type: "Tracked",
+        kit: "Autonomous Mobile Robot Kit",
+        Software: "ROS2 Jazzy",
     },
     {
         src: "assets/a300.glb",
