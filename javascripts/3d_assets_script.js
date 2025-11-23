@@ -34,7 +34,7 @@ const models = [
         Software: "ROS Noetic | ROS2 Humble",
     },
     {
-        src: "assets/a200.glb",
+        src: "assets/mmp_husky.glb",
         title: "Mobile Manipulation Platform Husky",
         robot_type: "Differential Drive",
         sensors: "Hokuyo UST-20LX",
