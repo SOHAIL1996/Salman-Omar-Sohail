@@ -2,13 +2,25 @@
    THEME TOKENS
    ========================================================= */
 :root {
-    --primary-color: hsl(225, 44%, 40%);
-    --secondary-color: hsl(229, 50%, 31%);
-    --text-color: hsl(228, 3%, 30%);
-    --background-color: hsl(220, 25%, 97%);
+    /* Light theme (default) - Professional vibrant blue */
+    --primary-color: hsl(217, 91%, 50%);
+    --secondary-color: hsl(221, 83%, 40%);
+    --text-color: hsl(222, 47%, 20%);
+    --background-color: hsl(210, 40%, 98%);
+    --panel-color: rgba(255, 255, 255, 0.98);
+    --card-color: hsl(0, 0%, 100%);
+    --border-color: hsl(214, 32%, 85%);
     --light-white-color: hsl(0, 0%, 100%);
-    --hyperlink-inactive-color: hsl(225, 65%, 50%);
-    --hyperlink-active-color: hsl(210, 55%, 35%);
+    --hyperlink-inactive-color: hsl(217, 91%, 50%);
+    --hyperlink-active-color: hsl(221, 83%, 35%);
+    --shadow-color: rgba(0, 0, 0, 0.12);
+    --table-header-bg: hsl(210, 40%, 96%);
+    --table-border: hsl(214, 32%, 85%);
+
+    /* Title text styling for light mode */
+    --title-stroke: none;
+    --title-filter: none;
+    --logo-filter: none;
 
     --project-font-size-huge: 1.5rem;
     --project-font-size-large: 1.125rem;
@@ -16,12 +28,41 @@
     --project-font-size-small: 0.85rem;
     --project-font-size-mini: 0.75rem;
 
-    --circuit-color-base: hsla(251, 52%, 43%, 0.15);
-    --circuit-color-pulse: hsl(225, 44%, 40%);
-    --circuit-color-trail: hsl(230, 52%, 43%);
-    --circuit-color-grid: hsla(238, 52%, 43%, 0.02);
-    --circuit-color-led: hsl(210, 52%, 43%);
-    --circuit-color-cpu-glow: hsla(260, 52%, 43%, 0.2);
+    --circuit-color-base: hsla(217, 91%, 50%, 0.12);
+    --circuit-color-pulse: hsl(217, 91%, 50%);
+    --circuit-color-trail: hsl(221, 83%, 45%);
+    --circuit-color-grid: hsla(217, 91%, 50%, 0.03);
+    --circuit-color-led: hsl(199, 89%, 48%);
+    --circuit-color-cpu-glow: hsla(217, 91%, 50%, 0.2);
+}
+
+/* Dark theme - Professional vibrant blue */
+[data-theme="dark"] {
+    --primary-color: hsl(217, 91%, 60%);
+    --secondary-color: hsl(213, 94%, 68%);
+    --text-color: hsl(210, 20%, 90%);
+    --background-color: hsl(222, 47%, 11%);
+    --panel-color: hsla(219, 39%, 13%, 0.9);
+    --card-color: hsl(220, 35%, 16%);
+    --border-color: hsl(215, 30%, 25%);
+    --light-white-color: hsl(220, 15%, 20%);
+    --hyperlink-inactive-color: hsl(217, 91%, 60%);
+    --hyperlink-active-color: hsl(199, 89%, 70%);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --table-header-bg: hsl(220, 35%, 18%);
+    --table-border: hsl(215, 30%, 25%);
+
+    /* Title text styling for dark mode */
+    --title-stroke: 1px rgba(255, 255, 255, 0.1);
+    --title-filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+    --logo-filter: invert(1) brightness(1.1);
+
+    --circuit-color-base: hsla(217, 91%, 60%, 0.12);
+    --circuit-color-pulse: hsl(217, 91%, 60%);
+    --circuit-color-trail: hsl(213, 94%, 55%);
+    --circuit-color-grid: hsla(217, 91%, 60%, 0.04);
+    --circuit-color-led: hsl(199, 89%, 60%);
+    --circuit-color-cpu-glow: hsla(217, 91%, 60%, 0.25);
 }
 
 /* =========================================================
@@ -76,13 +117,14 @@ h6 {
     font-weight: 400;
     color: var(--primary-color);
     padding: 5px;
-    border: 1px solid hsl(0, 0%, 50%, 0.2);
+    border: 1px solid var(--border-color);
     border-left: 4px solid var(--primary-color);
     display: inline-block;
     border-radius: 8px;
     min-width: 250px;
     text-indent: 10px;
     text-transform: uppercase;
+    background-color: var(--card-color);
 }
 
 a {
@@ -123,6 +165,9 @@ a:active {
     padding: 5px;
     margin: 0;
     margin-left: 10px;
+    -webkit-text-stroke: var(--title-stroke);
+    text-stroke: var(--title-stroke);
+    filter: var(--title-filter);
 }
 
 .mini-title {
@@ -140,28 +185,32 @@ a:active {
     padding: 0;
     margin: 0;
     margin-left: 10px;
+    -webkit-text-stroke: var(--title-stroke);
+    text-stroke: var(--title-stroke);
+    filter: var(--title-filter);
 }
 
 .horizontal-line {
     border: none;
-    border-top: 2px solid hsl(0, 0%, 50%, 0.2);
+    border-top: 2px solid var(--border-color);
     margin-top: 0px;
 }
 
 .horizontal-line-dashed {
     border: none;
-    border-top: 2px dashed hsl(0, 0%, 50%, 0.2);
+    border-top: 2px dashed var(--border-color);
     margin-top: 0px;
 }
 
 .card {
-    background-color: white;
+    background-color: var(--card-color);
     border-radius: 20px;
     width: 250px;
     padding-top: 20px;
     padding-bottom: 20px;
-    box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 1px 0px;
+    box-shadow: var(--shadow-color) 1px 1px 5px 0px;
     justify-items: center;
+    border: 1px solid var(--border-color);
 }
 
 /* =========================================================
@@ -175,11 +224,13 @@ a:active {
 }
 
 .main-panel {
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: var(--panel-color);
     padding: 20px;
     max-width: 1200px;
     box-sizing: border-box;
     justify-self: center;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
 }
 
 .header-grid {
@@ -323,14 +374,15 @@ a:active {
     height: 100vh;
     position: sticky;
     top: 0;
-    background: white;
+    background: var(--panel-color);
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 1000;
     border: none;
-    box-shadow: 3px 0 10px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 0 10px -5px var(--shadow-color);
     display: flex;
     flex-direction: column;
+    border-right: 1px solid var(--border-color);
 }
 
 .side-nav ul {
@@ -344,12 +396,12 @@ a:active {
 .side-nav li {
     position: relative;
     z-index: 1000;
-    border-bottom: 1px solid hsl(0, 0%, 90%);
+    border-bottom: 1px solid var(--border-color);
     transition: background 0.3s ease, border-left 0.3s ease;
 }
 
 .side-nav li:hover {
-    background: hsl(0, 0%, 98%);
+    background: var(--card-color);
     border-left: 4px solid var(--primary-color);
 }
 
@@ -390,12 +442,12 @@ a:active {
 
 /* ACTIVE PAGE HIGHLIGHT */
 .side-nav a.active {
-    background: hsl(0, 0%, 98%);
+    background: var(--card-color);
     border-left: 4px solid var(--primary-color);
     padding-left: 28px;
     color: var(--primary-color);
     font-weight: 900;
-    box-shadow: inset 0 0 10px rgba(52, 73, 94, 0.15);
+    box-shadow: inset 0 0 10px var(--shadow-color);
 }
 
 .side-nav a.active::before {
@@ -424,7 +476,7 @@ a:active {
 .side-nav .dropdown-menu a:hover {
     padding-left: 40px;
     color: var(--primary-color) !important;
-    background: hsl(0, 0%, 97%);
+    background: var(--card-color);
 }
 
 .side-nav li:hover .dropdown-menu {
@@ -446,6 +498,8 @@ a:active {
 
 .logo {
     height: 200px;
+    filter: var(--logo-filter);
+    transition: filter 0.3s ease;
 }
 
 .version {
@@ -469,8 +523,44 @@ a:active {
 .version-divider {
     margin-top: 10px;
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--border-color);
     width: 80%;
+}
+
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+    font-size: var(--project-font-size-small);
+    color: var(--text-color);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+}
+
+.theme-toggle i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.theme-toggle-label {
+    font-weight: 500;
 }
 
 /* =========================================================
@@ -596,9 +686,9 @@ a:active {
     height: 150px;
     width: 150px;
     margin: auto;
-    border: 1px solid hsl(0, 0%, 50%, 0.5);
+    border: 1px solid var(--border-color);
     border-radius: 50%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px var(--shadow-color);
     transition: transform 0.3s ease;
     justify-items: center;
 }
@@ -629,9 +719,9 @@ a:active {
     height: 250px;
     width: 250px;
     margin: auto;
-    border: 1px solid hsl(0, 0%, 50%, 0.5);
+    border: 1px solid var(--border-color);
     border-radius: 30px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px var(--shadow-color);
     transition: transform 0.3s ease;
 }
 
@@ -647,8 +737,20 @@ a:active {
 /* =========================================================
    TABLES
    ========================================================= */
+table {
+    color: var(--text-color);
+}
+
+thead {
+    background-color: var(--table-header-bg) !important;
+}
+
+th {
+    color: var(--secondary-color) !important;
+}
+
 tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
-    border-top: 1px solid hsl(0, 0%, 50%, 0.2);
+    border-top: 1px solid var(--border-color);
 }
 
 /* =========================================================
@@ -657,13 +759,12 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 .footer {
     font-family: var(--project-font-family);
     width: 1200px;
-    background-color: white;
+    background-color: var(--panel-color);
     color: var(--secondary-color);
     text-align: center;
     padding: 1px;
     justify-self: center;
-    border-top-width: 1px;
-    border-top-style: solid;
+    border-top: 1px solid var(--border-color);
 }
 
 /* =========================================================
@@ -734,20 +835,21 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 
 .nav-button {
     width: 200px;
-    background-color: white;
+    background-color: var(--card-color);
     color: var(--secondary-color);
     padding: 10px 0;
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     text-decoration: none;
     font-size: var(--project-font-size-normal);
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px var(--shadow-color);
     transition: background-color 0.3s ease;
 }
 
 .nav-button:hover {
-    background-color: white;
+    background-color: var(--panel-color);
+    border-color: var(--primary-color);
 }
 
 /* =========================================================
