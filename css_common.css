@@ -55,7 +55,7 @@
     /* Title text styling for dark mode */
     --title-stroke: 1px rgba(255, 255, 255, 0.08);
     --title-filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
-    --logo-filter: invert(1) brightness(1.05);
+    --logo-filter: invert(1) brightness(2);
 
     --circuit-color-base: hsla(220, 10%, 50%, 0.1);
     --circuit-color-pulse: hsl(220, 15%, 55%);
