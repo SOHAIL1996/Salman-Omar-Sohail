@@ -34,6 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
             { coords: [56.1304, -106.3468], name: "CA", period: "Undisclosed", description: "Robot Deployment" },
             { coords: [50.8333, 4.0000], name: "BE", period: "Undisclosed", description: "Robot Deployment" },
             { coords: [35.8616, 104.1954], name: "CN", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [63.4305, 10.3951], name: "NO", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [61.9241, 25.7482], name: "FI", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [55.3781, -3.4360], name: "UK", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [47.5162, 14.5501], name: "AT", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [41.9028, 12.4964], name: "Rome", period: "Undisclosed", description: "Robot Deployment" },
         ];
 
         // Create a feature group to store all markers

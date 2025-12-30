@@ -1221,6 +1221,27 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 /* =========================================================
+   ACADEMIC PROJECTS GRID
+   ========================================================= */
+.academic-projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.academic-project h6 {
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+.academic-project p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* =========================================================
    PDF VIEWER
    ========================================================= */
 .pdfv-controls {
