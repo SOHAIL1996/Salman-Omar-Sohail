@@ -1,48 +1,58 @@
 /* ---------- Skills Data (edit me) ---------- */
 const SKILLS = [
     // --- Software ---
-    { area: "Software", group: "Systems", title: "Linux Systems", level: 5, tags: ["Edge Computing", "CLI", "Services"] },
-    { area: "Software", group: "Programming", title: "C++", level: 5, tags: ["ROS", "STL", "CMake"] },
-    { area: "Software", group: "Programming", title: "Python", level: 5, tags: ["ROS", "NumPy", "Pandas", ] },
-    { area: "Software", group: "Programming", title: "Java", level: 3, tags: ["API"] },
-    { area: "Software", group: "Programming", title: "Bash Scripting", level: 4, tags: ["Automation"] },
-    { area: "Software", group: "Tools", title: "GitHub", level: 4, tags: ["Software Packagees","Actions", "Issues"] },
+    { area: "Software", group: "Systems", title: "Linux Systems", level: 5, tags: ["Ubuntu", "Systemd", "Networking"] },
+    { area: "Software", group: "Systems", title: "Edge Computing", level: 5, tags: ["Jetson", "RPi", "Steamdeck"] },
+    { area: "Software", group: "Programming", title: "C++", level: 5, tags: ["ROS2", "STL", "CMake"] },
+    { area: "Software", group: "Programming", title: "Python", level: 5, tags: ["ROS2", "Flask", "Cython"] },
+    { area: "Software", group: "Programming", title: "Bash Scripting", level: 5, tags: ["Automation", "Udev"] },
+    { area: "Software", group: "Tools", title: "Git/GitHub", level: 5, tags: ["CI/CD", "Actions", "Packages"] },
+    { area: "Software", group: "Tools", title: "Docker", level: 4, tags: ["Containers", "Compose"] },
 
-    { area: "Software", group: "Robotics", title: "ROS 1/2 (All versions)", level: 5, tags: ["Nav2", "MoveIt2", "XACRO"] },
-    { area: "Software", group: "Robotics", title: "Gazebo Classic/Ignition", level: 5, tags: ["SDF", "Sensors"] },
-    { area: "Software", group: "Robotics", title: "Webots", level: 4, tags: ["Robot Drivers"] },
-    { area: "Software", group: "Robotics", title: "NVIDIA Isaac Sim", level: 3, tags: ["Robot Drivers"] },
+    { area: "Software", group: "Robotics", title: "ROS 1/2 (All versions)", level: 5, tags: ["Noetic", "Humble", "Jazzy"] },
+    { area: "Software", group: "Robotics", title: "Nav2 Navigation", level: 5, tags: ["SLAM", "Localization", "Planning"] },
+    { area: "Software", group: "Robotics", title: "MoveIt2", level: 5, tags: ["Motion Planning", "OMPL", "Kinematics"] },
+    { area: "Software", group: "Robotics", title: "Gazebo Sim", level: 5, tags: ["Fortress", "Harmonic", "ros2_control"] },
+    { area: "Software", group: "Robotics", title: "URDF/XACRO", level: 5, tags: ["Robot Modeling", "TF2"] },
+    { area: "Software", group: "Robotics", title: "ros2_control", level: 4, tags: ["Controllers", "Hardware Interface"] },
 
-    { area: "Software", group: "Docs", title: "LaTeX", level: 4, tags: ["Research Papers","Manuals"] },
-    { area: "Software", group: "Docs", title: "reStructuredText", level: 4, tags: ["Online Documentation"] },
+    { area: "Software", group: "Sensors", title: "LiDAR Integration", level: 5, tags: ["Ouster", "Livox", "Hesai"] },
+    { area: "Software", group: "Sensors", title: "Depth Cameras", level: 5, tags: ["RealSense", "ZED2i"] },
+    { area: "Software", group: "Sensors", title: "RTK-GPS Systems", level: 4, tags: ["Fixposition", "Emlid"] },
 
-    { area: "Software", group: "Design", title: "Engineering Design", level: 5, tags: ["3D Designing"] },
+    { area: "Software", group: "Protocols", title: "CAN Bus", level: 4, tags: ["SocketCAN", "DBC"] },
+    { area: "Software", group: "Protocols", title: "Serial/Modbus", level: 4, tags: ["RS485", "USB"] },
+
+    { area: "Software", group: "Docs", title: "Technical Documentation", level: 5, tags: ["Sphinx", "RST", "Markdown"] },
+    { area: "Software", group: "Docs", title: "LaTeX", level: 4, tags: ["Papers", "Manuals"] },
+
+    { area: "Software", group: "Design", title: "Fusion 360", level: 5, tags: ["CAD", "CAM"] },
     { area: "Software", group: "Design", title: "3D Printing", level: 5, tags: ["FDM", "SLA"] },
-    { area: "Software", group: "Design", title: "Fusion 360", level: 5, tags: ["3D Designing"] },
-    { area: "Software", group: "Design", title: "CATIA V5", level: 4, tags: ["3D Designing"] },
-    { area: "Software", group: "Design", title: "Blender", level: 3, tags: ["3D Designing"] },
+    { area: "Software", group: "Design", title: "Blender", level: 3, tags: ["Mesh Export", "GLTF"] },
 
-    { area: "Software", group: "AI/ML", title: "Classic Machine Learning", level: 5, tags: ["Scikit-learn","Custom"] },
-    { area: "Software", group: "AI/ML", title: "Deep Learning", level: 5, tags: ["PyTorch", "TensorFlow","Custom"] },
-    { area: "Software", group: "AI/ML", title: "Reinforcement Learning", level: 3, tags: ["Policy-based","Custom"] },
-    { area: "Software", group: "AI/ML", title: "Computer Vision", level: 5, tags: ["OpenCV","YOLO","Custom"] },
-    { area: "Software", group: "AI/ML", title: "Natural Language Processing", level: 4, tags: ["Classical","Transformers", "N-Grams"] },
-    { area: "Software", group: "AI/ML", title: "Stable Diffusion", level: 3, tags: ["GUI"] },
+    { area: "Software", group: "AI/ML", title: "Computer Vision", level: 5, tags: ["OpenCV", "YOLO", "Depth"] },
+    { area: "Software", group: "AI/ML", title: "Deep Learning", level: 5, tags: ["PyTorch", "TensorFlow"] },
+    { area: "Software", group: "AI/ML", title: "Reinforcement Learning", level: 3, tags: ["Isaac Gym", "Locomotion"] },
 
-    { area: "Software", group: "Web", title: "HTML", level: 4, tags: ["Front-end"] },
-    { area: "Software", group: "Web", title: "CSS", level: 4, tags: ["Front-end"] },
-    { area: "Software", group: "Web", title: "JavaScript", level: 4, tags: ["Back-end"] },
+    { area: "Software", group: "Web", title: "Flask", level: 4, tags: ["REST API", "WebSocket"] },
+    { area: "Software", group: "Web", title: "JavaScript/Three.js", level: 4, tags: ["3D Viz", "GLTF"] },
+    { area: "Software", group: "Web", title: "HTML/CSS", level: 4, tags: ["Responsive UI"] },
 
     // --- Hardware ---
-    { area: "Hardware", group: "Integration", title: "R. Hardware Integration", level: 5, tags: ["Sensors", "Actuators"] },
-    { area: "Hardware", group: "Integration", title: "R. Electrical Integration", level: 4, tags: ["Wiring", "Power"] },
+    { area: "Hardware", group: "Platforms", title: "Wheeled Robots", level: 5, tags: ["Husky", "Jackal", "Ridgeback"] },
+    { area: "Hardware", group: "Platforms", title: "Quadrupeds", level: 5, tags: ["Unitree", "Boston Dynamics"] },
+    { area: "Hardware", group: "Platforms", title: "Humanoids/Bipeds", level: 4, tags: ["H1", "G1", "Ascento"] },
+    { area: "Hardware", group: "Platforms", title: "Tracked Robots", level: 4, tags: ["ROVO", "Custom"] },
 
-    { area: "Hardware", group: "Additive Manufacturing", title: "3D Printing", level: 5, tags: ["Sensor Brackets", "Mounts"] },
-    { area: "Hardware", group: "Subtractive Manufacturing", title: "Lathe Machine", level: 4, tags: ["Base Plates"] },
-    { area: "Hardware", group: "Manufacturing", title: "Carpentry", level: 3, tags: ["Fixtures"] },
-    { area: "Hardware", group: "Subtractive Manufacturing", title: "CNC Milling", level: 3, tags: ["Panels"] },
-    { area: "Hardware", group: "Subtractive Manufacturing", title: "Drilling", level: 3, tags: ["Holes", "Bores"] },
-    { area: "Hardware", group: "Subtractive Manufacturing", title: "Cutting", level: 3, tags: ["Sizing"] },
+    { area: "Hardware", group: "Manipulators", title: "Robot Arms", level: 5, tags: ["xARM", "UR", "Franka"] },
+    { area: "Hardware", group: "Manipulators", title: "Grippers", level: 5, tags: ["Robotiq 2F", "Custom"] },
+    { area: "Hardware", group: "Manipulators", title: "Dexterous Hands", level: 4, tags: ["Inspire", "SEED"] },
+
+    { area: "Hardware", group: "Integration", title: "Sensor Integration", level: 5, tags: ["LiDAR", "Camera", "IMU"] },
+    { area: "Hardware", group: "Integration", title: "Electrical Systems", level: 4, tags: ["Wiring", "Power"] },
+
+    { area: "Hardware", group: "Manufacturing", title: "3D Printing", level: 5, tags: ["Brackets", "Mounts"] },
+    { area: "Hardware", group: "Manufacturing", title: "Machining", level: 3, tags: ["Lathe", "Drilling"] },
 ];
 
 /* ---------- Render ---------- */

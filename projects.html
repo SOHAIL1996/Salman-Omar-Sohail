@@ -90,17 +90,38 @@
                 <br>
                 <div class="project-item">
 
+                    <!-- Row 1 -->
+                    <div class="project-container">
+                        <img src="media/gifs/mmp.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Dual-Arm Mobile Manipulation Platform</h6>
+                        <div>
+                            ROS2 Jazzy stack for Clearpath Ridgeback with dual xARM850, Robotiq 2F-140 grippers,
+                            and 3-axis rig. MoveIt2 motion planning, Nav2 navigation, Ouster LiDAR, ZED2i integration.
+                        </div>
+                    </span>
+
                     <div class="project-container">
                         <img src="media/gifs/xarm6.webp" loading="lazy">
                     </div>
                     <span>
                         <h6>Industrial Orchard Packaging</h6>
                         <div>
-                            This project automated apple packaging, employing a robotic arm
-                            (uFactory xARM5) and a depth camera (ZED2i) to identify, orient for optimal presentation
-                            (vibrant colours
-                            facing up), and carefully place apples into diverse packaging. The project was aimed to increase
-                            efficiency and reduce manual labourof packaged fruit in agricultural processing.
+                            Automated apple packaging with xARM6 and ZED2i depth camera. Color-based orientation
+                            detection, compliant control, MoveIt2 planning with Robotiq grippers.
+                        </div>
+                    </span>
+
+                    <!-- Row 2 -->
+                    <div class="project-container">
+                        <img src="media/robots/rovo3.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>ROVO3 Tracked Robot Platform</h6>
+                        <div>
+                            ROS2 Jazzy tracked robot with CAN bus (500kbps), IMU fusion odometry, web interface
+                            with 3D GLTF viz, VNC streaming, Nav2 integration.
                         </div>
                     </span>
 
@@ -108,29 +129,22 @@
                         <img src="media/gifs/jackal.webp" loading="lazy">
                     </div>
                     <span>
-                        <h6>Outdoor Inspection Routine</h6>
+                        <h6>Outdoor Security Patrol System</h6>
                         <div>
-                            A custom GPS-based security system was developed for a Jackal UGV, leveraging the ROS2 Nav2
-                            framework for autonomous
-                            patrol missions. The project scope was to create a reliable and cost-effective solution for
-                            outdoor security, surveillance,
-                            and potentially initial incident response by enabling robots to navigate and monitor
-                            designated areas.
+                            GPS-based patrol for Jackal UGV using Nav2, LIO-SAM SLAM with Ouster LiDAR,
+                            Steamdeck joystick interface, web dashboard for mission planning.
                         </div>
                     </span>
 
+                    <!-- Row 3 -->
                     <div class="project-container">
                         <img src="media/gifs/husky_waypoint_navi.webp" loading="lazy">
                     </div>
                     <span>
-                        <h6>Underground Pipe Inspection</h6>
+                        <h6>Underground Infrastructure Inspection</h6>
                         <div>
-                            The Unitree Go2 had special sensors integrated for the inspection of
-                            underground piping tunnels. Equipped with 4 sensors,
-                            including LiDAR and a depth-camera, gas-sensor, and a thermal camera, the robot generated detailed 3D
-                            maps for surveys, enabling remote assessment of
-                            infrastructure integrity and identification of potential maintenance needs, improving safety
-                            and efficiency. The GiF is of another project, underground project cannot be shown.
+                            Unitree Go2 quadruped for tunnel inspection with LiDAR, thermal camera, gas sensors.
+                            3D mapping pipelines for survey documentation in hazardous environments.
                         </div>
                     </span>
 
@@ -140,26 +154,20 @@
                     <span>
                         <h6>Quadruped Low-Level Gait Planning</h6>
                         <div>
-                            This research focused on enhancing the mobility of Unitree A1 quadruped robots through
-                            advanced gait planning and control. By developing ROS wrappers and utilizing the TOWR optimization framework, the project aimed
-                            to enable these robots to navigate complex and uneven terrains with greater stability and efficiency, 
-                            expanding their potential applications in diverse environments.
+                            Unitree A1 gait planning with TOWR optimization framework, CHAMP controllers,
+                            real-time visualization tools for terrain navigation.
                         </div>
                     </span>
 
+                    <!-- Row 4 -->
                     <div class="project-container">
                         <img src="media/gifs/husky_vineyard.webp" loading="lazy">
                     </div>
                     <span>
                         <h6>Vineyard 3D Reconstruction</h6>
                         <div>
-                            This project utilized a Husky A200 equipped with  over 12 sensors,
-                            including LiDAR and a depth-camera, managed by ROS 2, the rover is capable of generating detailed 3D
-                            precise 3D models of vineyards or any target application.
-                            The robot has been deployed for precision agriculture, including detailed
-                            mapping, plant health monitoring, yield prediction,
-                            and optimization of resource management for improved vineyard productivity and
-                            sustainability.
+                            Husky A200 with 12+ sensors for precision agriculture. Ouster LiDAR, Fixposition GPS,
+                            web interface, Nav2 for systematic field coverage.
                         </div>
                     </span>
 
@@ -167,28 +175,22 @@
                         <img src="media/robots/retailbot_ai.jpeg" loading="lazy">
                     </div>
                     <span>
-                        <h6>Retail Service Bot</h6>
+                        <h6>Retail Service Bot (NDA)</h6>
                         <div>
-                            The development of a retail service bot (ai image due to NDA) aimed to automate various
-                            tasks within retail spaces to enhance customer experience
-                            and operational efficiency. Potential functionalities include guiding customers, managing
-                            inventory, providing product information, and potentially even assisting with order fulfilment, 
-                            showcasing the growing role of robotics in the retail sector.
+                            Autonomous retail robot for customer guidance. Nav2 navigation, multi-sensor
+                            perception, web dashboard for fleet management.
                         </div>
                     </span>
 
+                    <!-- Row 5 -->
                     <div class="project-container">
                         <img src="media/gifs/h1.webp" loading="lazy">
                     </div>
                     <span>
-                        <h6>Logistics Humanoid Demo</h6>
+                        <h6>Humanoid Logistics Demo</h6>
                         <div>
-                            This project served as a demonstration of how humanoid robots Unitree H1 can be effectively utilized in
-                            logistics and warehousing.
-                            By showcasing tasks such as object manipulation, transportation, and interaction within
-                            human-designed environments,
-                            the demo aimed to highlight the potential for humanoid robots to augment or automate
-                            labour-intensive processes in supply chain operations.
+                            Unitree H1/G1 ROS2 drivers with Livox LiDAR, GPS waypoints, Steamdeck teleop,
+                            RL locomotion deployment, web dashboards.
                         </div>
                     </span>
 
@@ -196,42 +198,276 @@
                         <img src="media/robots/hxg.webp" loading="lazy">
                     </div>
                     <span>
-                        <h6>Robotic Bar</h6>
+                        <h6>Robotic Bartender System</h6>
                         <div>
-                            The development of a robotic bar focused on automating the process of preparing and serving
-                            drinks. This involves robotic arms for manipulation, precise dispensing mechanisms, and a control
-                            system to manage orders and create consistent beverages, potentially offering benefits in terms of
-                            speed, accuracy, and operational hours in the hospitality industry.
+                            Husky + xARM for automated beverage preparation. MoveIt2 planning,
+                            dispensing algorithms, ROS2 service-based order management.
                         </div>
                     </span>
 
+                    <!-- Row 6 -->
                     <div class="project-container">
                         <img src="media/gifs/aloha.webp" loading="lazy">
                     </div>
                     <span>
-                        <h6>Aloha Tele-operation</h6>
+                        <h6>ALOHA Bimanual Teleoperation</h6>
                         <div>
-                            This project focuses on utilizing the ALOHA robot, a low-cost open-source hardware system
-                            designed for bimanual teleoperation. The system typically involves a human operator controlling a master set of robotic arms,
-                            which in turn precisely mirror their
-                            movements on a follower set of arms (the ALOHA robot itself). Equipped with multiple
-                            cameras for enhanced perception, ALOHA enables the collection of high-quality real-world demonstrations for imitation
-                            learning in robotics.
+                            ROS1 Noetic 4-arm teleop with Interbotix/Dynamixel, RealSense D405 cameras,
+                            master-follower control for imitation learning.
                         </div>
                     </span>
 
                     <div class="project-container">
-                        <img src="media/gifs/webinterface.webp" loading="lazy">
+                        <img src="media/gifs/inspire_hand.webp" loading="lazy">
                     </div>
                     <span>
-                        <h6>Robot Web Control Interface 2024</h6>
+                        <h6>Inspire Dexterous Hand</h6>
                         <div>
-                            The Robot Web Control Interface is a web-based platform designed to facilitate the control
-                            and monitoring of robotic systems.
-                            It typically includes features such as real-time video streaming, sensor data visualization,
-                            and control interfaces for various robotic components,
-                            enabling users to interact with and manage robots remotely through a user-friendly web
-                            interface.
+                            ROS2 Humble drivers for 6-DOF hand. Modbus/RS485 communication,
+                            position/force/speed control, calibration procedures.
+                        </div>
+                    </span>
+
+                    <!-- Row 7 -->
+                    <div class="project-container">
+                        <img src="media/gifs/ascento.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Ascento Bipedal Integration</h6>
+                        <div>
+                            ROS2 Humble firmware for wheeled-bipedal robot. Livox Mid360, Fixposition GPS,
+                            Gazebo Fortress sim, Steamdeck teleop.
+                        </div>
+                    </span>
+
+                    <div class="project-container">
+                        <img src="media/gifs/web_dashboard.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Universal Web Control Interface</h6>
+                        <div>
+                            Flask platform for 15+ robots. Three.js 3D viz, virtual joystick, GPS waypoints,
+                            rosbag capture, VNC access, Cython optimized.
+                        </div>
+                    </span>
+
+                    <!-- Row 8 -->
+                    <div class="project-container">
+                        <img src="media/practical_experience/a1.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Quadruped ROS Ecosystem (QRE)</h6>
+                        <div>
+                            Unitree A1/Go1/Go2/B1/B2 drivers. CHAMP controllers, LIO-SAM SLAM,
+                            Nav2, Open Manipulator, Gazebo sim, online docs.
+                        </div>
+                    </span>
+
+                    <div class="project-container">
+                        <img src="media/practical_experience/go2.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Go2 EDU Mobile Platform</h6>
+                        <div>
+                            ROS2 Foxy/Humble integration for Unitree Go2. Livox Mid360, GPS waypoint nav,
+                            Steamdeck controller, AprilTag detection.
+                        </div>
+                    </span>
+
+                    <!-- Row 9 -->
+                    <div class="project-container">
+                        <img src="media/practical_experience/b2w.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>B2/B2-W Industrial Quadruped</h6>
+                        <div>
+                            ROS2 Humble stack for Unitree B2 series. Livox LiDAR, web dashboard,
+                            multi-machine ROS setup, industrial inspection applications.
+                        </div>
+                    </span>
+
+                    <div class="project-container">
+                        <img src="media/practical_experience/ridgebackxarm.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Ridgeback Omnidirectional Base</h6>
+                        <div>
+                            Clearpath Ridgeback R100 integration. Nav2 navigation, Ouster LiDAR,
+                            mecanum drive control, web interface, URDF modeling.
+                        </div>
+                    </span>
+
+                    <!-- Row 10 -->
+                    <div class="project-container">
+                        <img src="media/practical_experience/dingo.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Dingo Indoor Mobile Robot</h6>
+                        <div>
+                            Clearpath Dingo D100 with Piper arm integration. ROS2 Jazzy, MoveIt2,
+                            indoor navigation, web-based control interface.
+                        </div>
+                    </span>
+
+                    <div class="project-container">
+                        <img src="media/practical_experience/hunter.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Agilex Hunter 2.0 Platform</h6>
+                        <div>
+                            ROS2 Humble integration for Agilex Hunter. CAN bus driver, Ouster LiDAR,
+                            uBlox GPS, Nav2 navigation, web dashboard.
+                        </div>
+                    </span>
+
+                    <!-- Row 11 -->
+                    <div class="project-container">
+                        <img src="media/practical_experience/huskymu.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Husky A300 Multi-Unit Platform</h6>
+                        <div>
+                            Clearpath Husky A300 with advanced sensor suite. ROS2 Jazzy,
+                            Fixposition GPS, multi-LiDAR setup, web interface.
+                        </div>
+                    </span>
+
+                    <div class="project-container">
+                        <img src="media/practical_experience/warthog.drawio.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Warthog Heavy-Duty Platform</h6>
+                        <div>
+                            Clearpath Warthog integration for outdoor heavy-duty applications.
+                            Nav2, Gazebo simulation, rugged terrain navigation.
+                        </div>
+                    </span>
+
+                    <!-- Row 12 -->
+                    <div class="project-container">
+                        <img src="media/practical_experience/ur5e.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>UR5e Mobile Manipulation</h6>
+                        <div>
+                            Universal Robots UR5e on Ridgeback. ROS2 Jazzy driver, MoveIt2,
+                            Robotiq gripper, lift mechanism, pan-tilt camera.
+                        </div>
+                    </span>
+
+                    <div class="project-container">
+                        <img src="media/robots/go1_om_ortho.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Open Manipulator Integration</h6>
+                        <div>
+                            ROBOTIS Open Manipulator on Go1/Go2 quadruped. ROS2 Foxy drivers,
+                            Dynamixel control, mobile manipulation demos.
+                        </div>
+                    </span>
+
+                    <!-- Row 13 -->
+                    <div class="project-container">
+                        <img src="media/gifs/rovo_gazebo.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Gazebo Simulation Environments</h6>
+                        <div>
+                            Gazebo Fortress/Harmonic sims for all platforms. ros2_control integration,
+                            sensor plugins, physics tuning, CI/CD testing.
+                        </div>
+                    </span>
+
+                    <div class="project-container">
+                        <img src="media/gifs/slam_pointcloud.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>3D SLAM Pipelines</h6>
+                        <div>
+                            LIO-SAM, FAST-LIO, and slam_toolbox integration. Multi-LiDAR fusion,
+                            loop closure, map saving/loading across platforms.
+                        </div>
+                    </span>
+
+                    <!-- Row 14 -->
+                    <div class="project-container">
+                        <img src="media/practical_experience/go1.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Go1 EDU Research Platform</h6>
+                        <div>
+                            Unitree Go1 with ROS1/ROS2 bridge. CHAMP gait controller,
+                            RSLidar integration, multi-machine setup, Gazebo sim.
+                        </div>
+                    </span>
+
+                    <div class="project-container">
+                        <img src="media/practical_experience/spot.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Boston Dynamics Spot Integration</h6>
+                        <div>
+                            ROS2 driver development for Spot robot. SDK integration,
+                            autonomous navigation, sensor payload management.
+                        </div>
+                    </span>
+
+                    <!-- Row 15 -->
+                    <div class="project-container">
+                        <img src="media/practical_experience/kinova.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Kinova Gen3 Manipulation</h6>
+                        <div>
+                            Kinova Gen3 arm integration with ROS2. MoveIt2 planning,
+                            force-torque sensing, compliant control modes.
+                        </div>
+                    </span>
+
+                    <div class="project-container">
+                        <img src="media/practical_experience/franka.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Franka Emika Research Arm</h6>
+                        <div>
+                            Franka Panda integration for research. libfranka driver,
+                            impedance control, real-time control loops.
+                        </div>
+                    </span>
+
+                    <!-- Row 16 -->
+                    <div class="project-container">
+                        <img src="media/practical_experience/diablo.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Direct Drive Diablo Platform</h6>
+                        <div>
+                            Wheeled-legged Diablo robot integration. ROS2 drivers,
+                            balance control, teleoperation interface.
+                        </div>
+                    </span>
+
+                    <div class="project-container">
+                        <img src="media/practical_experience/g1.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>Unitree G1 Humanoid</h6>
+                        <div>
+                            ROS2 integration for G1 humanoid. Nav2 navigation,
+                            Livox LiDAR, GPS waypoints, web dashboard.
+                        </div>
+                    </span>
+
+                    <!-- Row 17 -->  
+
+                    <div class="project-container">
+                        <img src="media/practical_experience/xarm.webp" loading="lazy">
+                    </div>
+                    <span>
+                        <h6>xARM Series Integration</h6>
+                        <div>
+                            UFactory xARM5/6/7/850 ROS2 drivers. MoveIt2 configs,
+                            gripper control, vision-guided picking applications.
                         </div>
                     </span>
 

@@ -710,28 +710,55 @@ a:active {
    ========================================================= */
 .project-item {
     display: grid;
-    width: 1150px;
-    grid-template-columns: 1.0fr 3.0fr;
-    gap: 40px;
+    width: 100%;
+    max-width: 1150px;
+    grid-template-columns: 140px 1fr 140px 1fr;
+    gap: 15px 20px;
+    align-items: start;
 }
 
 .project-item img {
-    height: 250px;
-    width: 250px;
+    height: 130px;
+    width: 130px;
     margin: auto;
     border: 1px solid var(--border-color);
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 0 0 5px var(--shadow-color);
     transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
 .project-item img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.project-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10px;
 }
 
 .project-container img {
     position: relative;
-    top: 30px;
+    top: 0;
+}
+
+.project-item span {
+    padding: 5px 0;
+}
+
+.project-item span h6 {
+    font-size: 0.85rem;
+    margin: 0 0 8px 0;
+    min-width: 200px;
+    padding: 4px 8px;
+    text-indent: 5px;
+}
+
+.project-item span div {
+    font-size: 0.8rem;
+    line-height: 1.5;
 }
 
 /* =========================================================
@@ -994,6 +1021,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     background: transparent;
     font-size: var(--project-font-size-small);
     font-weight: 600;
+    color: var(--text-color);
     cursor: pointer;
     transition: .2s transform ease;
 }

@@ -20,104 +20,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // List of locations with lat, long, name, and other info
         const locations = [
-            {
-                coords: [50.9667, 6.65],
-                name: "DE",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [23.657, 53.971],
-                name: "UAE",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [40.7128, -74.0060],
-                name: "US",
-                period: "Undisclosed-",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [42.83, 12.35],
-                name: "IT",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [-25.735, 134.388],
-                name: "AU",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [-8.986, -52.997],
-                name: "BR",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [47.166, 9.521], // Liechtenstein
-                name: "LI",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [56.2639, 9.5018], // Denmark
-                name: "DK",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [46.2276, 2.2137], // France
-                name: "FR",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [46.8182, 8.2275], // Switzerland
-                name: "CH",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [26.8206, 30.8025], // Egypt
-                name: "EG",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [56.1304, -106.3468], // Canada
-                name: "CA",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [50.8333, 4.0000], // Belgium
-                name: "BE",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
-            {
-                coords: [35.8616, 104.1954], // China
-                name: "CN",
-                period: "Undisclosed",
-                description: "Robot Deployment",
-                iconUrl: 'media/robots/mbsascento.png',
-            },
+            { coords: [50.9667, 6.65], name: "DE", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [23.657, 53.971], name: "UAE", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [40.7128, -74.0060], name: "US", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [42.83, 12.35], name: "IT", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [-25.735, 134.388], name: "AU", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [-8.986, -52.997], name: "BR", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [47.166, 9.521], name: "LI", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [56.2639, 9.5018], name: "DK", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [46.2276, 2.2137], name: "FR", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [46.8182, 8.2275], name: "CH", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [26.8206, 30.8025], name: "EG", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [56.1304, -106.3468], name: "CA", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [50.8333, 4.0000], name: "BE", period: "Undisclosed", description: "Robot Deployment" },
+            { coords: [35.8616, 104.1954], name: "CN", period: "Undisclosed", description: "Robot Deployment" },
         ];
 
         // Create a feature group to store all markers
@@ -126,20 +42,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add markers from the locations list
         try {
             locations.forEach(location => {
-                // Create custom icon for each location
-                const customIcon = L.icon({
-                    iconUrl: location.iconUrl,
-                    // iconSize: location.iconSize,
-                    // iconAnchor: location.iconAnchor,
-                    // popupAnchor: location.popupAnchor
-                    iconSize: [25, 30],
-                    iconAnchor: [10, 30],
-                    popupAnchor: [0, -30]
-                });
-
-                const marker = L.marker(location.coords, {
-                    icon: customIcon,
-                    title: location.name
+                const marker = L.circleMarker(location.coords, {
+                    radius: 8,
+                    fillColor: '#4a5568',
+                    color: '#2d3748',
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 0.85
                 }).addTo(map)
                     .bindPopup(`
                             <strong>${location.name}</strong><br>
