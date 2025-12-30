@@ -1032,8 +1032,8 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 .skills-tab.active {
-    background: var(--chip-bg, #0f172a);
-    color: #fff;
+    background: var(--primary-color);
+    color: var(--background-color);
 }
 
 .skills-tab:hover {
@@ -1047,24 +1047,22 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 .skill-card {
-    color: #e8eefc;
+    color: var(--text-color);
     padding: 14px;
     border-radius: 14px;
     position: relative;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px) saturate(160%);
-    -webkit-backdrop-filter: blur(12px) saturate(160%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .skill-card.software {
-    background: #1b2543;
+    background: transparent;
 }
 
 .skill-card.hardware {
-    background: #0b1020;
+    background: transparent;
 }
 
 .skill-head {
@@ -1090,11 +1088,18 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     position: absolute;
     right: 12px;
     top: 15px;
-    font-size: .75rem;
-    opacity: .65;
-    background-color: #ffffff1d;
-    padding: 2px 6px;
-    border-radius: 5px;
+    font-size: .7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.skill-card.software .skill-tooltip {
+    color: #3b82f6;
+}
+
+.skill-card.hardware .skill-tooltip {
+    color: #10b981;
 }
 
 .skill-sub {
@@ -1117,7 +1122,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, .15);
+    background: var(--border-color);
     position: relative;
     overflow: hidden;
 }
@@ -1127,7 +1132,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, .95), rgba(255, 255, 255, .35));
+    background: var(--primary-color);
     animation: pop .28s ease-out both;
 }
 
@@ -1151,11 +1156,28 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 .skill-tag {
-    font-size: var(--project-font-size-mini);
-    padding: .18rem .5rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, .08);
-    border: 1px solid rgba(255, 255, 255, .12);
+    font-size: 0.65rem;
+    padding: .12rem .4rem;
+    border-radius: 3px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+    border-color: var(--primary-color);
+}
+
+.skill-card.software .skill-tag {
+    border-left: 3px solid #3b82f6;
+}
+
+.skill-card.hardware .skill-tag {
+    border-left: 3px solid #10b981;
 }
 
 
