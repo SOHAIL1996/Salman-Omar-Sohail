@@ -11,50 +11,71 @@ window.addEventListener('load', () => {
     let staticCanvas, staticCtx;
 
     // === CSS Variable Helpers ===
-    const rootStyles = getComputedStyle(document.documentElement);
-
     const getVar = (name, fallback) => {
-        const v = rootStyles.getPropertyValue(name);
+        const v = getComputedStyle(document.documentElement).getPropertyValue(name);
         return v && v.trim() ? v.trim() : fallback;
     };
 
-    const parseHsl = (hslString, fallbackH, fallbackS, fallbackL) => {
-        if (!hslString || !hslString.trim) {
-            return { h: fallbackH, s: fallbackS, l: fallbackL };
+    const rgbToHsl = (r, g, b) => {
+        r /= 255; g /= 255; b /= 255;
+        const max = Math.max(r, g, b), min = Math.min(r, g, b);
+        let h = 0, s = 0;
+        const l = (max + min) / 2;
+        if (max !== min) {
+            const d = max - min;
+            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+            switch (max) {
+                case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                case g: h = (b - r) / d + 2; break;
+                case b: h = (r - g) / d + 4; break;
+            }
+            h *= 60;
         }
-        let str = hslString.trim();
-        if (!/^hsl[a]?\(/i.test(str)) {
-            return { h: fallbackH, s: fallbackS, l: fallbackL };
+        return { h, s: s * 100, l: l * 100 };
+    };
+
+    const parseHsl = (colorString, fallbackH, fallbackS, fallbackL) => {
+        const fallback = { h: fallbackH, s: fallbackS, l: fallbackL };
+        if (!colorString || !colorString.trim) return fallback;
+        const str = colorString.trim();
+
+        // Hex: #RGB or #RRGGBB
+        const hexMatch = str.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+        if (hexMatch) {
+            let hex = hexMatch[1];
+            if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+            const r = parseInt(hex.slice(0, 2), 16);
+            const g = parseInt(hex.slice(2, 4), 16);
+            const b = parseInt(hex.slice(4, 6), 16);
+            return rgbToHsl(r, g, b);
         }
-        str = str.replace(/hsla?\(/i, '').replace(')', '').trim();
-        if (str.indexOf(',') === -1) {
-            str = str.replace(/\s+/g, ',');
+
+        // hsl() / hsla()
+        if (/^hsl[a]?\(/i.test(str)) {
+            const cleaned = str.replace(/hsla?\(/i, '').replace(')', '').trim();
+            const parts = (cleaned.indexOf(',') === -1 ? cleaned.replace(/\s+/g, ',') : cleaned)
+                .split(',').map(p => p.trim()).filter(Boolean);
+            const h = parseFloat(parts[0]);
+            const s = parseFloat(parts[1]);
+            const l = parseFloat(parts[2]);
+            if (!Number.isNaN(h) && !Number.isNaN(s) && !Number.isNaN(l)) return { h, s, l };
         }
-        const parts = str.split(',').map(p => p.trim()).filter(Boolean);
-        const h = parseFloat(parts[0]);
-        const s = parseFloat(parts[1]);
-        const l = parseFloat(parts[2]);
-        if (Number.isNaN(h) || Number.isNaN(s) || Number.isNaN(l)) {
-            return { h: fallbackH, s: fallbackS, l: fallbackL };
+
+        // rgb() / rgba()
+        if (/^rgb[a]?\(/i.test(str)) {
+            const cleaned = str.replace(/rgba?\(/i, '').replace(')', '');
+            const parts = cleaned.split(',').map(p => parseFloat(p.trim()));
+            if (parts.length >= 3 && parts.slice(0, 3).every(n => !Number.isNaN(n))) {
+                return rgbToHsl(parts[0], parts[1], parts[2]);
+            }
         }
-        return { h, s, l };
+
+        return fallback;
     };
 
     const hslToString = (hsl, alpha = 1, lightnessOffset = 0) => {
         const l = Math.max(0, Math.min(100, hsl.l + lightnessOffset));
         return `hsla(${hsl.h}, ${hsl.s}%, ${l}%, ${alpha})`;
-    };
-
-    // === Color Configuration ===
-    const circuitColors = {
-        base: getVar('--circuit-color-base', 'hsla(239, 52%, 43%, 0.15)'),
-        pulse: getVar('--circuit-color-pulse', 'hsla(256, 52%, 43%, 1.00)'),
-        grid: getVar('--circuit-color-grid', 'hsla(245, 52%, 43%, 0.02)'),
-        cpuGlow: getVar('--circuit-color-cpu-glow', 'hsla(252, 52%, 43%, 0.20)'),
-        trailHsl: parseHsl(getVar('--circuit-color-trail', 'hsla(254, 52%, 43%, 1.00)'), 135, 52, 43),
-        ledHsl: parseHsl(getVar('--circuit-color-led', 'hsla(251, 52%, 43%, 1.00)'), 135, 52, 43),
-        baseHsl: parseHsl(getVar('--circuit-color-base', 'hsla(239, 52%, 43%, 0.15)'), 239, 52, 43),
-        pulseHsl: parseHsl(getVar('--circuit-color-pulse', 'hsla(256, 52%, 43%, 1.00)'), 256, 52, 43)
     };
 
     // === State ===
@@ -65,18 +86,25 @@ window.addEventListener('load', () => {
 
     const config = {
         gridSize: 30,
-        colorBase: circuitColors.base,
-        colorPulse: circuitColors.pulse,
-        trailHsl: circuitColors.trailHsl,
         trailLength: 10,
         pulseSpeed: 2,
-        maxPathLength: 20,
-        colorGrid: circuitColors.grid,
-        ledHsl: circuitColors.ledHsl,
-        cpuGlow: circuitColors.cpuGlow,
-        baseHsl: circuitColors.baseHsl,
-        pulseHsl: circuitColors.pulseHsl
+        maxPathLength: 20
     };
+
+    function refreshColors() {
+        // Parse the hex/hsl values once into HSL components for downstream hslToString().
+        // Fallbacks: neutral grey palette (default light theme).
+        config.colorBase  = getVar('--circuit-color-base',  'hsla(220, 8%, 40%, 0.1)');
+        config.colorPulse = getVar('--circuit-color-pulse', 'hsl(220, 10%, 45%)');
+        config.colorGrid  = getVar('--circuit-color-grid',  'hsla(220, 8%, 40%, 0.03)');
+        config.cpuGlow    = getVar('--circuit-color-cpu-glow', 'hsla(220, 8%, 40%, 0.15)');
+        config.trailHsl   = parseHsl(config.colorPulse, 220, 10, 45);
+        config.ledHsl     = parseHsl(getVar('--circuit-color-led', 'hsl(220, 12%, 50%)'), 220, 12, 50);
+        config.baseHsl    = parseHsl(config.colorBase, 220, 8, 40);
+        config.pulseHsl   = parseHsl(config.colorPulse, 220, 10, 45);
+    }
+
+    refreshColors();
 
     const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
     const randomFloat = (min, max) => Math.random() * (max - min) + min;
@@ -866,6 +894,14 @@ window.addEventListener('load', () => {
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(init, 200);
+    });
+
+    window.addEventListener('themechange', () => {
+        // Wait one frame so computed styles reflect the new data-theme attribute.
+        requestAnimationFrame(() => {
+            refreshColors();
+            init();
+        });
     });
 
     init();

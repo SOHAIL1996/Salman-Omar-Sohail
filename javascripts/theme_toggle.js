@@ -26,6 +26,7 @@
             document.documentElement.setAttribute('data-theme', theme);
         }
         updateToggleButton(theme);
+        window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
     }
 
     function updateToggleButton(theme) {
