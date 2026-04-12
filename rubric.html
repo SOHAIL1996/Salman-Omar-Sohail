@@ -27,6 +27,7 @@
     <script src="javascripts/theme_toggle.js"></script>
     <script src="javascripts/common_script.js" defer></script>
     <script src="javascripts/circuitry_background.js" defer></script>
+    <script src="javascripts/rubric_script.js" defer></script>
 </head>
 
 <body>
@@ -72,25 +73,40 @@
 
                 <p>Robots are categorized based on <strong>personal</strong> experience on their capabilities and
                     applications. The following table provides a rubric for evaluating various robots based on different
-                    criteria including vibe check.</p>
+                    criteria including vibe check. All scores are out of 10 &mdash; higher is better.</p>
+
+                <div class="rubric-legend">
+                    <span><i class="fa-solid fa-user-astronaut"></i> Humanoid</span>
+                    <span><i class="fa-solid fa-dog"></i> Quadruped</span>
+                    <span><i class="fa-solid fa-hand-back-fist"></i> Manipulator</span>
+                    <span><i class="fa-solid fa-truck-pickup"></i> Wheeled UGV</span>
+                    <span><i class="fa-solid fa-truck-ramp-box"></i> Mobile Manipulator</span>
+                    <span><i class="fa-solid fa-person-walking"></i> Wheeled-biped</span>
+                    <span><i class="fa-solid fa-motorcycle"></i> Wheel-leg hybrid</span>
+                </div>
+
+                <div class="rubric-controls">
+                    <input id="rubricSearch" type="search" placeholder="Filter by manufacturer or robot..." />
+                    <small id="rubricCount"></small>
+                </div>
 
                 <div class="rubric-table-wrap">
-                    <table border="0" cellpadding="8" style="width: 100%; border-collapse: collapse;">
+                    <table id="rubricTable" border="0" cellpadding="8" style="width: 100%; border-collapse: collapse;">
                         <thead>
                             <tr>
-                                <th style="color: var(--secondary-color);"></th>
-                                <th style="color: var(--secondary-color);">Manufacturer</th>
-                                <th style="color: var(--secondary-color);">Robot</th>
-                                <th style="text-align: center; color: var(--secondary-color);">Hardware</th>
-                                <th style="text-align: center; color: var(--secondary-color);">Software</th>
-                                <th style="text-align: center; color: var(--secondary-color);">Documentation</th>
-                                <th style="text-align: center; color: var(--secondary-color);">Integration</th>
-                                <th style="text-align: center; color: var(--secondary-color);">Simulation</th>
-                                <th style="text-align: center; color: var(--secondary-color);">Navigation</th>
-                                <th style="text-align: center; color: var(--secondary-color);">Perception</th>
-                                <th style="text-align: center; color: var(--secondary-color);">Manipulation</th>
-                                <th style="text-align: center; color: var(--secondary-color);">Year</th>
-                                <th style="text-align: center; color: var(--secondary-color);">Vibe</th>
+                                <th scope="col" style="color: var(--secondary-color);"></th>
+                                <th scope="col" class="sortable" data-type="text" style="color: var(--secondary-color);">Manufacturer</th>
+                                <th scope="col" class="sortable" data-type="text" style="color: var(--secondary-color);">Robot</th>
+                                <th scope="col" class="sortable" data-type="num" style="text-align: center; color: var(--secondary-color);">Hardware</th>
+                                <th scope="col" class="sortable" data-type="num" style="text-align: center; color: var(--secondary-color);">Software</th>
+                                <th scope="col" class="sortable" data-type="num" style="text-align: center; color: var(--secondary-color);">Documentation</th>
+                                <th scope="col" class="sortable" data-type="num" style="text-align: center; color: var(--secondary-color);">Integration</th>
+                                <th scope="col" class="sortable" data-type="num" style="text-align: center; color: var(--secondary-color);">Simulation</th>
+                                <th scope="col" class="sortable" data-type="num" style="text-align: center; color: var(--secondary-color);">Navigation</th>
+                                <th scope="col" class="sortable" data-type="num" style="text-align: center; color: var(--secondary-color);">Perception</th>
+                                <th scope="col" class="sortable" data-type="num" style="text-align: center; color: var(--secondary-color);">Manipulation</th>
+                                <th scope="col" class="sortable" data-type="num" style="text-align: center; color: var(--secondary-color);">Year</th>
+                                <th scope="col" class="sortable" data-type="num" style="text-align: center; color: var(--secondary-color);">Vibe</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -99,556 +115,556 @@
                                 <td class="robot-thumb"><i class="fa-solid fa-truck-pickup"></i></td>
                                 <td>Clearpath</td>
                                 <td>Warthog W100</td>
-                                <td style="text-align: center;">9</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">7</td>
-                                <td style="text-align: center;">9</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">n/a</td>
-                                <td style="text-align: center;">n/a</td>
+                                <td class="score score-high">9</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-mid">7</td>
+                                <td class="score score-high">9</td>
+                                <td class="score score-high">8</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
                                 <td style="text-align: center;">2025</td>
-                                <td style="text-align: center;">8</td>
+                                <td class="score score-high">8</td>
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-truck-pickup"></i></td>
                                 <td>Clearpath</td>
                                 <td>Husky A200</td>
-                                <td style="text-align: center;">9</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">7</td>
-                                <td style="text-align: center;">9</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">n/a</td>
-                                <td style="text-align: center;">n/a</td>
+                                <td class="score score-high">9</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-mid">7</td>
+                                <td class="score score-high">9</td>
+                                <td class="score score-high">8</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
                                 <td style="text-align: center;">2025</td>
-                                <td style="text-align: center;">9</td>
+                                <td class="score score-high">9</td>
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-truck-pickup"></i></td>
                                 <td>Clearpath</td>
                                 <td>Jackal J100</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">7</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">7</td>
-                                <td style="text-align: center;">9</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">n/a</td>
-                                <td style="text-align: center;">n/a</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-mid">7</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-mid">7</td>
+                                <td class="score score-high">9</td>
+                                <td class="score score-high">8</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
                                 <td style="text-align: center;">2025</td>
-                                <td style="text-align: center;">8</td>
+                                <td class="score score-high">8</td>
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-truck-pickup"></i></td>
                                 <td>Clearpath</td>
                                 <td>Ridgeback R100</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">7</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">7</td>
-                                <td style="text-align: center;">9</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">n/a</td>
-                                <td style="text-align: center;">n/a</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-mid">7</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-mid">7</td>
+                                <td class="score score-high">9</td>
+                                <td class="score score-high">8</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
                                 <td style="text-align: center;">2025</td>
-                                <td style="text-align: center;">9</td>
+                                <td class="score score-high">9</td>
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-truck-pickup"></i></td>
                                 <td>Clearpath</td>
                                 <td>Dingo d/o</td>
-                                <td style="text-align: center;">4</td> <!-- Hardware -->
-                                <td style="text-align: center;">8</td> <!-- Software -->
-                                <td style="text-align: center;">8</td> <!-- Documentation -->
-                                <td style="text-align: center;">5</td> <!-- Integration -->
-                                <td style="text-align: center;">9</td> <!-- Simulation -->
-                                <td style="text-align: center;">8</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td class="score score-low">4</td> <!-- Hardware -->
+                                <td class="score score-high">8</td> <!-- Software -->
+                                <td class="score score-high">8</td> <!-- Documentation -->
+                                <td class="score score-mid">5</td> <!-- Integration -->
+                                <td class="score score-high">9</td> <!-- Simulation -->
+                                <td class="score score-high">8</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2022</td> <!-- Year -->
-                                <td style="text-align: center;">3</td> <!-- Vibe -->
+                                <td class="score score-low">3</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-user-astronaut"></i></td>
                                 <td>Unitree</td>
                                 <td>H1</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">5</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">5</td> <!-- Integration -->
-                                <td style="text-align: center;">3</td> <!-- Simulation -->
-                                <td style="text-align: center;">5</td> <!-- Navigation -->
-                                <td style="text-align: center;">6</td> <!-- Perception -->
-                                <td style="text-align: center;">7</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-mid">5</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-mid">5</td> <!-- Integration -->
+                                <td class="score score-low">3</td> <!-- Simulation -->
+                                <td class="score score-mid">5</td> <!-- Navigation -->
+                                <td class="score score-mid">6</td> <!-- Perception -->
+                                <td class="score score-mid">7</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2023</td> <!-- Year -->
-                                <td style="text-align: center;">6</td> <!-- Vibe -->
+                                <td class="score score-mid">6</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-user-astronaut"></i></td>
                                 <td>Unitree</td>
                                 <td>H2</td>
-                                <td style="text-align: center;">9</td> <!-- Hardware -->
-                                <td style="text-align: center;">6</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">6</td> <!-- Integration -->
-                                <td style="text-align: center;">4</td> <!-- Simulation -->
-                                <td style="text-align: center;">6</td> <!-- Navigation -->
-                                <td style="text-align: center;">7</td> <!-- Perception -->
-                                <td style="text-align: center;">8</td> <!-- Manipulation -->
+                                <td class="score score-high">9</td> <!-- Hardware -->
+                                <td class="score score-mid">6</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-mid">6</td> <!-- Integration -->
+                                <td class="score score-low">4</td> <!-- Simulation -->
+                                <td class="score score-mid">6</td> <!-- Navigation -->
+                                <td class="score score-mid">7</td> <!-- Perception -->
+                                <td class="score score-high">8</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2025</td> <!-- Year -->
-                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                                <td class="score score-high">8</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-user-astronaut"></i></td>
                                 <td>Unitree</td>
                                 <td>R1</td>
-                                <td style="text-align: center;">7</td> <!-- Hardware -->
-                                <td style="text-align: center;">6</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">6</td> <!-- Integration -->
-                                <td style="text-align: center;">4</td> <!-- Simulation -->
-                                <td style="text-align: center;">5</td> <!-- Navigation -->
-                                <td style="text-align: center;">6</td> <!-- Perception -->
-                                <td style="text-align: center;">6</td> <!-- Manipulation -->
+                                <td class="score score-mid">7</td> <!-- Hardware -->
+                                <td class="score score-mid">6</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-mid">6</td> <!-- Integration -->
+                                <td class="score score-low">4</td> <!-- Simulation -->
+                                <td class="score score-mid">5</td> <!-- Navigation -->
+                                <td class="score score-mid">6</td> <!-- Perception -->
+                                <td class="score score-mid">6</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2025</td> <!-- Year -->
-                                <td style="text-align: center;">7</td> <!-- Vibe -->
+                                <td class="score score-mid">7</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-user-astronaut"></i></td>
                                 <td>AgiBot</td>
                                 <td>A2</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">6</td> <!-- Software -->
-                                <td style="text-align: center;">6</td> <!-- Documentation -->
-                                <td style="text-align: center;">6</td> <!-- Integration -->
-                                <td style="text-align: center;">4</td> <!-- Simulation -->
-                                <td style="text-align: center;">6</td> <!-- Navigation -->
-                                <td style="text-align: center;">7</td> <!-- Perception -->
-                                <td style="text-align: center;">8</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-mid">6</td> <!-- Software -->
+                                <td class="score score-mid">6</td> <!-- Documentation -->
+                                <td class="score score-mid">6</td> <!-- Integration -->
+                                <td class="score score-low">4</td> <!-- Simulation -->
+                                <td class="score score-mid">6</td> <!-- Navigation -->
+                                <td class="score score-mid">7</td> <!-- Perception -->
+                                <td class="score score-high">8</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2025</td> <!-- Year -->
-                                <td style="text-align: center;">7</td> <!-- Vibe -->
+                                <td class="score score-mid">7</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-user-astronaut"></i></td>
                                 <td>Unitree</td>
                                 <td>H1-2</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">5</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">5</td> <!-- Integration -->
-                                <td style="text-align: center;">3</td> <!-- Simulation -->
-                                <td style="text-align: center;">5</td> <!-- Navigation -->
-                                <td style="text-align: center;">6</td> <!-- Perception -->
-                                <td style="text-align: center;">8</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-mid">5</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-mid">5</td> <!-- Integration -->
+                                <td class="score score-low">3</td> <!-- Simulation -->
+                                <td class="score score-mid">5</td> <!-- Navigation -->
+                                <td class="score score-mid">6</td> <!-- Perception -->
+                                <td class="score score-high">8</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2024</td> <!-- Year -->
-                                <td style="text-align: center;">6</td> <!-- Vibe -->
+                                <td class="score score-mid">6</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-user-astronaut"></i></td>
                                 <td>Unitree</td>
                                 <td>G1 Edu (Max Version)</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">7</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">7</td> <!-- Integration -->
-                                <td style="text-align: center;">3</td> <!-- Simulation -->
-                                <td style="text-align: center;">5</td> <!-- Navigation -->
-                                <td style="text-align: center;">6</td> <!-- Perception -->
-                                <td style="text-align: center;">8</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-mid">7</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-mid">7</td> <!-- Integration -->
+                                <td class="score score-low">3</td> <!-- Simulation -->
+                                <td class="score score-mid">5</td> <!-- Navigation -->
+                                <td class="score score-mid">6</td> <!-- Perception -->
+                                <td class="score score-high">8</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2024</td> <!-- Year -->
-                                <td style="text-align: center;">7</td> <!-- Vibe -->
+                                <td class="score score-mid">7</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-dog"></i></td>
                                 <td>Unitree</td>
                                 <td>A1</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">1</td>
-                                <td style="text-align: center;">0</td>
-                                <td style="text-align: center;">2</td>
-                                <td style="text-align: center;">1</td>
-                                <td style="text-align: center;">1</td>
-                                <td style="text-align: center;">n/a</td>
-                                <td style="text-align: center;">n/a</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-low">1</td>
+                                <td class="score score-low">0</td>
+                                <td class="score score-low">2</td>
+                                <td class="score score-low">1</td>
+                                <td class="score score-low">1</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
                                 <td style="text-align: center;">2022</td>
-                                <td style="text-align: center;">3</td>
+                                <td class="score score-low">3</td>
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-dog"></i></td>
                                 <td>Unitree</td>
                                 <td>GO1</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">4</td>
-                                <td style="text-align: center;">2</td>
-                                <td style="text-align: center;">4</td>
-                                <td style="text-align: center;">1</td>
-                                <td style="text-align: center;">5</td>
-                                <td style="text-align: center;">n/a</td>
-                                <td style="text-align: center;">n/a</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-low">4</td>
+                                <td class="score score-low">2</td>
+                                <td class="score score-low">4</td>
+                                <td class="score score-low">1</td>
+                                <td class="score score-mid">5</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
                                 <td style="text-align: center;">2023</td>
-                                <td style="text-align: center;">4</td>
+                                <td class="score score-low">4</td>
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Unitree</td>
                                 <td>Z1</td>
-                                <td style="text-align: center;">4</td> <!-- Hardware -->
-                                <td style="text-align: center;">2</td> <!-- Software -->
-                                <td style="text-align: center;">1</td> <!-- Documentation -->
-                                <td style="text-align: center;">1</td> <!-- Integration -->
-                                <td style="text-align: center;">8</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">5</td> <!-- Manipulation -->
+                                <td class="score score-low">4</td> <!-- Hardware -->
+                                <td class="score score-low">2</td> <!-- Software -->
+                                <td class="score score-low">1</td> <!-- Documentation -->
+                                <td class="score score-low">1</td> <!-- Integration -->
+                                <td class="score score-high">8</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-mid">5</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2022</td> <!-- Year -->
-                                <td style="text-align: center;">2</td> <!-- Vibe -->
+                                <td class="score score-low">2</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-dog"></i></td>
                                 <td>Unitree</td>
                                 <td>B1</td>
-                                <td style="text-align: center;">8</td>
-                                <td style="text-align: center;">5</td>
-                                <td style="text-align: center;">2</td>
-                                <td style="text-align: center;">5</td>
-                                <td style="text-align: center;">1</td>
-                                <td style="text-align: center;">7</td>
-                                <td style="text-align: center;">n/a</td>
-                                <td style="text-align: center;">n/a</td>
+                                <td class="score score-high">8</td>
+                                <td class="score score-mid">5</td>
+                                <td class="score score-low">2</td>
+                                <td class="score score-mid">5</td>
+                                <td class="score score-low">1</td>
+                                <td class="score score-mid">7</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
+                                <td style="text-align: center;" class="score score-na">n/a</td>
                                 <td style="text-align: center;">2022</td>
-                                <td style="text-align: center;">6</td>
+                                <td class="score score-mid">6</td>
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-dog"></i></td>
                                 <td>Unitree</td>
                                 <td>GO2/GO2-W</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">5</td> <!-- Software -->
-                                <td style="text-align: center;">8</td> <!-- Documentation -->
-                                <td style="text-align: center;">8</td> <!-- Integration -->
-                                <td style="text-align: center;">8</td> <!-- Simulation -->
-                                <td style="text-align: center;">8</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-mid">5</td> <!-- Software -->
+                                <td class="score score-high">8</td> <!-- Documentation -->
+                                <td class="score score-high">8</td> <!-- Integration -->
+                                <td class="score score-high">8</td> <!-- Simulation -->
+                                <td class="score score-high">8</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2025</td> <!-- Year -->
-                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                                <td class="score score-high">8</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-dog"></i></td>
                                 <td>Unitree</td>
                                 <td>B2/B2-W</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">5</td> <!-- Software -->
-                                <td style="text-align: center;">8</td> <!-- Documentation -->
-                                <td style="text-align: center;">8</td> <!-- Integration -->
-                                <td style="text-align: center;">8</td> <!-- Simulation -->
-                                <td style="text-align: center;">8</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-mid">5</td> <!-- Software -->
+                                <td class="score score-high">8</td> <!-- Documentation -->
+                                <td class="score score-high">8</td> <!-- Integration -->
+                                <td class="score score-high">8</td> <!-- Simulation -->
+                                <td class="score score-high">8</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2025</td> <!-- Year -->
-                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                                <td class="score score-high">8</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-person-walking"></i></td>
                                 <td>Ascento Research</td>
                                 <td>Ascento</td>
-                                <td style="text-align: center;">7</td> <!-- Hardware -->
-                                <td style="text-align: center;">7</td> <!-- Software -->
-                                <td style="text-align: center;">6</td> <!-- Documentation -->
-                                <td style="text-align: center;">7</td> <!-- Integration -->
-                                <td style="text-align: center;">6</td> <!-- Simulation -->
-                                <td style="text-align: center;">4</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td class="score score-mid">7</td> <!-- Hardware -->
+                                <td class="score score-mid">7</td> <!-- Software -->
+                                <td class="score score-mid">6</td> <!-- Documentation -->
+                                <td class="score score-mid">7</td> <!-- Integration -->
+                                <td class="score score-mid">6</td> <!-- Simulation -->
+                                <td class="score score-low">4</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2025</td> <!-- Year -->
-                                <td style="text-align: center;">6</td> <!-- Vibe -->
+                                <td class="score score-mid">6</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Ufactory</td>
                                 <td>xARM6 (lite)</td>
-                                <td style="text-align: center;">4</td> <!-- Hardware -->
-                                <td style="text-align: center;">9</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">9</td> <!-- Integration -->
-                                <td style="text-align: center;">9</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">5</td> <!-- Manipulation -->
+                                <td class="score score-low">4</td> <!-- Hardware -->
+                                <td class="score score-high">9</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-high">9</td> <!-- Integration -->
+                                <td class="score score-high">9</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-mid">5</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2021</td> <!-- Year -->
-                                <td style="text-align: center;">4</td> <!-- Vibe -->
+                                <td class="score score-low">4</td> <!-- Vibe -->
                             </tr>
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Ufactory</td>
                                 <td>xARM5</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">9</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">9</td> <!-- Integration -->
-                                <td style="text-align: center;">9</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">6</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-high">9</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-high">9</td> <!-- Integration -->
+                                <td class="score score-high">9</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-mid">6</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2022</td> <!-- Year -->
-                                <td style="text-align: center;">6</td> <!-- Vibe -->
+                                <td class="score score-mid">6</td> <!-- Vibe -->
                             </tr>
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Ufactory</td>
                                 <td>xARM6</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">9</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">9</td> <!-- Integration -->
-                                <td style="text-align: center;">9</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-high">9</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-high">9</td> <!-- Integration -->
+                                <td class="score score-high">9</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-high">9</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2022</td> <!-- Year -->
-                                <td style="text-align: center;">9</td> <!-- Vibe -->
+                                <td class="score score-high">9</td> <!-- Vibe -->
                             </tr>
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Ufactory</td>
                                 <td>xARM7</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">9</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">9</td> <!-- Integration -->
-                                <td style="text-align: center;">9</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-high">9</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-high">9</td> <!-- Integration -->
+                                <td class="score score-high">9</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-high">9</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2023</td> <!-- Year -->
-                                <td style="text-align: center;">9</td> <!-- Vibe -->
+                                <td class="score score-high">9</td> <!-- Vibe -->
                             </tr>
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Ufactory</td>
                                 <td>850</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">9</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">9</td> <!-- Integration -->
-                                <td style="text-align: center;">9</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-high">9</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-high">9</td> <!-- Integration -->
+                                <td class="score score-high">9</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-high">9</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2023</td> <!-- Year -->
-                                <td style="text-align: center;">9</td> <!-- Vibe -->
+                                <td class="score score-high">9</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Universal Robots</td>
                                 <td>UR5e</td>
-                                <td style="text-align: center;">10</td> <!-- Hardware -->
-                                <td style="text-align: center;">9</td> <!-- Software -->
-                                <td style="text-align: center;">8</td> <!-- Documentation -->
-                                <td style="text-align: center;">8</td> <!-- Integration -->
-                                <td style="text-align: center;">8</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td class="score score-high">10</td> <!-- Hardware -->
+                                <td class="score score-high">9</td> <!-- Software -->
+                                <td class="score score-high">8</td> <!-- Documentation -->
+                                <td class="score score-high">8</td> <!-- Integration -->
+                                <td class="score score-high">8</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-high">9</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2022</td> <!-- Year -->
-                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                                <td class="score score-high">8</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Universal Robots</td>
                                 <td>UR20e</td>
-                                <td style="text-align: center;">10</td> <!-- Hardware -->
-                                <td style="text-align: center;">9</td> <!-- Software -->
-                                <td style="text-align: center;">8</td> <!-- Documentation -->
-                                <td style="text-align: center;">8</td> <!-- Integration -->
-                                <td style="text-align: center;">8</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td class="score score-high">10</td> <!-- Hardware -->
+                                <td class="score score-high">9</td> <!-- Software -->
+                                <td class="score score-high">8</td> <!-- Documentation -->
+                                <td class="score score-high">8</td> <!-- Integration -->
+                                <td class="score score-high">8</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-high">9</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2022</td> <!-- Year -->
-                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                                <td class="score score-high">8</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Universal Robots</td>
                                 <td>UR10e</td>
-                                <td style="text-align: center;">10</td> <!-- Hardware -->
-                                <td style="text-align: center;">9</td> <!-- Software -->
-                                <td style="text-align: center;">8</td> <!-- Documentation -->
-                                <td style="text-align: center;">8</td> <!-- Integration -->
-                                <td style="text-align: center;">8</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">9</td> <!-- Manipulation -->
+                                <td class="score score-high">10</td> <!-- Hardware -->
+                                <td class="score score-high">9</td> <!-- Software -->
+                                <td class="score score-high">8</td> <!-- Documentation -->
+                                <td class="score score-high">8</td> <!-- Integration -->
+                                <td class="score score-high">8</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-high">9</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2022</td> <!-- Year -->
-                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                                <td class="score score-high">8</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Kinova</td>
                                 <td>Gen3</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">7</td> <!-- Software -->
-                                <td style="text-align: center;">7</td> <!-- Documentation -->
-                                <td style="text-align: center;">7</td> <!-- Integration -->
-                                <td style="text-align: center;">7</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">7</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-mid">7</td> <!-- Software -->
+                                <td class="score score-mid">7</td> <!-- Documentation -->
+                                <td class="score score-mid">7</td> <!-- Integration -->
+                                <td class="score score-mid">7</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-mid">7</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2023</td> <!-- Year -->
-                                <td style="text-align: center;">7</td> <!-- Vibe -->
+                                <td class="score score-mid">7</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-hand-back-fist"></i></td>
                                 <td>Franka Emika</td>
                                 <td>Panda</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">8</td> <!-- Software -->
-                                <td style="text-align: center;">8</td> <!-- Documentation -->
-                                <td style="text-align: center;">8</td> <!-- Integration -->
-                                <td style="text-align: center;">8</td> <!-- Simulation -->
-                                <td style="text-align: center;">n/a</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">8</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-high">8</td> <!-- Software -->
+                                <td class="score score-high">8</td> <!-- Documentation -->
+                                <td class="score score-high">8</td> <!-- Integration -->
+                                <td class="score score-high">8</td> <!-- Simulation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-high">8</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2022</td> <!-- Year -->
-                                <td style="text-align: center;">8</td> <!-- Vibe -->
+                                <td class="score score-high">8</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-dog"></i></td>
                                 <td>Boston Dynamics</td>
                                 <td>Spot</td>
-                                <td style="text-align: center;">9</td> <!-- Hardware -->
-                                <td style="text-align: center;">8</td> <!-- Software -->
-                                <td style="text-align: center;">8</td> <!-- Documentation -->
-                                <td style="text-align: center;">8</td> <!-- Integration -->
-                                <td style="text-align: center;">7</td> <!-- Simulation -->
-                                <td style="text-align: center;">8</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td class="score score-high">9</td> <!-- Hardware -->
+                                <td class="score score-high">8</td> <!-- Software -->
+                                <td class="score score-high">8</td> <!-- Documentation -->
+                                <td class="score score-high">8</td> <!-- Integration -->
+                                <td class="score score-mid">7</td> <!-- Simulation -->
+                                <td class="score score-high">8</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2024</td> <!-- Year -->
-                                <td style="text-align: center;">9</td> <!-- Vibe -->
+                                <td class="score score-high">9</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-motorcycle"></i></td>
                                 <td>Direct Drive Tech</td>
                                 <td>Diablo</td>
-                                <td style="text-align: center;">7</td> <!-- Hardware -->
-                                <td style="text-align: center;">4</td> <!-- Software -->
-                                <td style="text-align: center;">4</td> <!-- Documentation -->
-                                <td style="text-align: center;">5</td> <!-- Integration -->
-                                <td style="text-align: center;">3</td> <!-- Simulation -->
-                                <td style="text-align: center;">5</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td class="score score-mid">7</td> <!-- Hardware -->
+                                <td class="score score-low">4</td> <!-- Software -->
+                                <td class="score score-low">4</td> <!-- Documentation -->
+                                <td class="score score-mid">5</td> <!-- Integration -->
+                                <td class="score score-low">3</td> <!-- Simulation -->
+                                <td class="score score-mid">5</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2024</td> <!-- Year -->
-                                <td style="text-align: center;">5</td> <!-- Vibe -->
+                                <td class="score score-mid">5</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-truck-pickup"></i></td>
                                 <td>AgileX</td>
                                 <td>Hunter</td>
-                                <td style="text-align: center;">7</td> <!-- Hardware -->
-                                <td style="text-align: center;">5</td> <!-- Software -->
-                                <td style="text-align: center;">5</td> <!-- Documentation -->
-                                <td style="text-align: center;">6</td> <!-- Integration -->
-                                <td style="text-align: center;">5</td> <!-- Simulation -->
-                                <td style="text-align: center;">6</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td class="score score-mid">7</td> <!-- Hardware -->
+                                <td class="score score-mid">5</td> <!-- Software -->
+                                <td class="score score-mid">5</td> <!-- Documentation -->
+                                <td class="score score-mid">6</td> <!-- Integration -->
+                                <td class="score score-mid">5</td> <!-- Simulation -->
+                                <td class="score score-mid">6</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2024</td> <!-- Year -->
-                                <td style="text-align: center;">6</td> <!-- Vibe -->
+                                <td class="score score-mid">6</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-truck-ramp-box"></i></td>
                                 <td>Neobotix</td>
                                 <td>MMP + UR5e</td>
-                                <td style="text-align: center;">8</td> <!-- Hardware -->
-                                <td style="text-align: center;">7</td> <!-- Software -->
-                                <td style="text-align: center;">6</td> <!-- Documentation -->
-                                <td style="text-align: center;">7</td> <!-- Integration -->
-                                <td style="text-align: center;">7</td> <!-- Simulation -->
-                                <td style="text-align: center;">7</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">8</td> <!-- Manipulation -->
+                                <td class="score score-high">8</td> <!-- Hardware -->
+                                <td class="score score-mid">7</td> <!-- Software -->
+                                <td class="score score-mid">6</td> <!-- Documentation -->
+                                <td class="score score-mid">7</td> <!-- Integration -->
+                                <td class="score score-mid">7</td> <!-- Simulation -->
+                                <td class="score score-mid">7</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td class="score score-high">8</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2024</td> <!-- Year -->
-                                <td style="text-align: center;">7</td> <!-- Vibe -->
+                                <td class="score score-mid">7</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-truck-pickup"></i></td>
                                 <td>MyBotShop</td>
                                 <td>Rovo</td>
-                                <td style="text-align: center;">6</td> <!-- Hardware -->
-                                <td style="text-align: center;">6</td> <!-- Software -->
-                                <td style="text-align: center;">5</td> <!-- Documentation -->
-                                <td style="text-align: center;">6</td> <!-- Integration -->
-                                <td style="text-align: center;">6</td> <!-- Simulation -->
-                                <td style="text-align: center;">6</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td class="score score-mid">6</td> <!-- Hardware -->
+                                <td class="score score-mid">6</td> <!-- Software -->
+                                <td class="score score-mid">5</td> <!-- Documentation -->
+                                <td class="score score-mid">6</td> <!-- Integration -->
+                                <td class="score score-mid">6</td> <!-- Simulation -->
+                                <td class="score score-mid">6</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2024</td> <!-- Year -->
-                                <td style="text-align: center;">6</td> <!-- Vibe -->
+                                <td class="score score-mid">6</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-truck-pickup"></i></td>
                                 <td>Quadruped</td>
                                 <td>Andi</td>
-                                <td style="text-align: center;">6</td> <!-- Hardware -->
-                                <td style="text-align: center;">5</td> <!-- Software -->
-                                <td style="text-align: center;">5</td> <!-- Documentation -->
-                                <td style="text-align: center;">5</td> <!-- Integration -->
-                                <td style="text-align: center;">5</td> <!-- Simulation -->
-                                <td style="text-align: center;">5</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td class="score score-mid">6</td> <!-- Hardware -->
+                                <td class="score score-mid">5</td> <!-- Software -->
+                                <td class="score score-mid">5</td> <!-- Documentation -->
+                                <td class="score score-mid">5</td> <!-- Integration -->
+                                <td class="score score-mid">5</td> <!-- Simulation -->
+                                <td class="score score-mid">5</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2023</td> <!-- Year -->
-                                <td style="text-align: center;">5</td> <!-- Vibe -->
+                                <td class="score score-mid">5</td> <!-- Vibe -->
                             </tr>
 
                             <tr>
                                 <td class="robot-thumb"><i class="fa-solid fa-truck-pickup"></i></td>
                                 <td>Segway</td>
                                 <td>E1</td>
-                                <td style="text-align: center;">7</td> <!-- Hardware -->
-                                <td style="text-align: center;">1</td> <!-- Software -->
-                                <td style="text-align: center;">2</td> <!-- Documentation -->
-                                <td style="text-align: center;">5</td> <!-- Integration -->
-                                <td style="text-align: center;">0</td> <!-- Simulation -->
-                                <td style="text-align: center;">3</td> <!-- Navigation -->
-                                <td style="text-align: center;">n/a</td> <!-- Perception -->
-                                <td style="text-align: center;">n/a</td> <!-- Manipulation -->
+                                <td class="score score-mid">7</td> <!-- Hardware -->
+                                <td class="score score-low">1</td> <!-- Software -->
+                                <td class="score score-low">2</td> <!-- Documentation -->
+                                <td class="score score-mid">5</td> <!-- Integration -->
+                                <td class="score score-low">0</td> <!-- Simulation -->
+                                <td class="score score-low">3</td> <!-- Navigation -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Perception -->
+                                <td style="text-align: center;" class="score score-na">n/a</td> <!-- Manipulation -->
                                 <td style="text-align: center;">2025</td> <!-- Year -->
-                                <td style="text-align: center;">2</td> <!-- Vibe -->
+                                <td class="score score-low">2</td> <!-- Vibe -->
                             </tr>
 
                         </tbody>
