@@ -1374,3 +1374,25 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
         flex-direction: column;
     }
 }
+
+/* Rubric table — horizontal scroll when needed */
+.rubric-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.rubric-table-wrap table {
+    min-width: 900px;
+    font-size: var(--project-font-size-small);
+}
+
+/* Rubric robot icon */
+.robot-thumb {
+    width: 36px;
+    text-align: center;
+    padding: 3px !important;
+    color: var(--secondary-color);
+}
+.robot-thumb i {
+    font-size: 1.2rem;
+}
