@@ -533,21 +533,28 @@ window.addEventListener('load', () => {
         processors = [];
 
         const processorConfigs = [
-            { size: 220, variant: 0 },
-            { size: 160, variant: 1 },
-            { size: 120, variant: 1 },
+            { size: 140, variant: 1 },
+            { size: 110, variant: 1 },
             { size: 90, variant: 2 },
+            { size: 80, variant: 2 },
             { size: 70, variant: 2 },
+            { size: 100, variant: 1 },
+            { size: 85, variant: 2 },
+            { size: 75, variant: 2 },
+            { size: 95, variant: 2 },
+            { size: 120, variant: 1 },
+            { size: 65, variant: 2 },
+            { size: 105, variant: 1 },
         ];
 
         const area = width * height;
         let count;
-        if (area > 2000000) count = 5;
-        else if (area > 1200000) count = 4;
-        else if (area > 800000) count = 3;
-        else count = 3;
+        if (area > 2000000) count = 12;
+        else if (area > 1200000) count = 9;
+        else if (area > 800000) count = 7;
+        else count = 6;
 
-        const minDistance = 200;
+        const minDistance = 90;
 
         for (let i = 0; i < count; i++) {
             let attempts = 0;
@@ -594,12 +601,6 @@ window.addEventListener('load', () => {
             staticCtx.fillRect(0, y, width, 1);
         }
 
-        // Corner registration marks (PCB alignment)
-        drawCornerMarks(staticCtx);
-
-        // Vias scattered around
-        drawVias(staticCtx);
-
         // Static circuit lines
         lines.forEach(line => line.drawStatic(staticCtx));
 
@@ -611,12 +612,6 @@ window.addEventListener('load', () => {
 
         // Silkscreen labels near processors
         drawSilkscreenLabels(staticCtx);
-
-        // Mounting holes in corners
-        drawMountingHoles(staticCtx);
-
-        // Test points
-        drawTestPoints(staticCtx);
     }
 
     // === Static decorative elements ===
