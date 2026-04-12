@@ -1,71 +1,68 @@
-// Theme Toggle Script
-// Default: Light theme, Toggle to: Dark theme
+// Theme cycle: light (grey) → green → navy → orange → rose → purple → dark → light
 
-(function() {
+(function () {
     const THEME_KEY = 'portfolio-theme';
+    const THEMES = ['light', 'green', 'navy', 'orange', 'rose', 'purple', 'dark'];
 
-    // Get saved theme or default to light
+    const THEME_META = {
+        light:  { icon: 'fa-solid fa-circle-half-stroke', label: 'Grey'   },
+        green:  { icon: 'fa-solid fa-leaf',               label: 'Green'  },
+        navy:   { icon: 'fa-solid fa-anchor',             label: 'Navy'   },
+        orange: { icon: 'fa-solid fa-fire',               label: 'Orange' },
+        rose:   { icon: 'fa-solid fa-heart',              label: 'Rose'   },
+        purple: { icon: 'fa-solid fa-wand-magic-sparkles',label: 'Purple' },
+        dark:   { icon: 'fa-solid fa-moon',               label: 'Dark'   }
+    };
+
     function getTheme() {
-        return localStorage.getItem(THEME_KEY) || 'light';
+        const saved = localStorage.getItem(THEME_KEY);
+        return THEMES.includes(saved) ? saved : 'light';
     }
 
-    // Apply theme to document
     function applyTheme(theme) {
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
+        if (theme === 'light') {
             document.documentElement.removeAttribute('data-theme');
+        } else {
+            document.documentElement.setAttribute('data-theme', theme);
         }
         updateToggleButton(theme);
     }
 
-    // Update toggle button icon and label
     function updateToggleButton(theme) {
         const toggle = document.getElementById('themeToggle');
         if (!toggle) return;
-
         const icon = toggle.querySelector('i');
         const label = toggle.querySelector('.theme-toggle-label');
-
-        if (theme === 'light') {
-            // In light mode, show option to switch to dark
-            if (icon) {
-                icon.className = 'fa-solid fa-moon';
-            }
-            if (label) {
-                label.textContent = 'Dark';
-            }
-        } else {
-            // In dark mode, show option to switch to light
-            if (icon) {
-                icon.className = 'fa-solid fa-sun';
-            }
-            if (label) {
-                label.textContent = 'Light';
-            }
-        }
+        const nextIdx = (THEMES.indexOf(theme) + 1) % THEMES.length;
+        const next = THEMES[nextIdx];
+        const meta = THEME_META[next];
+        if (icon) icon.className = meta.icon;
+        if (label) label.textContent = meta.label;
+        toggle.setAttribute('title', 'Current: ' + THEME_META[theme].label + '. Click for ' + meta.label + '.');
+        toggle.setAttribute('aria-label', 'Switch theme to ' + meta.label);
     }
 
-    // Toggle between themes
-    function toggleTheme() {
-        const currentTheme = getTheme();
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        localStorage.setItem(THEME_KEY, newTheme);
-        applyTheme(newTheme);
+    function cycleTheme() {
+        const idx = THEMES.indexOf(getTheme());
+        const next = THEMES[(idx + 1) % THEMES.length];
+        localStorage.setItem(THEME_KEY, next);
+        applyTheme(next);
     }
 
-    // Initialize theme on page load (before DOM ready to prevent flash)
     applyTheme(getTheme());
 
-    // Set up toggle button when DOM is ready
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const toggle = document.getElementById('themeToggle');
         if (toggle) {
-            toggle.addEventListener('click', toggleTheme);
+            toggle.addEventListener('click', cycleTheme);
             updateToggleButton(getTheme());
         }
     });
 
-    // Expose toggle function globally if needed
-    window.toggleTheme = toggleTheme;
+    window.toggleTheme = cycleTheme;
+    window.setTheme = function (theme) {
+        if (!THEMES.includes(theme)) return;
+        localStorage.setItem(THEME_KEY, theme);
+        applyTheme(theme);
+    };
 })();
