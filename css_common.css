@@ -1477,3 +1477,34 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 .sortable.sort-asc::after { content: " ↑"; opacity: 1; }
 .sortable.sort-desc::after { content: " ↓"; opacity: 1; }
+
+/* Accessibility: skip link */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 9999;
+    border-radius: 0 0 6px 0;
+}
+.skip-link:focus {
+    left: 0;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    #circuitCanvas {
+        display: none;
+    }
+    .scrolling-container {
+        animation: none !important;
+    }
+}
