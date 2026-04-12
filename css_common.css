@@ -646,29 +646,80 @@ a:active {
    ========================================================= */
 .experience-container {
     display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem 0.75rem 1.25rem;
+    border-left: 4px solid var(--primary-color);
+    background: color-mix(in srgb, var(--secondary-color) 3%, transparent);
+    border-radius: 0 10px 10px 0;
+    margin-top: 1.5rem;
 }
 
 .experience-container img {
-    margin-right: 20px;
-    height: 50px;
-    position: relative;
+    margin-right: 4px;
+    height: 54px;
+    width: 54px;
+    object-fit: contain;
     border-radius: 50%;
-    top: 10px;
+    background: var(--card-color);
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.25s ease;
 }
 
 .experience-container img:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
+}
+
+.experience-container h4 {
+    margin: 0;
+    line-height: 1.35;
 }
 
 .experience-meta {
     font-size: var(--project-font-size-small);
     color: var(--primary-color);
     line-height: 1.6;
+    padding: 0.35rem 0 0.5rem 1.5rem;
+    border-left: 4px solid color-mix(in srgb, var(--primary-color) 40%, transparent);
+    margin-left: 0;
 }
 
 .experience-meta img {
     vertical-align: middle;
     margin-left: 5px;
+    border-radius: 2px;
+}
+
+/* Nested tables in experience: zebra + hover */
+.experience-container + .experience-meta + div + div table tbody tr,
+.text-spec table tbody tr {
+    transition: background 0.15s ease;
+}
+.text-spec table tbody tr:nth-child(odd) {
+    background: color-mix(in srgb, var(--secondary-color) 3%, transparent);
+}
+.text-spec table tbody tr:hover {
+    background: color-mix(in srgb, var(--primary-color) 8%, transparent);
+}
+
+/* Role subheader */
+.text-spec h6 {
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 1.25rem 0 0.5rem;
+    padding-left: 1.5rem;
+    border-left: 4px solid color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+/* custom bullets inside experience tables look tighter */
+.custom-bullets {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.85rem;
+    line-height: 1.55;
 }
 
 /* =========================================================
@@ -708,6 +759,89 @@ a:active {
 /* =========================================================
    PROJECTS
    ========================================================= */
+/* Project card grid */
+.project-grid {
+    display: grid;
+    width: 100%;
+    max-width: 1200px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin: 0 auto;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px var(--shadow-color);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+.project-card-media {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--secondary-color) 6%, var(--card-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card-media img {
+    transform: scale(1.05);
+}
+
+.project-card-body {
+    padding: 0.9rem 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.project-card-title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+}
+
+.project-card-desc {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Legacy project-item (kept in case of other references) */
 .project-item {
     display: grid;
     width: 100%;
