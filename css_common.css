@@ -3,22 +3,22 @@
    ========================================================= */
 :root {
     /* Light theme (default) - Clean neutral grey */
-    --primary-color: hsl(220, 8%, 35%);
-    --secondary-color: hsl(220, 10%, 25%);
-    --text-color: hsl(220, 10%, 20%);
+    --primary-color: hsl(220, 10%, 22%);
+    --secondary-color: hsl(220, 12%, 15%);
+    --text-color: hsl(220, 14%, 10%);
     --background-color: hsl(220, 10%, 95%);
     --panel-color: rgba(250, 250, 252, 0.98);
     --card-color: hsl(220, 10%, 98%);
     --border-color: hsl(220, 8%, 82%);
     --light-white-color: hsl(220, 10%, 98%);
-    --hyperlink-inactive-color: hsl(220, 15%, 40%);
-    --hyperlink-active-color: hsl(220, 20%, 30%);
+    --hyperlink-inactive-color: hsl(220, 18%, 28%);
+    --hyperlink-active-color: hsl(220, 22%, 18%);
     --shadow-color: rgba(0, 0, 0, 0.1);
     --table-header-bg: hsl(220, 8%, 92%);
     --table-border: hsl(220, 8%, 82%);
 
     /* Semantic & utility tokens (configurable) */
-    --accent-dark: hsl(220, 12%, 25%);
+    --accent-dark: hsl(220, 14%, 12%);
     --info-color: #3b82f6;
     --success-color: #10b981;
     --focus-ring: #93c5fd;
@@ -258,35 +258,31 @@ h4 {
 }
 
 h6 {
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
     color: var(--secondary-color);
-    padding: 0.45rem 1rem 0.45rem 0.95rem;
-    border: none;
-    border-left: 3px solid var(--primary-color);
-    display: inline-block;
-    border-radius: 0 6px 6px 0;
-    margin: 1.25rem 0 0.6rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    background: linear-gradient(90deg,
-            color-mix(in srgb, var(--primary-color) 14%, transparent) 0%,
-            color-mix(in srgb, var(--primary-color) 4%, transparent) 60%,
-            transparent 100%);
-    position: relative;
+    letter-spacing: 0.08em;
+    text-align: left;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 1.75rem 0 0.75rem;
+    padding: 0;
+    border: none;
+    background: none;
+    line-height: 1.35;
 }
 
-h6::after {
+h6::before {
     content: "";
-    position: absolute;
-    left: 0.95rem;
-    right: 1rem;
-    bottom: 0.15rem;
-    height: 1px;
-    background: linear-gradient(90deg,
-            color-mix(in srgb, var(--primary-color) 35%, transparent),
-            transparent);
-    pointer-events: none;
+    flex: 0 0 auto;
+    width: 7px;
+    height: 7px;
+    background: var(--primary-color);
+    transform: rotate(45deg);
+    display: inline-block;
+    align-self: center;
 }
 
 a {
@@ -554,7 +550,7 @@ a:active {
     box-shadow: 3px 0 10px -5px var(--shadow-color);
     display: flex;
     flex-direction: column;
-    border-right: 3px solid var(--primary-color);
+    border-right: 1px solid var(--border-color);
 }
 
 .side-nav ul {
@@ -708,6 +704,7 @@ a:active {
    THEME TOGGLE
    ========================================================= */
 .theme-toggle {
+    display: none !important;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -865,16 +862,7 @@ a:active {
 }
 
 
-/* Role subheader */
-.text-spec h6 {
-    color: var(--primary-color);
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin: 1.25rem 0 0.5rem;
-    padding-left: 1.5rem;
-    border-left: 4px solid color-mix(in srgb, var(--primary-color) 20%, transparent);
-}
+/* Role subheader — base h6 styling applies; no override needed */
 
 /* custom bullets inside experience tables look tighter */
 .custom-bullets {
