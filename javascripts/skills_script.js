@@ -16,9 +16,9 @@ const SKILLS = [
     { area: "Software", group: "Robotics", title: "URDF/XACRO", level: 5, tags: ["Robot Modeling", "TF2"] },
     { area: "Software", group: "Robotics", title: "ros2_control", level: 4, tags: ["Controllers", "Hardware Interface"] },
 
-    { area: "Software", group: "Sensors", title: "LiDAR Integration", level: 5, tags: ["Ouster", "Livox", "Hesai"] },
-    { area: "Software", group: "Sensors", title: "Depth Cameras", level: 5, tags: ["RealSense", "ZED2i"] },
-    { area: "Software", group: "Sensors", title: "RTK-GPS Systems", level: 4, tags: ["Fixposition", "Emlid"] },
+    { area: "Software", group: "Sensors", title: "LiDAR Integration", level: 5, tags: ["Livox", "Ouster", "Hokuyo", "Blickfeld"] },
+    { area: "Software", group: "Sensors", title: "IMUs", level: 4, tags: ["UM7", "Phidgets", "Lord Microstrain"] },
+    { area: "Software", group: "Sensors", title: "Sensor Integration", level: 5, tags: ["LiDAR", "Depth Cameras", "IMU", "GPS", "Routers"] },
 
     { area: "Software", group: "Protocols", title: "CAN Bus", level: 4, tags: ["SocketCAN", "DBC"] },
     { area: "Software", group: "Protocols", title: "Serial/Modbus", level: 4, tags: ["RS485", "USB"] },
@@ -27,7 +27,7 @@ const SKILLS = [
     { area: "Software", group: "Docs", title: "LaTeX", level: 4, tags: ["Papers", "Manuals"] },
 
     { area: "Software", group: "Design", title: "Fusion 360", level: 5, tags: ["CAD", "CAM"] },
-    { area: "Software", group: "Design", title: "3D Printing", level: 5, tags: ["FDM", "SLA"] },
+    { area: "Software", group: "Design", title: "3D Printing", level: 5, tags: ["FDM", "SLA", "Bambu Studio", "PrusaSlicer", "Cura", "Mesh Repair"] },
     { area: "Software", group: "Design", title: "Blender", level: 3, tags: ["Mesh Export", "GLTF"] },
 
     { area: "Software", group: "AI/ML", title: "Computer Vision", level: 5, tags: ["OpenCV", "YOLO", "Depth"] },
@@ -39,20 +39,21 @@ const SKILLS = [
     { area: "Software", group: "Web", title: "HTML/CSS", level: 4, tags: ["Responsive UI"] },
 
     // --- Hardware ---
-    { area: "Hardware", group: "Platforms", title: "Wheeled Robots", level: 5, tags: ["Husky", "Jackal", "Ridgeback"] },
-    { area: "Hardware", group: "Platforms", title: "Quadrupeds", level: 5, tags: ["Unitree", "Boston Dynamics"] },
-    { area: "Hardware", group: "Platforms", title: "Humanoids/Bipeds", level: 4, tags: ["H1", "G1", "Ascento"] },
-    { area: "Hardware", group: "Platforms", title: "Tracked Robots", level: 4, tags: ["ROVO", "Custom"] },
+    { area: "Hardware", group: "Platforms", title: "Tracked Robots", level: 4, tags: ["Mattro ROVO2", "Mattro ROVO3"] },
+    { area: "Hardware", group: "Platforms", title: "Quadrupeds", level: 5, tags: ["Unitree A1", "Unitree A2", "Unitree Go2", "Unitree B1", "Unitree B2", "Unitree B2-W", "Boston Dynamics Spot"] },
+    { area: "Hardware", group: "Platforms", title: "Humanoids/Bipeds", level: 4, tags: ["Unitree H1", "Unitree G1", "Unitree G1-D", "Unitree R1", "AgiBot A2", "AgiBot X2", "AgiBot G2", "LimX P1", "Ascento"] },
+    { area: "Hardware", group: "Platforms", title: "Wheeled Robots", level: 5, tags: ["AgileX Hunter", "Segway E1", "Clearpath Husky", "Clearpath Jackal", "Clearpath Ridgeback", "Clearpath Dingo", "Clearpath Boxer", "Clearpath Warthog"] },
 
-    { area: "Hardware", group: "Manipulators", title: "Robot Arms", level: 5, tags: ["xARM", "UR", "Franka"] },
-    { area: "Hardware", group: "Manipulators", title: "Grippers", level: 5, tags: ["Robotiq 2F", "Custom"] },
-    { area: "Hardware", group: "Manipulators", title: "Dexterous Hands", level: 4, tags: ["Inspire", "SEED"] },
+    { area: "Hardware", group: "Manipulators", title: "Robot Arms", level: 5, tags: ["Ufactory xARM5/6/7", "Ufactory UF850", "UR5/5e/10e/20", "Kinova Gen3", "Kinova Link 6", "Franka Panda", "AgileX PiPER", "Unitree Z1", "Unitree D1-T", "Robotis OM-X"] },
+    { area: "Hardware", group: "Manipulators", title: "Grippers & Dexterous Hands", level: 5, tags: ["Robotiq 2F-85", "Robotiq 2F-140", "Inspire 6-DOF", "SEED", "Custom"] },
 
-    { area: "Hardware", group: "Integration", title: "Sensor Integration", level: 5, tags: ["LiDAR", "Camera", "IMU"] },
-    { area: "Hardware", group: "Integration", title: "Electrical Systems", level: 4, tags: ["Wiring", "Power"] },
+    { area: "Hardware", group: "Sensors", title: "Depth Cameras", level: 5, tags: ["ZEDX", "ZED2", "ZED2i", "RealSense D435/D435i", "RealSense D455", "RealSense D405"] },
+    { area: "Hardware", group: "Sensors", title: "RTK-GPS Systems", level: 4, tags: ["Fixposition", "EMLID RS2", "EMLID M2", "Drotek"] },
 
-    { area: "Hardware", group: "Manufacturing", title: "3D Printing", level: 5, tags: ["Brackets", "Mounts"] },
-    { area: "Hardware", group: "Manufacturing", title: "Machining", level: 3, tags: ["Lathe", "Drilling"] },
+    { area: "Hardware", group: "Integration", title: "Electrical Systems", level: 4, tags: ["Wiring", "Power", "Soldering", "Crimping", "Schematics", "PCB Assembly", "Multimeter Diagnostics"] },
+
+    { area: "Hardware", group: "Manufacturing", title: "3D Printing", level: 5, tags: ["Brackets", "Mounts", "Enclosures", "Sensor Housings", "End-Effectors", "Jigs", "Prototypes"] },
+    { area: "Hardware", group: "Manufacturing", title: "Machining", level: 3, tags: ["Lathe", "Drilling", "Milling", "CNC", "Grinding", "Welding", "Sheet Metal"] },
 ];
 
 /* ---------- Render ---------- */
@@ -83,14 +84,26 @@ function card({ area, group, title, level, tags }) {
 }
 
 function render(filter = "all") {
-    // Software first, Hardware last; within each area, group + title alphabetical
+    // Software first, Hardware last.
+    // Within Hardware: Sensors first, then Platforms, Manufacturing, Integration, Manipulators (Robot Arms last).
+    // Within each (area, group), preserve the order they appear in the SKILLS array above.
     const areaOrder = { Software: 0, Hardware: 1 };
+    const groupOrder = {
+        Sensors: 0,
+        Platforms: 1,
+        Manufacturing: 2,
+        Integration: 3,
+        Manipulators: 4,
+    };
     grid.innerHTML = SKILLS
+        .map((s, i) => ({ ...s, _idx: i }))
         .filter(s => filter === "all" ? true : s.area === filter)
         .sort((a, b) => {
             const ao = (areaOrder[a.area] ?? 99) - (areaOrder[b.area] ?? 99);
             if (ao !== 0) return ao;
-            return (a.group + a.title).localeCompare(b.group + b.title);
+            const go = (groupOrder[a.group] ?? 99) - (groupOrder[b.group] ?? 99);
+            if (go !== 0) return go;
+            return a._idx - b._idx;
         })
         .map(card).join("");
 }
