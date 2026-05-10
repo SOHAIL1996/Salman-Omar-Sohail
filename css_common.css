@@ -1077,6 +1077,7 @@ a:active {
     align-items: center;
     gap: 1rem;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .experience-container img {
@@ -1085,9 +1086,9 @@ a:active {
     width: 54px;
     object-fit: contain;
     border-radius: 50%;
-    background: var(--card-color);
-    padding: 4px;
-    border: 1px solid var(--border-color);
+    background: transparent;
+    padding: 0;
+    border: none;
     transition: transform 0.25s ease;
 }
 
@@ -1097,13 +1098,91 @@ a:active {
 
 .experience-container h4 {
     margin: 0;
-    line-height: 1.35;
+    line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.experience-container h4 a,
+.experience-container h4 .company-name {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--secondary-color);
+    letter-spacing: -0.005em;
+    text-decoration: none;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.experience-container h4 a:hover {
+    border-bottom-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.experience-container h4 .role-tag {
+    color: var(--muted-color);
+    font-weight: 400;
+    font-size: var(--project-font-size-small);
+    font-style: italic;
+    letter-spacing: 0.01em;
+}
+
+.experience-fallback-icon {
+    width: 54px;
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    opacity: 0.6;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+/* When .experience-meta lives inside .experience-container, push it to the right */
+.experience-container .experience-meta {
+    margin-left: auto;
+    text-align: right;
+    border-left: none;
+    padding: 0;
+    font-size: var(--project-font-size-mini);
+    line-height: 1.5;
+    color: var(--muted-color);
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+.experience-container .experience-meta .exp-range {
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 1.05em;
+    letter-spacing: 0.02em;
+}
+
+.experience-container .experience-meta .exp-duration {
+    margin-left: 4px;
+    color: var(--muted-color);
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+.experience-container .experience-meta img {
+    margin-left: 6px !important;
+    width: 14px !important;
+    height: auto;
+    border-radius: 2px;
+    vertical-align: middle;
+    box-shadow: 0 1px 2px var(--shadow-weak);
 }
 
 .experience-meta {
     font-size: var(--project-font-size-small);
     color: var(--primary-color);
-    line-height: 1.6;
+    line-height: 1.5;
     padding: 0.35rem 0 0.5rem 1.5rem;
     border-left: 4px solid color-mix(in srgb, var(--primary-color) 40%, transparent);
     margin-left: 0;
