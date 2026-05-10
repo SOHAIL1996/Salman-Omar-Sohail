@@ -6,15 +6,15 @@
     --primary-color: #2C5282;
     --secondary-color: #1B365D;
     --text-color: #1F2937;
-    --background-color: hsl(214, 30%, 96%);
-    --panel-color: rgba(250, 251, 253, 0.98);
-    --card-color: hsl(214, 30%, 98%);
+    --background-color: #ffffff;
+    --panel-color: #ffffff;
+    --card-color: #ffffff;
     --border-color: #CBD5E0;
     --light-white-color: hsl(214, 30%, 98%);
     --hyperlink-inactive-color: #2C5282;
     --hyperlink-active-color: #1B365D;
     --shadow-color: rgba(27, 54, 93, 0.12);
-    --table-header-bg: color-mix(in srgb, #2C5282 10%, hsl(214, 30%, 96%));
+    --table-header-bg: color-mix(in srgb, #2C5282 8%, #ffffff);
     --table-border: #CBD5E0;
 
     /* Semantic & utility tokens (configurable) */
