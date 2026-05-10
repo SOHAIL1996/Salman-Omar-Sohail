@@ -234,11 +234,12 @@ h1,
     padding: 0 0 0.6rem 0;
     font-size: var(--project-font-size-small);
     font-weight: 600;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: 0.22em;
     border-bottom: 1px solid var(--border-color);
     position: relative;
+    opacity: 0.85;
 }
 
 .subsection-label::after {
@@ -415,8 +416,8 @@ h4 {
 
 h6 {
     font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--secondary-color);
+    font-weight: 600;
+    color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     text-align: left;
@@ -428,6 +429,7 @@ h6 {
     border: none;
     background: none;
     line-height: 1.35;
+    opacity: 0.85;
 }
 
 h6::before {
@@ -1109,9 +1111,9 @@ a:active {
 
 .experience-container h4 a,
 .experience-container h4 .company-name {
-    font-size: 1.2em;
+    font-size: 1.15em;
     font-weight: 600;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     letter-spacing: -0.005em;
     text-decoration: none;
     border-bottom: 1.5px solid transparent;
@@ -1120,7 +1122,7 @@ a:active {
 
 .experience-container h4 a:hover {
     border-bottom-color: var(--primary-color);
-    color: var(--primary-color);
+    color: var(--accent-dark);
 }
 
 .experience-container h4 .role-tag {
