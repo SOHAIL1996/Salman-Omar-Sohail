@@ -191,7 +191,7 @@
 /* =========================================================
    BASE TYPOGRAPHY & GLOBALS
    ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@100..900&display=swap');
 
 #circuitCanvas {
     position: fixed;
@@ -205,8 +205,8 @@
 }
 
 body {
-    font-family: "Outfit", sans-serif;
-    font-weight: 300;
+    font-family: "Inter", "Outfit", sans-serif;
+    font-weight: 400;
     font-size: var(--project-font-size-normal);
     margin: 0;
     padding: 0;
@@ -217,14 +217,15 @@ body {
 
 h1,
 .section-heading {
+    font-family: "IBM Plex Serif", Georgia, serif;
     font-size: var(--project-font-size-huge);
     color: var(--primary-color);
     margin: 2.5rem 0 0.5rem;
     padding-top: 20px;
-    font-weight: 900;
-    letter-spacing: 0.02em;
+    font-weight: 500;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    line-height: 1.15;
+    line-height: 1.2;
 }
 
 /* Consistent sub-section label (gallery labels, grouped subsections) */
@@ -412,6 +413,42 @@ h4 {
     font-size: var(--project-font-size-large);
     font-weight: normal;
     color: var(--secondary-color);
+}
+
+.publication-title {
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 1.5rem 0 0.25rem;
+    line-height: 1.35;
+}
+
+.publication-title img {
+    margin-left: 6px;
+    vertical-align: middle;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px var(--shadow-weak);
+}
+
+.publication-meta {
+    margin: 0 0 0.5rem 0;
+    font-size: var(--project-font-size-small);
+    font-style: italic;
+    color: var(--muted-color);
+    line-height: 1.45;
+}
+
+.publication-meta a {
+    color: inherit;
+    border-bottom: 1px dotted color-mix(in srgb, var(--primary-color) 50%, transparent);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.publication-meta a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    text-decoration: none;
 }
 
 h6 {
@@ -1926,6 +1963,12 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 /* =========================================================
    PDF VIEWER
    ========================================================= */
+.pdfv {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-color);
+}
+
 .pdfv-controls {
     display: flex;
     flex-wrap: nowrap;
