@@ -229,19 +229,175 @@ h1,
 
 /* Consistent sub-section label (gallery labels, grouped subsections) */
 .subsection-label {
-    display: inline-block;
-    margin: 2.5rem 0 1.25rem 20px;
-    padding: 5px 14px;
-    font-size: var(--project-font-size-normal);
-    font-weight: 500;
-    color: var(--primary-color);
-    background-color: var(--card-color);
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--primary-color);
-    border-radius: 8px;
+    display: block;
+    margin: 2.75rem 20px 1.25rem 20px;
+    padding: 0 0 0.6rem 0;
+    font-size: var(--project-font-size-small);
+    font-weight: 600;
+    color: var(--secondary-color);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    min-width: 250px;
+    letter-spacing: 0.22em;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.subsection-label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 72px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+/* =========================================================
+   FEATURED HIGHLIGHT (replaceable showcase block)
+   Use `.highlight-feature--compact` to render as a small banner.
+   ========================================================= */
+.highlight-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 1.75rem;
+    margin: 1.75rem 20px 2.5rem 20px;
+    padding: 1.25rem;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 18px var(--shadow-weak);
+    align-items: center;
+    overflow: hidden;
+}
+
+.highlight-media {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #000;
+    aspect-ratio: 16 / 9;
+}
+
+.highlight-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.highlight-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 10px;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: var(--project-font-size-mini);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    border-radius: 999px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.highlight-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    min-width: 0;
+}
+
+.highlight-eyebrow {
+    font-size: var(--project-font-size-mini);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.highlight-title {
+    font-size: var(--project-font-size-large);
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 0;
+    line-height: 1.25;
+}
+
+.highlight-summary {
+    font-size: var(--project-font-size-small);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.55;
+}
+
+.highlight-bullets {
+    list-style: none;
+    margin: 0.25rem 0 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 1rem;
+    font-size: var(--project-font-size-small);
+}
+
+.highlight-bullets li {
+    position: relative;
+    padding-left: 1rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.highlight-bullets li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+/* Compact variant: small inline banner with truncated text and no bullets */
+.highlight-feature--compact {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 1rem;
+    padding: 0.75rem;
+    margin: 1.25rem 20px 1.5rem 20px;
+}
+
+.highlight-feature--compact .highlight-bullets {
+    display: none;
+}
+
+.highlight-feature--compact .highlight-summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.highlight-feature--compact .highlight-title {
+    font-size: var(--project-font-size-normal);
+}
+
+.highlight-feature--compact .highlight-eyebrow {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .highlight-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-bullets {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-feature--compact {
+        grid-template-columns: 1fr;
+    }
 }
 
 h2 {
@@ -920,7 +1076,9 @@ a:active {
 .gallery-item img {
     width: 100%;
     aspect-ratio: 1 / 1;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 12px;
+    box-sizing: border-box;
     display: block;
     border: none;
     border-radius: 0;
@@ -996,7 +1154,8 @@ a:active {
     padding: 8px;
 }
 
-.project-card-media img {
+.project-card-media img,
+.project-card-media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
