@@ -2,41 +2,41 @@
    THEME TOKENS
    ========================================================= */
 :root {
-    /* Light theme (default) - Clean neutral grey */
-    --primary-color: hsl(220, 10%, 22%);
-    --secondary-color: hsl(220, 12%, 15%);
-    --text-color: hsl(220, 14%, 10%);
-    --background-color: hsl(220, 10%, 95%);
-    --panel-color: rgba(250, 250, 252, 0.98);
-    --card-color: hsl(220, 10%, 98%);
-    --border-color: hsl(220, 8%, 82%);
-    --light-white-color: hsl(220, 10%, 98%);
-    --hyperlink-inactive-color: hsl(220, 18%, 28%);
-    --hyperlink-active-color: hsl(220, 22%, 18%);
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --table-header-bg: hsl(220, 8%, 92%);
-    --table-border: hsl(220, 8%, 82%);
+    /* Light theme (default) - CV palette: Palette_1 #1B365D / Palette_2 #2C5282 */
+    --primary-color: #2C5282;
+    --secondary-color: #1B365D;
+    --text-color: #1F2937;
+    --background-color: hsl(214, 30%, 96%);
+    --panel-color: rgba(250, 251, 253, 0.98);
+    --card-color: hsl(214, 30%, 98%);
+    --border-color: #CBD5E0;
+    --light-white-color: hsl(214, 30%, 98%);
+    --hyperlink-inactive-color: #2C5282;
+    --hyperlink-active-color: #1B365D;
+    --shadow-color: rgba(27, 54, 93, 0.12);
+    --table-header-bg: color-mix(in srgb, #2C5282 10%, hsl(214, 30%, 96%));
+    --table-border: #CBD5E0;
 
     /* Semantic & utility tokens (configurable) */
-    --accent-dark: hsl(220, 14%, 12%);
-    --info-color: #3b82f6;
+    --accent-dark: #1B365D;
+    --info-color: #2C5282;
     --success-color: #10b981;
     --focus-ring: #93c5fd;
-    --shadow-weak: rgba(0, 0, 0, 0.08);
-    --shadow-strong: rgba(0, 0, 0, 0.2);
+    --shadow-weak: rgba(27, 54, 93, 0.1);
+    --shadow-strong: rgba(27, 54, 93, 0.22);
     --overlay-light: rgba(255, 255, 255, 0.05);
     --overlay-mid: rgba(255, 255, 255, 0.1);
     --overlay-strong: rgba(255, 255, 255, 0.2);
     --dropdown-bg: rgba(255, 255, 255, 0.96);
-    --dropdown-bg-hover: rgba(245, 245, 247, 0.98);
-    --form-border: #d0d5dd;
+    --dropdown-bg-hover: rgba(245, 247, 250, 0.98);
+    --form-border: #CBD5E0;
     --form-bg: #ffffff;
     --form-bg-alt: #f8fafc;
     --form-bg-active: #f1f5f9;
     --score-high: hsl(142, 65%, 40%);
     --score-mid: hsl(38, 90%, 45%);
     --score-low: hsl(0, 70%, 50%);
-    --muted-color: hsl(220, 8%, 55%);
+    --muted-color: #4A5568;
 
     /* Aliases (legacy selectors use these names) */
     --accent: var(--primary-color);
@@ -53,12 +53,12 @@
     --project-font-size-small: 0.85rem;
     --project-font-size-mini: 0.75rem;
 
-    --circuit-color-base: hsla(220, 8%, 40%, 0.1);
-    --circuit-color-pulse: hsl(220, 10%, 45%);
-    --circuit-color-trail: hsl(220, 8%, 40%);
-    --circuit-color-grid: hsla(220, 8%, 40%, 0.03);
-    --circuit-color-led: hsl(220, 12%, 50%);
-    --circuit-color-cpu-glow: hsla(220, 8%, 40%, 0.15);
+    --circuit-color-base: hsla(214, 49%, 34%, 0.1);
+    --circuit-color-pulse: #2C5282;
+    --circuit-color-trail: #1B365D;
+    --circuit-color-grid: hsla(214, 49%, 34%, 0.03);
+    --circuit-color-led: #3b5e92;
+    --circuit-color-cpu-glow: hsla(214, 49%, 34%, 0.15);
 }
 
 /* ---------- Accent theme overrides (apply on top of light defaults) ---------- */
