@@ -1745,7 +1745,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     background: transparent;
     font-size: var(--project-font-size-small);
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--primary-color);
     cursor: pointer;
     transition: .2s transform ease;
 }
@@ -1800,12 +1800,12 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 .skill-title {
     flex: 1;
     min-width: 0;
-    font-weight: 500;
+    font-weight: 400;
+    color: var(--primary-color);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: var(--project-font-size-normal);
-
 }
 
 .skill-tooltip {
@@ -1819,11 +1819,11 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 .skill-card.software .skill-tooltip {
-    color: var(--info-color);
+    color: var(--success-color);
 }
 
 .skill-card.hardware .skill-tooltip {
-    color: var(--success-color);
+    color: var(--score-mid);
 }
 
 .skill-sub {
@@ -1837,27 +1837,39 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 
 .skill-meter {
     display: flex;
-    gap: 6px;
-    margin-top: 12px;
-    flex-wrap: wrap;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+    gap: 0;
+    margin-top: 14px;
+    height: 4px;
+    width: 50%;
+    max-width: 140px;
     background: var(--border-color);
-    position: relative;
+    border-radius: 2px;
     overflow: hidden;
 }
 
-.dot.filled::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
+.dot {
+    flex: 1;
+    height: 100%;
+    background: transparent;
+    position: relative;
+}
+
+.dot.filled {
     background: var(--primary-color);
-    animation: pop .28s ease-out both;
+    animation: skillFill .35s ease-out both;
+}
+
+@keyframes skillFill {
+    from {
+        transform: scaleX(0);
+        transform-origin: left;
+        opacity: 0.4;
+    }
+    to {
+        transform: scaleX(1);
+        transform-origin: left;
+        opacity: 1;
+    }
 }
 
 @keyframes pop {
@@ -1897,11 +1909,11 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 .skill-card.software .skill-tag {
-    border-left: 3px solid var(--info-color);
+    border-left: 3px solid var(--success-color);
 }
 
 .skill-card.hardware .skill-tag {
-    border-left: 3px solid var(--success-color);
+    border-left: 3px solid var(--score-mid);
 }
 
 
@@ -2078,7 +2090,7 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .dot.filled::after {
+    .dot.filled {
         animation: none;
     }
 }

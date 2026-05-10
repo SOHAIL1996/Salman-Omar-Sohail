@@ -32,7 +32,7 @@ const SKILLS = [
 
     { area: "Software", group: "AI/ML", title: "Computer Vision", level: 5, tags: ["OpenCV", "YOLO", "Depth"] },
     { area: "Software", group: "AI/ML", title: "Deep Learning", level: 5, tags: ["PyTorch", "TensorFlow"] },
-    { area: "Software", group: "AI/ML", title: "Reinforcement Learning", level: 3, tags: ["Isaac Gym", "Locomotion"] },
+    { area: "Software", group: "AI/ML", title: "Reinforcement Learning", level: 5, tags: ["Isaac Gym", "Locomotion"] },
 
     { area: "Software", group: "Web", title: "Flask", level: 4, tags: ["REST API", "WebSocket"] },
     { area: "Software", group: "Web", title: "JavaScript/Three.js", level: 4, tags: ["3D Viz", "GLTF"] },
@@ -83,10 +83,15 @@ function card({ area, group, title, level, tags }) {
 }
 
 function render(filter = "all") {
+    // Software first, Hardware last; within each area, group + title alphabetical
+    const areaOrder = { Software: 0, Hardware: 1 };
     grid.innerHTML = SKILLS
         .filter(s => filter === "all" ? true : s.area === filter)
-        // stable, readable grouping
-        .sort((a, b) => (a.area + b.group + a.title).localeCompare(b.area + b.group + b.title))
+        .sort((a, b) => {
+            const ao = (areaOrder[a.area] ?? 99) - (areaOrder[b.area] ?? 99);
+            if (ao !== 0) return ao;
+            return (a.group + a.title).localeCompare(b.group + b.title);
+        })
         .map(card).join("");
 }
 render();
