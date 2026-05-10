@@ -10,7 +10,7 @@ cd "$ROOT"
 # Sanity: must look like X.Y or X.Y.Z
 [[ "$NEW" =~ ^[0-9]+(\.[0-9]+){1,2}$ ]] || { echo "Bad version: $NEW"; exit 1; }
 
-HTML_FILES=(index.html experience.html projects.html academia.html rubric.html robot_deployment.html)
+HTML_FILES=(index.html skills.html experience.html projects.html academia.html rubric.html robot_deployment.html)
 
 for f in "${HTML_FILES[@]}"; do
     # Replace existing ?v=X on css_common.css
