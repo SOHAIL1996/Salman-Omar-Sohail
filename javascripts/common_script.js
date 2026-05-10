@@ -106,19 +106,51 @@ Software License Agreement (BSD)
 
   // ------- DOM Ready & Fetches -------
   document.addEventListener("DOMContentLoaded", () => {
+    // Load topbar (date · location · local time)
+    const topbarMount = document.getElementById("topbar");
+    if (topbarMount) {
+      fetch("topbar.html")
+        .then((r) => r.text())
+        .then((html) => {
+          // Replace the mount wrapper so `.topbar` becomes a direct body child;
+          // sticky positioning needs a tall parent (the body) to stick against.
+          topbarMount.outerHTML = html;
+
+          const bd = document.getElementById("buildDate");
+          if (bd) {
+            const d = new Date(document.lastModified);
+            bd.textContent = fmtDate(d);
+          }
+
+          const navTime = document.getElementById("navLocalTime");
+          const navTz = document.getElementById("navTimezone");
+          if (navTime) {
+            const TZ = "Europe/Berlin";
+            const updateNavTime = () => {
+              const now = new Date();
+              navTime.textContent = now.toLocaleTimeString("en-GB", {
+                hour: "2-digit", minute: "2-digit", hour12: false, timeZone: TZ,
+              });
+              navTime.dateTime = now.toISOString();
+              if (navTz) {
+                const part = new Intl.DateTimeFormat("en-GB", {
+                  timeZone: TZ, timeZoneName: "short",
+                }).formatToParts(now).find((p) => p.type === "timeZoneName");
+                navTz.textContent = part ? part.value : "";
+              }
+            };
+            updateNavTime();
+            setInterval(updateNavTime, 30000);
+          }
+        });
+    }
+
     // Load navbar
     fetch("navbar.html")
       .then((response) => response.text())
       .then((html) => {
         const nav = document.getElementById("navbar");
         nav.innerHTML = html;
-
-        // Set build date (if placeholder exists)
-        const bd = document.getElementById("buildDate");
-        if (bd) {
-          const d = new Date(document.lastModified);
-          bd.textContent = fmtDate(d);
-        }
 
         // Wire up nav search for full-document search
         const input = document.getElementById("navSearch");

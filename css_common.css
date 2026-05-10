@@ -741,7 +741,7 @@ a:active {
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 /* hover highlight bar */
@@ -837,18 +837,18 @@ a:active {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
+    margin-top: 6px;
     font-size: var(--project-font-size-small);
     color: var(--muted-color);
     font-style: italic;
 }
 
-.build-date {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--project-font-size-mini);
-    color: var(--muted-color);
-    font-style: italic;
+.version i {
+    color: var(--primary-color);
+    opacity: 0.7;
+    font-style: normal;
+    font-size: 0.9em;
 }
 
 .version-divider {
@@ -856,6 +856,90 @@ a:active {
     border: none;
     border-top: 1px solid var(--border-color);
     width: 80%;
+}
+
+/* =========================================================
+   TOP BAR (date · country · local time)
+   Centered pill, hugs content width — small and minimal.
+   ========================================================= */
+.topbar {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    padding: 0 16px;
+    z-index: 200;
+    pointer-events: none;
+}
+
+.topbar-inner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 5px 16px;
+    color: var(--muted-color);
+    font-size: var(--project-font-size-mini);
+    box-shadow: 0 4px 14px var(--shadow-weak), 0 1px 3px var(--shadow-color);
+    pointer-events: auto;
+}
+
+.topbar-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.topbar-item > i {
+    color: var(--primary-color);
+    opacity: 0.7;
+    font-size: 0.95em;
+}
+
+.topbar-item > img {
+    border-radius: 2px;
+    box-shadow: 0 1px 2px var(--shadow-weak);
+}
+
+.topbar-item > span,
+.topbar-item > time {
+    color: var(--secondary-color);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+}
+
+.topbar-divider {
+    width: 1px;
+    height: 12px;
+    background: var(--border-color);
+}
+
+.topbar-tz {
+    font-size: 0.85em !important;
+    opacity: 0.6;
+    letter-spacing: 0.08em;
+    color: var(--muted-color) !important;
+    font-weight: 400 !important;
+    margin-left: 2px;
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 6px 12px;
+    }
+
+    .topbar-inner {
+        justify-content: center;
+        gap: 10px;
+    }
 }
 
 /* =========================================================
@@ -904,15 +988,16 @@ a:active {
 
 #navSearch {
     width: 90%;
-    color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     border-radius: 4px;
     padding: 10px 12px;
     outline: none;
+    background: transparent;
 }
 
 #navSearch::placeholder {
-    color: var(--muted);
+    color: color-mix(in srgb, var(--primary-color) 55%, transparent);
 }
 
 #navSearch:focus {
