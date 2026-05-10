@@ -19,8 +19,8 @@ for f in "${HTML_FILES[@]}"; do
     sed -i -E "s|(src=\"javascripts/[^\"?]+\\.js)\?v=[^\"]+\"|\1?v=${NEW}\"|g" "$f"
 done
 
-# Update the navbar version label
-sed -i -E "s|<span class=\"version\">[[:space:]]*v[0-9]+(\.[0-9]+){1,2}[[:space:]]*</span>|<span class=\"version\"> v${NEW} </span>|" navbar.html
+# Update the navbar version label (preserves any inline icon/markup before the v-tag)
+sed -i -E "s|(<span class=\"version\">[^<]*(<[^>]+></[^>]+>[^<]*)?)v[0-9]+(\.[0-9]+){1,2}|\1v${NEW}|" navbar.html
 
 echo "Bumped to v${NEW}."
 echo "Files touched:"

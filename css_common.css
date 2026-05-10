@@ -1289,7 +1289,8 @@ a:active {
     min-height: 2.6em;
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item video {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: contain;
@@ -1303,7 +1304,8 @@ a:active {
     transition: transform 0.4s ease;
 }
 
-.gallery-item .card:hover img {
+.gallery-item .card:hover img,
+.gallery-item .card:hover video {
     transform: scale(1.04);
 }
 
