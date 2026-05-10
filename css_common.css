@@ -1109,7 +1109,7 @@ a:active {
     padding: 0.55rem 0.7rem;
     color: var(--primary-color);
     font-size: var(--project-font-size-small);
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
     border-top: 1px solid var(--border-color);
     background: transparent;
