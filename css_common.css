@@ -2111,12 +2111,6 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .dot.filled {
-        animation: none;
-    }
-}
-
 @media (max-width: 768px) {
     .carousel-container {
         height: 400px;
@@ -2268,20 +2262,4 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
 }
 .skip-link:focus {
     left: 0;
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-    #circuitCanvas {
-        display: none;
-    }
-    .scrolling-container {
-        animation: none !important;
-    }
 }
