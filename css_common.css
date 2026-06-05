@@ -46,6 +46,7 @@
     --title-stroke: none;
     --title-filter: none;
     --logo-filter: none;
+    --logo-color: #1B365D;
 
     --project-font-size-huge: 1.5rem;
     --project-font-size-large: 1.125rem;
@@ -186,6 +187,7 @@
     --title-stroke: 1px rgba(255, 255, 255, 0.08);
     --title-filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
     --logo-filter: invert(1) brightness(2);
+    --logo-color: #79c0ff;
 
     --circuit-color-base: hsla(212, 100%, 67%, 0.12);
     --circuit-color-pulse: hsl(208, 100%, 74%);
@@ -886,7 +888,7 @@ a:active {
     width: 200px;
     -webkit-mask: url('media/logos/logo.webp') center/contain no-repeat;
             mask: url('media/logos/logo.webp') center/contain no-repeat;
-    background-color: var(--primary-color);
+    background-color: var(--logo-color);
     transition: background-color 0.3s ease;
 }
 
@@ -1279,7 +1281,9 @@ a:active {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background: var(--card-color);
+    background: var(--card-glass);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border-color);
     box-shadow: 0 2px 6px var(--shadow-color);
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
