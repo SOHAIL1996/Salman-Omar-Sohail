@@ -54,11 +54,18 @@
     --project-font-size-mini: 0.75rem;
 
     --circuit-color-base: hsla(214, 49%, 34%, 0.1);
-    --circuit-color-pulse: #2C5282;
-    --circuit-color-trail: #1B365D;
+    --circuit-color-pulse: hsl(213, 49%, 34%);
+    --circuit-color-trail: hsl(215, 55%, 24%);
     --circuit-color-grid: hsla(214, 49%, 34%, 0.03);
-    --circuit-color-led: #3b5e92;
+    --circuit-color-led: hsl(216, 42%, 40%);
     --circuit-color-cpu-glow: hsla(214, 49%, 34%, 0.15);
+
+    /* Glassmorphism: translucent panels let the circuit canvas (z-index:-1)
+       show through. Light theme = frosted white. */
+    --sidebar-glass: rgba(255, 255, 255, 0.6);
+    --panel-glass: rgba(255, 255, 255, 0.42);
+    --card-glass: rgba(255, 255, 255, 0.55);
+    --glass-blur: 16px;
 }
 
 /* ---------- Accent theme overrides (apply on top of light defaults) ---------- */
@@ -71,10 +78,10 @@
     --hyperlink-active-color: #0D6B3A;
     --table-header-bg: color-mix(in srgb, #168C4B 10%, hsl(220, 10%, 95%));
     --circuit-color-base: hsla(142, 60%, 35%, 0.1);
-    --circuit-color-pulse: #168C4B;
-    --circuit-color-trail: #0D6B3A;
+    --circuit-color-pulse: hsl(147, 73%, 32%);
+    --circuit-color-trail: hsl(149, 78%, 24%);
     --circuit-color-grid: hsla(142, 60%, 35%, 0.03);
-    --circuit-color-led: #22A768;
+    --circuit-color-led: hsl(152, 66%, 39%);
     --circuit-color-cpu-glow: hsla(142, 60%, 35%, 0.15);
 }
 
@@ -86,10 +93,10 @@
     --hyperlink-active-color: #0f2557;
     --table-header-bg: color-mix(in srgb, #1e3a8a 10%, hsl(220, 10%, 95%));
     --circuit-color-base: hsla(223, 64%, 33%, 0.1);
-    --circuit-color-pulse: #1e3a8a;
-    --circuit-color-trail: #0f2557;
+    --circuit-color-pulse: hsl(224, 64%, 33%);
+    --circuit-color-trail: hsl(222, 71%, 20%);
     --circuit-color-grid: hsla(223, 64%, 33%, 0.03);
-    --circuit-color-led: #3b5bd4;
+    --circuit-color-led: hsl(227, 64%, 53%);
     --circuit-color-cpu-glow: hsla(223, 64%, 33%, 0.15);
 }
 
@@ -101,10 +108,10 @@
     --hyperlink-active-color: #9a3412;
     --table-header-bg: color-mix(in srgb, #ea580c 10%, hsl(220, 10%, 95%));
     --circuit-color-base: hsla(21, 90%, 48%, 0.1);
-    --circuit-color-pulse: #ea580c;
-    --circuit-color-trail: #9a3412;
+    --circuit-color-pulse: hsl(21, 90%, 48%);
+    --circuit-color-trail: hsl(15, 79%, 34%);
     --circuit-color-grid: hsla(21, 90%, 48%, 0.03);
-    --circuit-color-led: #fb923c;
+    --circuit-color-led: hsl(27, 96%, 61%);
     --circuit-color-cpu-glow: hsla(21, 90%, 48%, 0.15);
 }
 
@@ -116,10 +123,10 @@
     --hyperlink-active-color: #9f1239;
     --table-header-bg: color-mix(in srgb, #e11d48 10%, hsl(220, 10%, 95%));
     --circuit-color-base: hsla(347, 77%, 50%, 0.1);
-    --circuit-color-pulse: #e11d48;
-    --circuit-color-trail: #9f1239;
+    --circuit-color-pulse: hsl(347, 77%, 50%);
+    --circuit-color-trail: hsl(343, 80%, 35%);
     --circuit-color-grid: hsla(347, 77%, 50%, 0.03);
-    --circuit-color-led: #fb7185;
+    --circuit-color-led: hsl(351, 95%, 71%);
     --circuit-color-cpu-glow: hsla(347, 77%, 50%, 0.15);
 }
 
@@ -131,10 +138,10 @@
     --hyperlink-active-color: #5b21b6;
     --table-header-bg: color-mix(in srgb, #7c3aed 10%, hsl(220, 10%, 95%));
     --circuit-color-base: hsla(263, 83%, 58%, 0.1);
-    --circuit-color-pulse: #7c3aed;
-    --circuit-color-trail: #5b21b6;
+    --circuit-color-pulse: hsl(262, 83%, 58%);
+    --circuit-color-trail: hsl(263, 69%, 42%);
     --circuit-color-grid: hsla(263, 83%, 58%, 0.03);
-    --circuit-color-led: #a78bfa;
+    --circuit-color-led: hsl(255, 92%, 76%);
     --circuit-color-cpu-glow: hsla(263, 83%, 58%, 0.15);
 }
 
@@ -181,11 +188,16 @@
     --logo-filter: invert(1) brightness(2);
 
     --circuit-color-base: hsla(212, 100%, 67%, 0.12);
-    --circuit-color-pulse: #79c0ff;
-    --circuit-color-trail: #58a6ff;
+    --circuit-color-pulse: hsl(208, 100%, 74%);
+    --circuit-color-trail: hsl(212, 100%, 67%);
     --circuit-color-grid: hsla(212, 100%, 67%, 0.04);
-    --circuit-color-led: #79c0ff;
+    --circuit-color-led: hsl(208, 100%, 74%);
     --circuit-color-cpu-glow: hsla(212, 100%, 67%, 0.2);
+
+    /* Glass: dark frosted so the circuit canvas reads through the panels. */
+    --sidebar-glass: rgba(13, 17, 23, 0.55);
+    --panel-glass: rgba(13, 17, 23, 0.32);
+    --card-glass: rgba(22, 27, 34, 0.5);
 }
 
 /* =========================================================
@@ -568,7 +580,9 @@ a:active {
 }
 
 .card {
-    background-color: var(--card-color);
+    background-color: var(--card-glass);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border-radius: 20px;
     width: 250px;
     padding-top: 20px;
@@ -589,7 +603,9 @@ a:active {
 }
 
 .main-panel {
-    background-color: var(--panel-color);
+    background-color: var(--panel-glass);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
     padding: 20px;
     max-width: 1200px;
     box-sizing: border-box;
@@ -739,7 +755,9 @@ a:active {
     height: 100vh;
     position: sticky;
     top: 0;
-    background: var(--panel-color);
+    background: var(--sidebar-glass);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 1000;
