@@ -773,6 +773,39 @@ a:active {
     border-right: 1px solid var(--border-color);
 }
 
+/* Hamburger toggle + backdrop: hidden on desktop, shown on mobile (≤768px) */
+.nav-toggle {
+    display: none;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 1100;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--sidebar-glass);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 990;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 .side-nav ul {
     margin: 0;
     padding: 0;
@@ -1543,7 +1576,8 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
    ========================================================= */
 .footer {
     font-family: var(--project-font-family);
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     background-color: var(--panel-color);
     color: var(--secondary-color);
     text-align: center;
@@ -2145,19 +2179,55 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
         margin: 5px 0;
     }
 
+    /* Stack layout; side-nav becomes an off-canvas drawer */
+    .global-overlay {
+        display: block;
+        max-width: 100%;
+    }
+
+    .main-panel {
+        max-width: 100%;
+        width: 100%;
+        border-left: none;
+        border-right: none;
+        padding-top: 60px; /* clearance for fixed hamburger + topbar */
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+    }
+
     .side-nav {
-        width: 250px;
-        height: 100%;
-        position: sticky;
+        position: fixed;
         top: 0;
-        background: var(--panel-color);
-        overflow-y: auto;
-        overflow-x: hidden;
+        left: 0;
+        width: min(82vw, 300px);
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
         z-index: 1000;
-        border: none;
-        box-shadow: 3px 0 10px -5px var(--shadow-strong);
-        display: flex;
-        flex-direction: column;
+        box-shadow: 3px 0 16px -4px var(--shadow-strong);
+    }
+
+    body.nav-open .side-nav {
+        transform: translateX(0);
+    }
+
+    .nav-backdrop {
+        display: block;
+    }
+
+    body.nav-open .nav-backdrop {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Wide data tables scroll horizontally instead of overflowing the page */
+    .main-panel table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 

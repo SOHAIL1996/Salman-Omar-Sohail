@@ -152,6 +152,67 @@ Software License Agreement (BSD)
         const nav = document.getElementById("navbar");
         nav.innerHTML = html;
 
+        // --- Mobile navigation (off-canvas hamburger drawer) ---
+        const navToggle = document.getElementById("navToggle");
+        const navBackdrop = document.getElementById("navBackdrop");
+        const sideNav = document.getElementById("sideNav");
+        const toggleIcon = navToggle ? navToggle.querySelector("i") : null;
+        const isMobileNav = () => window.matchMedia("(max-width: 768px)").matches;
+
+        function setNav(open) {
+          document.body.classList.toggle("nav-open", open);
+          if (navToggle) {
+            navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+            navToggle.setAttribute(
+              "aria-label",
+              open ? "Close navigation menu" : "Open navigation menu"
+            );
+          }
+          if (toggleIcon) {
+            toggleIcon.classList.toggle("fa-bars", !open);
+            toggleIcon.classList.toggle("fa-xmark", open);
+          }
+          if (open && sideNav) {
+            const firstLink = sideNav.querySelector("a");
+            if (firstLink) firstLink.focus();
+          }
+        }
+
+        if (navToggle) {
+          navToggle.addEventListener("click", () =>
+            setNav(!document.body.classList.contains("nav-open"))
+          );
+        }
+        if (navBackdrop) {
+          navBackdrop.addEventListener("click", () => setNav(false));
+        }
+        if (sideNav) {
+          // Tapping a real nav link closes the drawer (skip the dropdown toggle)
+          sideNav.addEventListener("click", (e) => {
+            const link = e.target.closest("a");
+            if (
+              link &&
+              !link.classList.contains("dropdown-toggle") &&
+              isMobileNav()
+            ) {
+              setNav(false);
+            }
+          });
+        }
+        // Escape closes the drawer and returns focus to the toggle
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && document.body.classList.contains("nav-open")) {
+            setNav(false);
+            if (navToggle) navToggle.focus();
+          }
+        });
+        // Reset state when resizing back up to desktop
+        window.addEventListener("resize", () => {
+          if (!isMobileNav() && document.body.classList.contains("nav-open")) {
+            setNav(false);
+          }
+        });
+
         // Wire up nav search for full-document search
         const input = document.getElementById("navSearch");
         if (input) {
