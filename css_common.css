@@ -1329,6 +1329,14 @@ a:active {
     transition: transform 0.4s ease;
 }
 
+/* Fill the whole card (no letterboxing) — for motion clips / videos
+   whose framing looks better edge-to-edge than padded & contained. */
+.gallery-item--cover img,
+.gallery-item--cover video {
+    object-fit: cover;
+    padding: 0;
+}
+
 .gallery-item .card:hover img,
 .gallery-item .card:hover video {
     transform: scale(1.04);
