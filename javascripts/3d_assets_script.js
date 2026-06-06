@@ -1,5 +1,5 @@
-const carousel = document.getElementById("carousel");
-const titleDisplay = document.getElementById("model-title");
+let carousel = null;
+let titleDisplay = null;
 
 const models = [
     {
@@ -313,75 +313,87 @@ function updateTitle() {
     }, 150);
 }
 
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        navigateCarousel('prev');
-    } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        navigateCarousel('next');
-    }
-});
+// ---- SPA-aware init / teardown ----
+let _carouselAbort = null;
+let _carouselInterval = null;
 
-// Touch/swipe support
-let touchStartX = 0;
-let touchStartY = 0;
-let isDragging = false;
+function initCarousel() {
+    teardownCarousel();
+    carousel = document.getElementById("carousel");
+    titleDisplay = document.getElementById("model-title");
+    if (!carousel) return;
 
-carousel.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-    isDragging = true;
-}, { passive: true });
+    currentIndex = 0;
+    isTransitioning = false;
+    modelElements = [];
 
-carousel.addEventListener('touchend', (e) => {
-    if (!isDragging) return;
+    initializeCarousel();
 
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchEndY = e.changedTouches[0].clientY;
-    const deltaX = touchStartX - touchEndX;
-    const deltaY = touchStartY - touchEndY;
+    _carouselAbort = new AbortController();
+    const signal = _carouselAbort.signal;
 
-    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-        e.preventDefault();
-        if (deltaX > 0) {
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            navigateCarousel('prev');
+        } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
             navigateCarousel('next');
-        } else {
+        }
+    }, { signal });
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isDragging = false;
+
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isDragging = true;
+    }, { passive: true, signal });
+
+    carousel.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+
+        const deltaX = touchStartX - e.changedTouches[0].clientX;
+        const deltaY = touchStartY - e.changedTouches[0].clientY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+            e.preventDefault();
+            navigateCarousel(deltaX > 0 ? 'next' : 'prev');
+        }
+
+        isDragging = false;
+    }, { passive: false, signal });
+
+    // Mouse wheel navigation with debounce
+    let wheelTimeout = null;
+    carousel.addEventListener('wheel', (e) => {
+        if (isTransitioning) return;
+        e.preventDefault();
+        if (wheelTimeout) return;
+        wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 250);
+        if (e.deltaX > 20 || e.deltaY > 20) {
+            navigateCarousel('next');
+        } else if (e.deltaX < -20 || e.deltaY < -20) {
             navigateCarousel('prev');
         }
-    }
+    }, { passive: false, signal });
 
-    isDragging = false;
-}, { passive: false });
-
-// Mouse wheel navigation with debounce
-let wheelTimeout = null;
-carousel.addEventListener('wheel', (e) => {
-    if (isTransitioning) return;
-    e.preventDefault();
-
-    if (wheelTimeout) return;
-
-    wheelTimeout = setTimeout(() => {
-        wheelTimeout = null;
-    }, 250);
-
-    if (e.deltaX > 20 || e.deltaY > 20) {
-        navigateCarousel('next');
-    } else if (e.deltaX < -20 || e.deltaY < -20) {
-        navigateCarousel('prev');
-    }
-}, { passive: false });
-
-// Initialize when ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeCarousel);
-} else {
-    initializeCarousel();
+    // Auto-advance carousel every 20 seconds
+    _carouselInterval = setInterval(() => {
+        if (!isTransitioning) navigateCarousel('next');
+    }, 20000);
 }
 
-// Auto-advance carousel every 20 seconds
-setInterval(() => {
-    if (!isTransitioning) {
-        navigateCarousel('next');
-    }
-}, 20000);
+function teardownCarousel() {
+    if (_carouselAbort) { _carouselAbort.abort(); _carouselAbort = null; }
+    if (_carouselInterval) { clearInterval(_carouselInterval); _carouselInterval = null; }
+    if (carousel) carousel.innerHTML = '';
+}
+
+if (window.SPA && window.SPA.register) {
+    window.SPA.register('projects.html', { init: initCarousel, teardown: teardownCarousel });
+}
+// Self-init on direct entry (content already present)
+if (document.getElementById('carousel')) initCarousel();

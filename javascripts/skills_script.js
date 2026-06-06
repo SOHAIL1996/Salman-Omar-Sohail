@@ -57,8 +57,8 @@ const SKILLS = [
 ];
 
 /* ---------- Render ---------- */
-const grid = document.getElementById("skills-grid");
-const tabs = document.querySelectorAll(".skills-tab");
+let grid = null;
+let tabs = null;
 
 function dotMeter(level = 0, max = 6) {
     return Array.from({ length: max }, (_, i) =>
@@ -107,13 +107,34 @@ function render(filter = "all") {
         })
         .map(card).join("");
 }
-render();
 
-/* ---------- Filters ---------- */
-tabs.forEach(btn => {
-    btn.addEventListener("click", () => {
-        tabs.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        render(btn.dataset.filter);
+/* ---------- SPA-aware init / teardown ---------- */
+let _skillsAbort = null;
+
+function initSkills() {
+    teardownSkills();
+    grid = document.getElementById("skills-grid");
+    tabs = document.querySelectorAll(".skills-tab");
+    if (!grid) return;
+
+    render();
+
+    _skillsAbort = new AbortController();
+    const signal = _skillsAbort.signal;
+    tabs.forEach(btn => {
+        btn.addEventListener("click", () => {
+            tabs.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            render(btn.dataset.filter);
+        }, { signal });
     });
-});
+}
+
+function teardownSkills() {
+    if (_skillsAbort) { _skillsAbort.abort(); _skillsAbort = null; }
+}
+
+if (window.SPA && window.SPA.register) {
+    window.SPA.register("skills.html", { init: initSkills, teardown: teardownSkills });
+}
+if (document.getElementById("skills-grid")) initSkills();

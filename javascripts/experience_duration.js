@@ -49,6 +49,11 @@
         });
     }
 
+    // Idempotent — safe to re-run on every SPA navigation into the page
+    if (window.SPA && window.SPA.register) {
+        window.SPA.register('experience.html', { init: update });
+    }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', update);
     } else {

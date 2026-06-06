@@ -8,6 +8,20 @@ const SCALE_FIT = 1.0;          // base multiplier used in fit calculations
 
 // ---------- Implementation ----------
 (function () {
+  let _cleanup = function () {};
+  function teardown() { _cleanup(); _cleanup = function () {}; }
+
+  function init() {
+    teardown();
+    const abort = new AbortController();
+    const signal = abort.signal;
+
+    // Ensure the PDF.js worker is configured even on SPA navigation
+    // (the inline <head> script in academia.html only runs on a full load).
+    if (window.pdfjsLib && pdfjsLib.GlobalWorkerOptions && !pdfjsLib.GlobalWorkerOptions.workerSrc) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = "javascripts/pdf/pdf.worker.min.js";
+    }
+
     const root = document.getElementById("pdfv");
     const sel = document.getElementById("pdfv-select");
     const zoomSel = document.getElementById("pdfv-zoom");
@@ -224,12 +238,12 @@ const SCALE_FIT = 1.0;          // base multiplier used in fit calculations
     }
 
     // Events
-    sel.addEventListener("change", (e) => loadPDF(e.target.value));
-    window.addEventListener("resize", onResize);
-    root.addEventListener("mouseenter", stopAutoRotate);
-    root.addEventListener("mouseleave", startAutoRotate);
-    root.addEventListener("focusin", stopAutoRotate);
-    root.addEventListener("focusout", startAutoRotate);
+    sel.addEventListener("change", (e) => loadPDF(e.target.value), { signal });
+    window.addEventListener("resize", onResize, { signal });
+    root.addEventListener("mouseenter", stopAutoRotate, { signal });
+    root.addEventListener("mouseleave", startAutoRotate, { signal });
+    root.addEventListener("focusin", stopAutoRotate, { signal });
+    root.addEventListener("focusout", startAutoRotate, { signal });
 
     if (zoomSel) {
         zoomSel.addEventListener("change", () => {
@@ -245,9 +259,23 @@ const SCALE_FIT = 1.0;          // base multiplier used in fit calculations
                     if (viewportEl) viewportEl.scrollTop = 0;
                 }
             }
-        });
+        }, { signal });
     }
 
     // Initial
     if (PDF_LIST.length) loadPDF(sel.value).then(startAutoRotate);
+
+    // Cleanup hook for SPA teardown
+    _cleanup = function () {
+        abort.abort();
+        stopAutoRotate();
+        cancelRender = true;
+        if (status && status.parentNode) status.remove();
+    };
+  } // end init
+
+  if (window.SPA && window.SPA.register) {
+    window.SPA.register("academia.html", { init, teardown });
+  }
+  if (document.getElementById("pdfv")) init();
 })();

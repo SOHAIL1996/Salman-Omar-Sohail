@@ -3,6 +3,47 @@ Software License Agreement (BSD)
 @author  Salman Omar Sohail
 */
 
+/* ---- SPA registry & shell helpers (shared by spa_router.js and page scripts) ---- */
+window.SPA = window.SPA || {};
+window.SPA.pages = window.SPA.pages || {};
+window.SPA.register = window.SPA.register || function (route, mod) {
+  (this.pages[route] = this.pages[route] || []).push(mod);
+};
+window.SPA._scrollingHTML = window.SPA._scrollingHTML || null;
+
+// Inject the header "scrolling images" strip (lives inside the swapped <main>).
+window.SPA.injectScrollingImages = function () {
+  const mount = document.getElementById("scrollingImages");
+  if (!mount) return;
+  if (window.SPA._scrollingHTML != null) {
+    mount.innerHTML = window.SPA._scrollingHTML;
+    return;
+  }
+  fetch("scrolling_images.html")
+    .then((r) => r.text())
+    .then((html) => {
+      window.SPA._scrollingHTML = html;
+      const m = document.getElementById("scrollingImages");
+      if (m) m.innerHTML = html;
+    })
+    .catch((e) => console.error("Error loading scrolling images:", e));
+};
+
+// Highlight the nav link for the current page.
+window.SPA.setActiveNavLink = function () {
+  const path = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".side-nav a").forEach((a) => {
+    const href = (a.getAttribute("href") || "").split("/").pop();
+    a.classList.toggle("active", href === path);
+  });
+};
+
+// Re-run shell hooks after the router swaps content.
+window.addEventListener("spa:navigated", function () {
+  window.SPA.injectScrollingImages();
+  window.SPA.setActiveNavLink();
+});
+
 (function () {
   // ------- Utilities -------
   const fmtDate = (d) =>
@@ -151,6 +192,7 @@ Software License Agreement (BSD)
       .then((html) => {
         const nav = document.getElementById("navbar");
         nav.innerHTML = html;
+        window.SPA.setActiveNavLink();
 
         // --- Mobile navigation (off-canvas hamburger drawer) ---
         const navToggle = document.getElementById("navToggle");
@@ -248,12 +290,43 @@ Software License Agreement (BSD)
       })
       .catch((error) => console.error("Error loading navbar:", error));
 
-    // Load scrolling images
-    fetch("scrolling_images.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("scrollingImages").innerHTML = data;
-      })
-      .catch((error) => console.error("Error loading scrolling images:", error));
+    // Load scrolling images (cached + reusable across SPA swaps)
+    window.SPA.injectScrollingImages();
   });
+})();
+
+/* Prefetch internal pages on hover / touch / focus so navigation feels instant.
+   Shared assets (CSS/JS/images) are already cached across pages; this fetches
+   the next page's HTML ahead of the click. Each URL is prefetched at most once. */
+(function () {
+  const prefetched = new Set();
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1));
+
+  function prefetch(href) {
+    if (prefetched.has(href)) return;
+    prefetched.add(href);
+    idle(() => {
+      const link = document.createElement("link");
+      link.rel = "prefetch";
+      link.href = href;
+      document.head.appendChild(link);
+    });
+  }
+
+  function maybePrefetch(e) {
+    const a = e.target.closest ? e.target.closest("a[href]") : null;
+    if (!a || a.target === "_blank") return;
+    const href = a.getAttribute("href");
+    if (!href || href.charAt(0) === "#") return;
+    try {
+      const url = new URL(a.href, location.href);
+      if (url.origin === location.origin && url.pathname.endsWith(".html")) {
+        prefetch(url.href);
+      }
+    } catch (_) {}
+  }
+
+  document.addEventListener("pointerover", maybePrefetch);
+  document.addEventListener("touchstart", maybePrefetch, { passive: true });
+  document.addEventListener("focusin", maybePrefetch);
 })();
