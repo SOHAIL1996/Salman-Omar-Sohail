@@ -54,6 +54,9 @@
     --project-font-size-small: 0.85rem;
     --project-font-size-mini: 0.75rem;
 
+    /* Uniform sizing for all data tables (single knob for configurability) */
+    --project-table-font-size: var(--project-font-size-small);
+
     --circuit-color-base: hsla(214, 49%, 34%, 0.1);
     --circuit-color-pulse: hsl(213, 49%, 34%);
     --circuit-color-trail: hsl(215, 55%, 24%);
@@ -466,7 +469,7 @@ h4 {
 }
 
 h6 {
-    font-size: 0.85rem;
+    font-size: var(--project-font-size-small);
     font-weight: 600;
     color: var(--primary-color);
     text-transform: uppercase;
@@ -1260,7 +1263,7 @@ a:active {
 .custom-bullets {
     margin: 0;
     padding-left: 1.1rem;
-    font-size: 0.85rem;
+    font-size: var(--project-font-size-small);
     line-height: 1.55;
 }
 
@@ -1495,7 +1498,7 @@ a:active {
 }
 
 .project-item span h6 {
-    font-size: 0.85rem;
+    font-size: var(--project-font-size-small);
     margin: 0 0 8px 0;
     min-width: 200px;
     padding: 4px 8px;
@@ -1512,6 +1515,7 @@ a:active {
    ========================================================= */
 table {
     color: var(--text-color);
+    font-size: var(--project-table-font-size);
 }
 
 thead {
