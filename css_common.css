@@ -2193,6 +2193,30 @@ tr:has(td[rowspan])+tr:not(:has(td[rowspan])) td {
         padding-top: 60px; /* clearance for fixed hamburger + topbar */
     }
 
+    /* Prevent any element from forcing horizontal overflow (which zooms the page out) */
+    html, body { overflow-x: hidden; max-width: 100%; }
+
+    /* Header: stack + shrink + wrap so the long name can't blow out the layout */
+    .header-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 4px;
+    }
+    .gif-title {
+        font-size: clamp(1.7rem, 8vw, 2.6rem);
+        white-space: normal;
+        text-align: center;
+        margin: 6px 0 0;
+        overflow-wrap: anywhere;
+    }
+    .mini-title {
+        font-size: 1rem;
+        letter-spacing: 0.18em;
+        text-align: center;
+        margin: 0.3rem 0 0;
+    }
+
     .nav-toggle {
         display: inline-flex;
     }

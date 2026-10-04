@@ -13,7 +13,7 @@
     <meta property="og:image" content="https://raw.githubusercontent.com/SOHAIL1996/Salman-Omar-Sohail/main/media/profile/sohail.png">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="stylesheet" href="css_common.css?v=5.4">
+    <link rel="stylesheet" href="css_common.css?v=5.5">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="media/logos/logo.webp" />
@@ -39,12 +39,12 @@
         </script>
 
     <!-- Javascript -->
-    <script src="javascripts/theme_toggle.js?v=5.4"></script>
-    <script src="javascripts/common_script.js?v=5.4" defer></script>
-    <script src="javascripts/spa_router.js?v=5.4" defer></script>
-    <script src="javascripts/gps_points.js?v=5.4" defer></script>
-    <script src="javascripts/circuitry_background.js?v=5.4" defer></script>
-    <script src="javascripts/experience_duration.js?v=5.4" defer></script>
+    <script src="javascripts/theme_toggle.js?v=5.5"></script>
+    <script src="javascripts/common_script.js?v=5.5" defer></script>
+    <script src="javascripts/spa_router.js?v=5.5" defer></script>
+    <script src="javascripts/gps_points.js?v=5.5" defer></script>
+    <script src="javascripts/circuitry_background.js?v=5.5" defer></script>
+    <script src="javascripts/experience_duration.js?v=5.5" defer></script>
 </head>
 
 <body>
@@ -91,13 +91,74 @@
                 <hr class="horizontal-line">
 
                 <div class="experience-container">
+                    <img src="media/logos/griddynamics_logo.drawio.webp" alt="Grid Dynamics Logo" loading="lazy">
+                    <h4>
+                        <a href="https://www.griddynamics.com/">Grid Dynamics</a>
+                        <span class="role-tag">Senior Robotics Software Engineer</span>
+                    </h4>
+                    <div class="experience-meta" data-start="2026-08">
+                        <span class="exp-range">AUG 2026 — Present</span> <span class="exp-duration"></span><br>
+                        Hybrid, Switzerland <img src="https://flagcdn.com/w20/ch.png" width="20" loading="lazy" alt="CH flag">
+                    </div>
+                </div>
+                <div>
+                    <h6>Development and Integration of Software</h6>
+                </div>
+                <div>
+                    Specializing in the development and integration of control and autonomy software for humanoid
+                    robots, principally the AgiBot G2 bimanual platform (16-DoF, dual 7-DoF arms). Expertise in
+                    building real-time manipulation stacks, teleoperation pipelines, hardware drivers and automated
+                    testing frameworks across ROS 2, Python, Rust and C++.
+                </div>
+                <div>
+                    <h6>Humanoid Platform Integration and Bring-Up</h6>
+                </div>
+                <div>
+                    Full mechanical, electrical and software commissioning of dual-arm humanoid systems — arm and
+                    gripper bring-up, end-effector changeovers between AgiBot OmniPicker and Robotiq 2F-85 units,
+                    kinematic modelling and URDF development, and keeping the robot's digital model consistent with
+                    its physical configuration as hardware evolves.
+                </div>
+                <div>
+                    <h6>Sensor and Hardware Integration</h6>
+                </div>
+                <div>
+                    Proficient in integrating and interfacing multi-camera rigs (head colour/depth, stereo and
+                    fisheye, wrist-mounted colour/depth), industrial grippers over Modbus RTU with full device
+                    telemetry (position, motor current, object detection, fault state), VR headsets (Pico 4 Ultra)
+                    for teleoperation, and embedded compute platforms (NVIDIA Jetson AGX Thor) including Linux
+                    real-time tuning, CPU core partitioning and CUDA runtime configuration.
+                </div>
+                <div>
+                    <h6>Embodied AI — VLA Training and Deployment</h6>
+                </div>
+                <div>
+                    Training and on-robot deployment of XVLA (Extended Vision-Language-Action) models for autonomous
+                    manipulation. Ownership of the full data path: VR-teleoperated demonstration capture,
+                    LeRobot-format dataset generation, dataset integrity evaluation and versioning, through to live
+                    policy execution translating model predictions into smooth, physically safe motion on hardware.
+                </div>
+                <div>
+                    <h6>Robot Safety Systems</h6>
+                </div>
+                <div>
+                    Design of the layered safeguards required for a humanoid operating around people — motion and
+                    joint-range limiting, emergency-stop interlocks, watchdogs on autonomous behaviour, and automated
+                    startup verification confirming the robot is correctly wired and calibrated before executing any
+                    large movement.
+                </div>
+
+                <br>
+                <hr class="horizontal-line-dashed">
+
+                <div class="experience-container">
                     <img src="media/logos/mybotshop_logo.drawio.webp" alt="MyBotShop Logo" loading="lazy">
                     <h4>
                         <a href="https://www.mybotshop.de/">MYBOTSHOP GmbH</a>
                         <span class="role-tag">Team Lead – Robotic Software Engineer</span>
                     </h4>
-                    <div class="experience-meta" data-start="2021-07">
-                        <span class="exp-range">JUL 2021 — Present</span> <span class="exp-duration"></span><br>
+                    <div class="experience-meta" data-start="2021-07" data-end="2026-07">
+                        <span class="exp-range">JUL 2021 — JUL 2026</span> <span class="exp-duration"></span><br>
                         Bergheim, Germany <img src="https://flagcdn.com/w20/de.png" width="20" loading="lazy" alt="DE flag">
                     </div>
                 </div>
@@ -435,6 +496,7 @@
                     practices for integrating and operating robots, sensors, and software components. Helps
                     users understand and leverage the capabilities of the systems effectively. Example below:
                 </div>
+                <!--
                 <figure>
                     <iframe src="https://docs.mybotshop.de" width="100%" height="600"
                         style="border: 1px solid hsl(0, 0%, 50%, 0.3); border-radius: 8px;">
@@ -443,6 +505,7 @@
                         <a href="https://docs.mybotshop.de" target="_blank">MYBOTSHOP Documentation</a>
                     </figcaption>
                 </figure>
+                -->
                 <div>
                     <h6>Robotic Trainer</h6>
                 </div>

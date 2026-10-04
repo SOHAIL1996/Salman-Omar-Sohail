@@ -15,7 +15,7 @@ page still works as a standalone document (progressive enhancement).
     (this.pages[route] = this.pages[route] || []).push(mod);
   };
 
-  const VER = "5.4";
+  const VER = "5.5";
   const L_CSS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
   const L_JS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
 
