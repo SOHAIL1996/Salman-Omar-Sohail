@@ -1274,6 +1274,19 @@ a:active {
     box-shadow: 0 1px 2px var(--shadow-weak);
 }
 
+/* Work arrangement (Onsite / Hybrid / Remote) appended to the location line */
+.experience-meta .work-mode {
+    font-style: italic;
+    color: var(--muted-color);
+    opacity: 0.9;
+}
+
+.experience-meta .work-mode::before {
+    content: "\00b7";
+    margin: 0 4px 0 2px;
+    opacity: 0.6;
+}
+
 .experience-meta {
     font-size: var(--project-font-size-small);
     color: var(--primary-color);
